@@ -1,12 +1,15 @@
 
 import { BrowserRouter } from 'react-router-dom';
-import FormPage from './components/Form';
+import Url from './components/Routes';
+import Dash from './components/Dash';
 
+import 'bootstrap/dist/css/bootstrap.css';
 function App(){
     return(
         <>
         <BrowserRouter>
-        <FormPage></FormPage>
+        <Dash></Dash>
+        <Url></Url>
         </BrowserRouter>
         </>
     )
