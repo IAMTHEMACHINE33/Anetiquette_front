@@ -1,7 +1,7 @@
 import React from 'react';
 import * as style from './style';
 
-const FormPage=()=> {
+const Login=()=> {
         const [signIn, toggle] = React.useState(true);
       return(
           <style.Container>
@@ -20,8 +20,8 @@ const FormPage=()=> {
                        <style.Title>Sign in</style.Title>
                        <style.Input type='email' placeholder='E-mail' />
                        <style.Input type='password' placeholder='Password' />
-                       <style.Anchor href='#'>Forgot your password?</style.Anchor>
-                       <style.Button>Sign In</style.Button>
+                       <style.Anchor href='/dash'>Forgot your password?</style.Anchor>
+                       <style.Anchor href='/dash'><style.Button>Sign In</style.Button></style.Anchor>
                    </style.Form>
               </style.SignInContainer>
 
@@ -56,4 +56,4 @@ const FormPage=()=> {
     }
 
 
-export default FormPage;
+export default Login;

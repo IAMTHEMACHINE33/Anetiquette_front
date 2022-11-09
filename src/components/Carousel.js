@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import img1 from '../photo/neon.jpg';
 import img2 from '../photo/redlips.jpg';
@@ -50,7 +51,7 @@ const CarouselImg=()=>{
             </Carousel>
     </>
        
-    )
+    );
 }
 
 export default CarouselImg

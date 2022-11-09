@@ -2,6 +2,7 @@
   "name": "anetiquette_front",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://localhost:3000/dash",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -11,7 +12,7 @@
     "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^2.1.3",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
@@ -39,4 +40,5 @@
       "last 1 safari version"
     ]
   }
+
 }

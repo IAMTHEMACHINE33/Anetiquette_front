@@ -1,4 +1,4 @@
-
+import React from 'react';
 import Navbar from './Navbar';
 import CarouselImg from './Carousel';
 
@@ -12,4 +12,4 @@ const Dash =()=>{
     )
 }
 
-export default Dash;
+export default Dash

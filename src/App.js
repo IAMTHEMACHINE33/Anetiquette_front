@@ -1,18 +1,14 @@
-
+import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Url from './components/Routes';
-import Dash from './components/Dash';
 
-import 'bootstrap/dist/css/bootstrap.css';
 function App(){
-    return(
-        <>
+    return(   
         <BrowserRouter>
-        <Dash></Dash>
-        <Url></Url>
+            <Url/>
         </BrowserRouter>
-        </>
-    )
+  
+    );
 }
 
-export default App;
+export default App

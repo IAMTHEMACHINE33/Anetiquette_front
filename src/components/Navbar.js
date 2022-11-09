@@ -1,29 +1,57 @@
-import 'bootstrap/dist/css/bootstrap.css';
+import React from 'react';
 const Navbar = () => {
   return (
-    <>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
+    <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand ml-3" href="{}">antiquette</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    
       </ul>
-      
+        <span class="navbar-nav ">
+          <ul class='navbar-nav'>
+        <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="/dash">HOME</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="{}">CATEGORY</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="{}">ABOUT US</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="{}">HELP</a>
+          </li>
+          <li class="nav-item mx-2" >
+            <a class="nav-link" href="{}">CONTACT</a>
+          </li>
+          <li class="nav-item mx-2" >
+            <a class="nav-link" href="{}"></a>
+          </li>
+          
+          
+        </ul>
+        
+        
+        
+        </span>
+        <span class='navbar-nav '>
+          <ul class='navbar-nav '>
+          <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+    
+  </form>
+          <a class="nav-link" href="/login">Cart</a>
+          <a class="nav-link" href="/login">Profile</a>
+          </ul>
+        
+        </span>
+      </div>
     </div>
   </nav>
-  </>
   )
 }
 
