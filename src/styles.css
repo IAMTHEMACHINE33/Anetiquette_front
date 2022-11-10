@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   background: #f6f5f7;
   display: flex;
   overflow: hidden;
@@ -14,4 +14,9 @@ body {
   font-family: "Montserrat", sans-serif;
   height: 100vh;
   margin: 20px 0 80px;
+} */
+
+.caroimg{
+  height: 75vh;
+  object-fit:cover;
 }

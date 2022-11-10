@@ -1,15 +1,14 @@
-
+import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import FormPage from './components/Form';
+import Url from './components/Routes';
 
 function App(){
-    return(
-        <>
+    return(   
         <BrowserRouter>
-        <FormPage></FormPage>
+            <Url/>
         </BrowserRouter>
-        </>
-    )
+  
+    );
 }
 
-export default App;
+export default App

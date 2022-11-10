@@ -1,1 +1,22 @@
 testing branch
+
+dependencies:
+
+npm install bootstrap (works)
+
+path copied as node_modules/bootstrap/dist/css/bootstrap.css in index
+bootstrap enabled
+
+==========================================================================
+
+style.css ko body ma problem cha
+
+==================================================================
+
+shift + alt + F ra prettier le code milaidincha
+
+==================================================================
+
+landing page is in package.json
+
+=======================================================================
