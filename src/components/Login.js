@@ -1,7 +1,10 @@
 import React from 'react';
 import * as style from './style';
+import { useNavigate } from "react-router-dom";
+
 
 const Login=()=> {
+        const navigate = useNavigate();
         const [signIn, toggle] = React.useState(true);
       return(
           <style.Container>
@@ -20,13 +23,13 @@ const Login=()=> {
                        <style.Title>Sign in</style.Title>
                        <style.Input type='email' placeholder='E-mail' />
                        <style.Input type='password' placeholder='Password' />
-                       <style.Anchor href='/dash'>Forgot your password?</style.Anchor>
-                       <style.Anchor href='/dash'><style.Button>Sign In</style.Button></style.Anchor>
+                       <style.Anchor >Forgot your password?</style.Anchor>
+                       <style.Anchor ><style.Button onClick={() => navigate("/dash")}>Sign In</style.Button></style.Anchor>
                    </style.Form>
               </style.SignInContainer>
 
-              <style.OverlayContainer signinIn={signIn}>
-                  <style.Overlay signinIn={signIn}>
+              <style.OverlayContainer  signinIn={signIn}>
+                  <style.Overlay  signinIn={signIn}>
 
                   <style.LeftOverlayPanel signinIn={signIn}>
                       <style.Title>Welcome Back!</style.Title>

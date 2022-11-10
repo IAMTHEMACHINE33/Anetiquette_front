@@ -4,12 +4,12 @@
  background-color: #fff;
  border-radius: 10px;
  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
- position: relative;
+ position: center;
  overflow: hidden;
  height: 80vh;
  width: 175vh;
  max-width: 100%;
- min-height: 400px;
+ min-height: 750px;
  `;
 
  export const SignUpContainer = styled.div`
@@ -77,12 +77,7 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: transform 80ms ease-in;
-    &:active{
-        transform: scale(0.95);
-    }
-    &:focus {
-        outline: none;
-    }
+
  `;
  export const GhostButton = styled(Button)`
  background-color: transparent;
