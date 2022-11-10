@@ -9,7 +9,7 @@ const Url=()=>{
         <>
         <Routes>
             {/* <Routes basename={'dash'}> */}
-            <Route path='/login' element={<Login/>}></Route>
+            <Route path='/' element={<Login/>}></Route>
             <Route path= '/dash' element={<Dash/>}></Route>
             <Route path= '/nav' element={<Navbar/>}></Route>
         </Routes>

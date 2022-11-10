@@ -44,8 +44,8 @@ const Navbar = () => {
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
     
   </form>
-          <a class="nav-link" href="/login">Cart</a>
-          <a class="nav-link" href="/login">Profile</a>
+          <a class="nav-link" href="/">Cart</a>
+          <a class="nav-link" href="/">Profile</a>
           </ul>
         
         </span>
