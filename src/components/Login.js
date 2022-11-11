@@ -1,5 +1,5 @@
 import React from 'react';
-import * as style from './style';
+import * as style from '../style';
 import { useNavigate } from "react-router-dom";
 
 
@@ -24,7 +24,7 @@ const Login=()=> {
                        <style.Input type='email' placeholder='E-mail' />
                        <style.Input type='password' placeholder='Password' />
                        <style.Anchor >Forgot your password?</style.Anchor>
-                       <style.Anchor ><style.Button onClick={() => navigate("/dash")}>Sign In</style.Button></style.Anchor>
+                       <style.Anchor ><style.Button onClick={() => navigate("/")}>Sign In</style.Button></style.Anchor>
                    </style.Form>
               </style.SignInContainer>
 

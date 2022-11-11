@@ -45,7 +45,7 @@ const Navbar = () => {
     
   </form>
           <a class="nav-link" href="/">Cart</a>
-          <a class="nav-link" href="/">Profile</a>
+          <a class="nav-link" href="/login">Profile</a>
           </ul>
         
         </span>

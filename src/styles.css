@@ -17,6 +17,19 @@
 } */
 
 .caroimg{
-  height: 75vh;
+  height: 60vh;
   object-fit:cover;
+}
+
+.categorycard{
+  width:80%;
+  height: 60%;
+  object-fit: cover;
+}
+
+
+
+.dashimg{
+  height: 18rem;
+  object-fit: cover;
 }
