@@ -2,48 +2,48 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-<div class="container my-5">
-  {/* <footer class="text-center text-white" style="background-color: #3f51b5"> */}
-    <div class="container">
-      <section class="mt-5">
-        <div class="row text-center d-flex justify-content-center pt-5">
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">About us</a>
+<div className="container my-5">
+  {/* <footer className="text-center text-black text-decoration-none" style="background-color: #3f51b5"> */}
+    <div className="container">
+      <section className="mt-5">
+        <div className="row text-center d-flex justify-content-center pt-5">
+          <div className="col-md-2">
+            <h6 className="text-uppercase font-weight-bold">
+              <a href="#!" className="text-black text-decoration-none">About us</a>
             </h6>
           </div>
 
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">Products</a>
+          <div className="col-md-2">
+            <h6 className="text-uppercase font-weight-bold">
+              <a href="#!" className="text-black text-decoration-none">Products</a>
             </h6>
           </div>
 
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">Awards</a>
+          <div className="col-md-2">
+            <h6 className="text-uppercase font-weight-bold">
+              <a href="#!" className="text-black text-decoration-none">Awards</a>
             </h6>
           </div>
 
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">Help</a>
+          <div className="col-md-2">
+            <h6 className="text-uppercase font-weight-bold">
+              <a href="#!" className="text-black text-decoration-none">Help</a>
             </h6>
           </div>
 
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">Contact</a>
+          <div className="col-md-2">
+            <h6 className="text-uppercase font-weight-bold">
+              <a href="#!" className="text-black text-decoration-none">Contact</a>
             </h6>
           </div>
         </div>
       </section>
 
-      <hr class="my-5" />
+      <hr className="my-5" />
 
-      <section class="mb-5">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-8">
+      <section className="mb-5">
+        <div className="row d-flex justify-content-center">
+          <div className="col-lg-8">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
               distinctio earum repellat quaerat voluptatibus placeat nam,
@@ -54,35 +54,35 @@ const Footer = () => {
         </div>
       </section>
 
-      <section class="text-center mb-5">
-        <a href="" class="text-white me-4">
-          <i class="fab fa-facebook-f"></i>
+      <section className="text-center mb-5">
+        <a href="" className="text-black text-decoration-none me-4">
+          <i className="fab fa-facebook-f"></i>
         </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-twitter"></i>
+        <a href="" className="text-black text-decoration-none me-4">
+          <i className="fab fa-twitter"></i>
         </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-google"></i>
+        <a href="" className="text-black text-decoration-none me-4">
+          <i className="fab fa-google"></i>
         </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-instagram"></i>
+        <a href="" className="text-black text-decoration-none me-4">
+          <i className="fab fa-instagram"></i>
         </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-linkedin"></i>
+        <a href="" className="text-black text-decoration-none me-4">
+          <i className="fab fa-linkedin"></i>
         </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-github"></i>
+        <a href="" className="text-black text-decoration-none me-4">
+          <i className="fab fa-github"></i>
         </a>
       </section>
     </div>
 
     <div
-         class="text-center p-3"
+         className="text-center p-3"
         //  style="background-color: rgba(0, 0, 0, 0.2)"
          >
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/"
-         >MDBootstrap.com</a
+      © anetiquette
+      <a className="text-black text-decoration-none" href="https://mdbootstrap.com/"
+         >@mail.com</a
         >
     </div>
  </div>

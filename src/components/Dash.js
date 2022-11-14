@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from "./Navbar";
 import CarouselImg from "./Carousel";
-import img1 from "../photo/neon.jpg";
-import img2 from '../photo/redlips.jpg';
+import img1 from "../photo/box.jpg";
+import img2 from '../photo/lens.jpg';
 import Category from './Category';
 import Footer from "./Footer";
 const Dash = () => {

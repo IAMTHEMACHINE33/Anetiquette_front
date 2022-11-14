@@ -16,7 +16,7 @@ const CarouselImg=()=>{
             <Carousel.Item>
                  <img
                 className="d-block w-100 h-10 caroimg"
-                src={img1}
+                src="https://cdn.thecoolist.com/wp-content/uploads/2022/02/Antique-Shops-Are-a-Great-Place-to-Shop.png"
                 alt="First slide"
                 />
                 <Carousel.Caption>
@@ -26,7 +26,7 @@ const CarouselImg=()=>{
             <Carousel.Item>
                 <img
                 className="d-block w-100 h-10 caroimg"
-                src={img2}
+                src="https://cdn2.howtostartanllc.com/images/business-ideas/business-idea-images/antique-store.jpg"
                 alt="Second slide"
                 />
 
@@ -37,7 +37,7 @@ const CarouselImg=()=>{
             <Carousel.Item>
                 <img
                 className="d-block w-100 caroimg"
-                src="https://img.freepik.com/free-photo/cool-geometric-triangular-figure-neon-laser-light-great-backgrounds-wallpapers_181624-9331.jpg?w=2000"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Paris_-_Vintage_travel_gear_seller_at_the_marche_Dauphine_-_5212.jpg/1200px-Paris_-_Vintage_travel_gear_seller_at_the_marche_Dauphine_-_5212.jpg"
                 alt="Third slide"
                 />
 

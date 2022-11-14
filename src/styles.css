@@ -1,21 +1,58 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
+@media only screen and (min-width: 0px) and (max-width: 300px){
+  .categorytxt{
+    font-size : clamp(10vw, 1.5vw, 5vw);
+  }
+
+  .caroimg{
+    height: 10vh  !important;
+    object-fit: cover;
+  }
+}
+
+
 * {
   box-sizing: border-box;
 }
 
 .caroimg{
-  height: 60vh;
+  height: 70vh;
+  overflow: hidden;
   object-fit:cover;
 }
 
 .categorycard{
-  width:80%;
-  height: 60%;
-  object-fit: cover;
+  width: 20rem;
+  transition: transform .2s;
+  padding: 10%;
 }
 
+.categorycard:hover {
+  transform: scale(1.2); 
+}
 
+.categoryimage{
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100%;
+}
+
+.categoryimage img{
+  object-fit: cover;
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.categorytxt{
+
+    font-size : clamp(0.1vw, 1.5vw, 5vw);
+ 
+  
+}
 
 .dashimg{
   height: 18rem;
