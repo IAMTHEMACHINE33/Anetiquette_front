@@ -92,7 +92,7 @@ const Login=()=> {
                       value={password}
                       onChange={registerDataChange}
                       />
-                      <style.Input type="submit" value="Sign Up"/>
+                      <style.Anchor><style.Input type="submit" value="Sign Up" background-color='#ff4b2b'/></style.Anchor>
                   </style.Form>
               </style.SignUpContainer>
 
@@ -113,7 +113,7 @@ const Login=()=> {
                             value={loginPassword} 
                             onChange={(e)=>setLoginPassword(e.target.value)}
                         />
-                       <style.Anchor >Forgot your password?</style.Anchor>
+                       <style.Anchor >Forgot your password?</style.Anchor>                
                        <style.Anchor ><style.Input type="submit" value="Sign In"/></style.Anchor>
                    </style.Form>
               </style.SignInContainer>

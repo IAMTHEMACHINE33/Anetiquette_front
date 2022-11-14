@@ -1,5 +1,7 @@
  import styled from 'styled-components';
 
+
+
  export const Container = styled.div`
  background-color: #fff;
  border-radius: 10px;
@@ -64,7 +66,6 @@
  margin: 8px 0;
  width: 100%;
  `;
- 
 
  export const Button = styled.button`
     border-radius: 20px;
@@ -79,6 +80,7 @@
     transition: transform 80ms ease-in;
 
  `;
+ 
  export const GhostButton = styled(Button)`
  background-color: transparent;
  border-color: #ffffff;
@@ -153,3 +155,4 @@ ${props => (props.signinIn !== true ? `transform: translateX(50%);` : null)}
    letter-spacing: 0.5px;
    margin: 20px 0 30px
  `;
+ 
