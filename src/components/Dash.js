@@ -76,7 +76,7 @@ const Dash = () => {
               <div className="card-body">
                 <ul className="list-group list-group-flush">
                   <li className="list-group-item text-center">0:00:00</li>
-                  <li className="list-group-item">Rainbow Girl</li>
+                  <li className="list-group-item">Rainbow Girls</li>
                   <li className="list-group-item">$1.000</li>
                 </ul>
                 
