@@ -1,7 +1,7 @@
 {
   "name": "anetiquette_front",
   "version": "0.1.0",
-  "proxy": "http://localhost:3000",
+  "proxy": "http://localhost:4000",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",

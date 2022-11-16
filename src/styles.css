@@ -11,6 +11,9 @@
   }
 }
 
+a{
+  text-decoration: none;
+};
 
 * {
   box-sizing: border-box;
@@ -21,15 +24,16 @@
   overflow: hidden;
   object-fit:cover;
 }
+/* ============================================    Category    =========================================================== */
 
 .categorycard{
-  width: 20rem;
+  width: 1vh;
   transition: transform .2s;
-  padding: 10%;
+ 
 }
 
 .categorycard:hover {
-  transform: scale(1.2); 
+  transform: scale(1.1); 
 }
 
 .categoryimage{
@@ -41,21 +45,16 @@
 .categoryimage img{
   object-fit: cover;
   position: absolute;
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 50%;
+  max-height: 50%;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
-.categorytxt{
 
-    font-size : clamp(0.1vw, 1.5vw, 5vw);
- 
-  
-}
 
 .dashimg{
-  height: 18rem;
+  height: 10rem;
   object-fit: cover;
 }
 

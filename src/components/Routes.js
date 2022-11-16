@@ -2,7 +2,8 @@ import {Routes, Route} from 'react-router-dom';
 import React from 'react';
 import Login from './Login';
 import Dash from './Dash';
-import Navbar from './Navbar'
+import Navbar from './Navbar';
+import Product from './Product';
 
 const Url=()=>{
     return(
@@ -12,6 +13,7 @@ const Url=()=>{
             <Route path='/login' element={<Login/>}></Route>
             <Route path= '/' element={<Dash/>}></Route>
             <Route path= '/nav' element={<Navbar/>}></Route>
+            <Route path= '/product' element={<Product/>}></Route>
         </Routes>
         </>
     )
