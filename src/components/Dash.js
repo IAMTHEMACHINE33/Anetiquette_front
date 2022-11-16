@@ -9,6 +9,7 @@ import axios from "axios";
 const Dash = () => {
 
   const [details, setDetails] = useState([]);
+  
 
   useEffect(()=>{
     axios.get("http://localhost:4000/product/show")
@@ -17,6 +18,8 @@ const Dash = () => {
       setDetails(result.data.data)
     }).catch(e=>{console.log(e)})
   },[])
+
+
 
   return (
     <>
