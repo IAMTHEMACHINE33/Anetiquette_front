@@ -92,7 +92,7 @@ const Login=()=> {
                       value={password}
                       onChange={registerDataChange}
                       />
-                      <style.Anchor><style.Input type="submit" value="Sign Up" background-color='#ff4b2b'/></style.Anchor>
+                      <style.Anchor><style.Input type="submit" name="registersubmit" value="Sign Up" background-color='#ff4b2b'/></style.Anchor>
                   </style.Form>
               </style.SignUpContainer>
 
@@ -102,6 +102,7 @@ const Login=()=> {
                        <style.Input 
                             type='email' 
                             placeholder='E-mail' 
+                            name='loginemail'
                             required 
                             value={loginEmail}
                             onChange={(e)=>setLoginEmail(e.target.value)}
@@ -109,12 +110,13 @@ const Login=()=> {
                        <style.Input 
                             type='password' 
                             placeholder='Password'
+                            name='loginpassword'
                             required
                             value={loginPassword} 
                             onChange={(e)=>setLoginPassword(e.target.value)}
                         />
                        <style.Anchor >Forgot your password?</style.Anchor>                
-                       <style.Anchor ><style.Input type="submit" value="Sign In"/></style.Anchor>
+                       <style.Anchor ><style.Input type="submit" name="loginsubmit" value="Sign In"/></style.Anchor>
                    </style.Form>
               </style.SignInContainer>
 
@@ -136,7 +138,7 @@ const Login=()=> {
                         <style.Paragraph>
                             | Explore the Marketplace | 
                         </style.Paragraph>
-                            <style.GhostButton onClick={() => toggle(false)}>
+                            <style.GhostButton onClick={() => toggle(false)} name="signup">
                                 Sign Up
                             </style.GhostButton> 
                       </style.RightOverlayPanel>
