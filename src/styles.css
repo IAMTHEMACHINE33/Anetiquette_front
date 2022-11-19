@@ -58,6 +58,41 @@ a{
   object-fit: cover;
 }
 
+.productimg{
+  width: 100%;
+  max-width:50vh;
+  height: auto;
+  object-fit: cover;
+}
+
+.productcol{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.productmultimg{
+  float: center;
+  width: 100%;
+  height: 30rem;
+  max-height: 30rem;
+  display: block;
+  object-fit: cover;
+}
+
+.productsmall{
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  
+}
+
+
+
+
+
 input[type=submit]{
   border-radius: 20px;
   border: 1px solid #ff4b2b;
