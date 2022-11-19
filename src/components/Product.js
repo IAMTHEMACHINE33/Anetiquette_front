@@ -6,30 +6,49 @@ import img2 from "../photo/neon.jpg";
 import Footer from "./Footer";
 
 export default class Product extends Component {
-  render() {
-    const settings = {
-      customPaging: function(i) {
-        return (
-          <a>
-            <img
-              className="productsmall"
-              src="https://i.pinimg.com/originals/27/3a/27/273a27d5f3c3828ce66aef34fa403b08.jpg"
-            />
+  constructor(props) {
+    super(props);
+    this.state = {
+      nav1: null,
+      nav2: null,
+    };
+  }
 
-            {/* <img className="productsmall" src="https://w0.peakpx.com/wallpaper/908/997/HD-wallpaper-one-piece-luffy-thumbnail.jpg" />
-                
-            <img className="productsmall" src={img2} />
-               
-            <img className="productsmall" src={img1} /> */}
-          </a>
-        );
-      },
-      dots: true,
-      dotsClass: "slick-dots custom-indicator",
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
+  componentDidMount() {
+    this.setState({
+      nav1: this.slider1,
+      nav2: this.slider2,
+    });
+  }
+  render() {
+    var settings = {
+      responsive: [
+        {
+          breakpoint: 2000,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 3,
+            infinite: true,
+            
+          },
+        },
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: true,
+          },
+        },
+      ],
     };
     return (
       <>
@@ -37,11 +56,33 @@ export default class Product extends Component {
         <div className="container-fluid">
           <div className="row my-3 p-3">
             <div className="col-7 container">
-              <Slider {...settings} className="productmultimg">
+              <Slider
+                asNavFor={this.state.nav2}
+                ref={(slider) => (this.slider1 = slider)}
+                
+              >
                 <div>
                   <img
                     className="productmultimg"
-                    src="https://i.pinimg.com/originals/27/3a/27/273a27d5f3c3828ce66aef34fa403b08.jpg"
+                    src="https://d1lss44hh2trtw.cloudfront.net/assets/article/2021/07/09/watch-dogs-legion-preview_feature.jpg"
+                  />
+                </div>
+                <div>
+                  <img
+                    className="productmultimg"
+                    src="https://w0.peakpx.com/wallpaper/908/997/HD-wallpaper-one-piece-luffy-thumbnail.jpg"
+                  />
+                </div>
+                <div>
+                  <img className="productmultimg" src={img2} />
+                </div>
+                <div>
+                  <img className="productmultimg" src={img1} />
+                </div>
+                <div>
+                  <img
+                    className="productmultimg"
+                    src="https://d1lss44hh2trtw.cloudfront.net/assets/article/2021/07/09/watch-dogs-legion-preview_feature.jpg"
                   />
                 </div>
                 <div>
@@ -57,7 +98,57 @@ export default class Product extends Component {
                   <img className="productmultimg" src={img1} />
                 </div>
               </Slider>
+
+              <Slider
+                {...settings}
+                asNavFor={this.state.nav1}
+                ref={(slider) => (this.slider2 = slider)}
+                slidesToShow={4}
+                swipeToSlide={true}
+                focusOnSelect={true}
+                className='mt-4'
+              >
+                <center>
+                  <img
+                    className="productsmall"
+                    src="https://d1lss44hh2trtw.cloudfront.net/assets/article/2021/07/09/watch-dogs-legion-preview_feature.jpg"
+                  />
+                </center>
+
+                <center>
+                  <img
+                    className="productsmall"
+                    src="https://w0.peakpx.com/wallpaper/908/997/HD-wallpaper-one-piece-luffy-thumbnail.jpg"
+                  />
+                </center>
+                <center>
+                  <img className="productsmall" src={img2} />
+                </center>
+                <center>
+                  <img className="productsmall" src={img1} />
+                </center>
+                <center>
+                  <img
+                    className="productsmall"
+                    src="https://d1lss44hh2trtw.cloudfront.net/assets/article/2021/07/09/watch-dogs-legion-preview_feature.jpg"
+                  />
+                </center>
+
+                <center>
+                  <img
+                    className="productsmall"
+                    src="https://w0.peakpx.com/wallpaper/908/997/HD-wallpaper-one-piece-luffy-thumbnail.jpg"
+                  />
+                </center>
+                <center>
+                  <img className="productsmall" src={img2} />
+                </center>
+                <center>
+                  <img className="productsmall" src={img1} />
+                </center>
+              </Slider>
             </div>
+
             <div className="col-5 text-center">
               <h1>1:00:00</h1>
               <h4>2000$</h4>
@@ -94,67 +185,8 @@ export default class Product extends Component {
         </div>
         <div className="container-fluid">
           <div className="row">
-            <div className="container text-center">
-              {/* <div className="container text-center productcont"> */}
-              {/* <img
-                className="productimg"
-                src="https://i.pinimg.com/originals/27/3a/27/273a27d5f3c3828ce66aef34fa403b08.jpg"
-              />
-            </div>
-            <div className="column ">
-              <div className="col productcol">
-                <img
-                  className="productmultimg"
-                  src="https://i.pinimg.com/originals/27/3a/27/273a27d5f3c3828ce66aef34fa403b08.jpg"
-                />
-              </div>
-              <div className="col productcol">
-                <img
-                  className="productmultimg"
-                  src="https://i.pinimg.com/originals/27/3a/27/273a27d5f3c3828ce66aef34fa403b08.jpg"
-                />
-              </div>
-              <div className="col productcol">
-                <img
-                  className="productmultimg"
-                  src="https://i.pinimg.com/originals/27/3a/27/273a27d5f3c3828ce66aef34fa403b08.jpg"
-                />
-              </div>
-              <div className="col productcol">
-                <img
-                  className="productmultimg"
-                  src="https://i.pinimg.com/originals/27/3a/27/273a27d5f3c3828ce66aef34fa403b08.jpg"
-                />
-              </div> */}
-            </div>
-
-            {/* <div className="col container">
-              <div className="img">
-                <figure>
-                  <img
-                    className="img-thumbnail"
-                    src="https://i.pinimg.com/originals/27/3a/27/273a27d5f3c3828ce66aef34fa403b08.jpg"
-                  />
-                  <img
-                    className="img-thumbnail"
-                    src="https://i.pinimg.com/originals/27/3a/27/273a27d5f3c3828ce66aef34fa403b08.jpg"
-                  />
-                  <img
-                    className="img-thumbnail"
-                    src="https://i.pinimg.com/originals/27/3a/27/273a27d5f3c3828ce66aef34fa403b08.jpg"
-                  />
-                  <img
-                    className="img-thumbnail"
-                    src="https://i.pinimg.com/originals/27/3a/27/273a27d5f3c3828ce66aef34fa403b08.jpg"
-                  />
-                </figure>
-              </div>
-            </div>{" "} */}
-          </div>
-
-          <div className="row">
-            <div className="container col-7 p-3 m-3">
-              <h2>Doflamingo</h2>
+            <div className="col-7 p-2 ms-5 my-2">
+              <h2>Flamingo</h2>
               <h4>$2000</h4>
               <br></br>
               <p>

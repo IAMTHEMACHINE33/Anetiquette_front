@@ -58,6 +58,9 @@ a{
   object-fit: cover;
 }
 
+/* ============================================    Product Desc    =========================================================== */
+
+
 .productimg{
   width: 100%;
   max-width:50vh;
@@ -86,8 +89,12 @@ a{
   object-fit: cover;
   width: 50px;
   height: 50px;
+  border-radius: 5px;
   
 }
+
+
+
 
 
 
