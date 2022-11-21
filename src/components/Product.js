@@ -64,7 +64,7 @@ export default class Product extends Component {
                 <div>
                   <img
                     className="productmultimg"
-                    src="https://d1lss44hh2trtw.cloudfront.net/assets/article/2021/07/09/watch-dogs-legion-preview_feature.jpg"
+                    src="https://i0.wp.com/rachelfroud.com/wp-content/uploads/2020/06/Flamingo-Print-Mockup.jpg?fit=2305%2C2000&ssl=1"
                   />
                 </div>
                 <div>
@@ -111,21 +111,21 @@ export default class Product extends Component {
                 <center>
                   <img
                     className="productsmall"
-                    src="https://d1lss44hh2trtw.cloudfront.net/assets/article/2021/07/09/watch-dogs-legion-preview_feature.jpg"
+                    src="https://i0.wp.com/rachelfroud.com/wp-content/uploads/2020/06/Flamingo-Print-Mockup.jpg?fit=2305%2C2000&ssl=1"
                   />
                 </center>
 
                 <center>
                   <img
                     className="productsmall"
-                    src="https://w0.peakpx.com/wallpaper/908/997/HD-wallpaper-one-piece-luffy-thumbnail.jpg"
+                    src="https://i.ytimg.com/vi/ZNvFCsqCeVg/maxresdefault.jpg"
                   />
                 </center>
                 <center>
-                  <img className="productsmall" src={img2} />
+                  <img className="productsmall" src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/04/Doflamingo.jpg" />
                 </center>
                 <center>
-                  <img className="productsmall" src={img1} />
+                  <img className="productsmall" src="https://ctl.s6img.com/society6/img/jwursFNDbtn_zDPyJxj_V5wjzIM/w_700/prints/~artwork/s6-0041/a/18686779_12096703/~~/pink-flamingos-zt6-prints.jpg?wait=0&attempt=0" />
                 </center>
                 <center>
                   <img
@@ -186,7 +186,7 @@ export default class Product extends Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-7 p-4 mb-2">
-              <h3>Flamingo</h3>
+              <h3>Flamingo Painting Collection</h3>
               <h4>$2000</h4>
               <br></br>
               <p>
