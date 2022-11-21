@@ -54,7 +54,7 @@ export default class Product extends Component {
       <>
         <Navbar />
         <div className="container-fluid">
-          <div className="row my-3 p-3">
+          <div className="row my-2 p-3">
             <div className="col-7 container">
               <Slider
                 asNavFor={this.state.nav2}
@@ -185,8 +185,8 @@ export default class Product extends Component {
         </div>
         <div className="container-fluid">
           <div className="row">
-            <div className="col-7 p-2 ms-5 my-2">
-              <h2>Flamingo</h2>
+            <div className="col-7 p-4 mb-2">
+              <h3>Flamingo</h3>
               <h4>$2000</h4>
               <br></br>
               <p>
