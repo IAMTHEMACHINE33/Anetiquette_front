@@ -40,7 +40,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="nav-item mx-2">
-                <a className="nav-link" href="/">
+                <a className="nav-link" href="/help">
                   HELP
                 </a>
               </li>
