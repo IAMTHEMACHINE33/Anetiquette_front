@@ -121,7 +121,7 @@ div.user_wallpaper a img{
     transition: all 1s ease;
     cursor:pointer
   }
-  div.card-body{
+  div.card-body-2{
     background-color: #DC270E;
     color:white;
     font-size: 1.5rem;
@@ -130,7 +130,7 @@ div.user_wallpaper a img{
     padding: 1%;
     margin: 1%;
   }
-  div.card-body:hover{
+  div.card-body-2:hover{
     background-color: white;
     color:black;
     transition: all 1s ease;

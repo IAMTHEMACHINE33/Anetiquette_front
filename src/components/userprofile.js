@@ -69,7 +69,7 @@ const Profile = () => {
             <a href="/">
               <img src={lens} class="card-img-top" alt="Order1"/>
             </a>
-            <div class="card-body">
+            <div class="card-body-2">
               <h5 class="card-title text-left">
                 <span >Price:  </span>
               </h5>
@@ -81,7 +81,7 @@ const Profile = () => {
             <a href="/">
               <img src={box} class="card-img-top" alt="Order2" />
             </a>
-            <div class="card-body">
+            <div class="card-body-2">
               <h5 class="card-title text-left">
                 <span>Price:  </span>
               </h5>
@@ -93,7 +93,7 @@ const Profile = () => {
             <a href="/">
               <img src={photo} class="card-img-top" alt="Order3" />
             </a>
-            <div class="card-body">
+            <div class="card-body-2">
               <h5 class="card-title text-left">
                 <span>Price:  </span>
               </h5>
@@ -105,7 +105,7 @@ const Profile = () => {
             <a href="/">
               <img src={diluc} class="card-img-top" alt="Order4" />
             </a>
-            <div class="card-body">
+            <div class="card-body-2">
               <h5 class="card-title text-left">
                 <span>Price:  </span>
               </h5>
