@@ -1,13 +1,13 @@
 import React from "react";
 import { Navbar, Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import Nav from 'react-bootstrap/Nav';
+import Nav from "react-bootstrap/Nav";
 import logo from "../../photo/logo.png";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Navigate = () => {
   const { activeLink, setActiveLink } = useState("home");
-  const { scrolled, setScrolled } = useState(false);
+  const [ scrolled, setScrolled ] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -18,18 +18,19 @@ const Navigate = () => {
       }
     };
     window.addEventListener("scroll", onScroll);
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const onUpdateActiveLink = (value) =>{
+  const onUpdateActiveLink = (value) => {
     setActiveLink(value);
-  }
+  };
   return (
     <>
-    <h1>Hello</h1>
       <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
         <Container>
           <Navbar.Brand href="#home">
+            
             <img src={logo} alt="Logo"></img>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
@@ -42,7 +43,7 @@ const Navigate = () => {
                 className={
                   activeLink === "home" ? "active navbar-link" : "navbar-link"
                 }
-                onClick={() => onUpdateActiveLink('home')}
+                onClick={() => onUpdateActiveLink("home")}
               >
                 Home
               </Nav.Link>
@@ -53,7 +54,7 @@ const Navigate = () => {
                     ? "active navbar-link"
                     : "navbar-link"
                 }
-                onClick={() => onUpdateActiveLink('category')}
+                onClick={() => onUpdateActiveLink("category")}
               >
                 Category
               </Nav.Link>
@@ -62,7 +63,7 @@ const Navigate = () => {
                 className={
                   activeLink === "about" ? "active navbar-link" : "navbar-link"
                 }
-                onClick={() => onUpdateActiveLink('about')}
+                onClick={() => onUpdateActiveLink("about")}
               >
                 About Us
               </Nav.Link>
@@ -71,7 +72,7 @@ const Navigate = () => {
                 className={
                   activeLink === "help" ? "active navbar-link" : "navbar-link"
                 }
-                onClick={() => onUpdateActiveLink('help')}
+                onClick={() => onUpdateActiveLink("help")}
               >
                 Help
               </Nav.Link>
@@ -82,25 +83,23 @@ const Navigate = () => {
                     ? "active navbar-link"
                     : "navbar-link"
                 }
-                onClick={() => onUpdateActiveLink('contact')}
+                onClick={() => onUpdateActiveLink("contact")}
               >
                 Contact
               </Nav.Link>
             </Nav>
             <span className="navbar-text">
               <div className="navbar-icon">
-                <a href="">Search</a>
-                <a href="">Cart</a>
-                <a href="">Profile</a>
+                <a className="text-light" href=""><i class="fas fa-search"></i></a>
+                <a className="text-light" href=""><i class="fas fa-shopping-cart"></i></a>
+                <a className="text-light" href=""><i class="fas fa-user-alt"></i></a>
               </div>
             </span>
           </Navbar.Collapse>
         </Container>
       </Navbar>
     </>
-  )
+  );
 };
 
 export default Navigate;
-
-
