@@ -1,0 +1,76 @@
+.edit-profile__content{
+    display: flex;
+}
+
+.edit-profile-container{
+    margin: 0 20%;
+}
+
+.upload{
+    font-size: 15px;
+    padding: 5px 0;
+    /* margin-left: 20px; */
+}
+
+input[type=text]{
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding-left: 20px;
+}
+
+.file{
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    font-size: 14px;
+    padding-left: 20px;
+    width: 240px;
+    color: rgb(159, 159, 159)
+}
+
+.edit_avatar{
+        border: 1px solid black;
+        width: 200px;
+height: 200px;
+border-radius: 50%;
+overflow: hidden;
+}
+
+.edit_avatar img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;    
+
+ 
+}
+
+
+label {
+    /* display: inline-block; */
+    width: 120px;
+    text-align: left;
+    font-weight: bold;
+  }
+
+.edit_left{
+    width: 50%;
+}
+
+.left__content{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+
+input[type=submit]{
+    margin: 20px 0;
+}
+
+
+.control{
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border: none;
+
+}
