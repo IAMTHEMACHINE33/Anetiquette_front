@@ -3,7 +3,7 @@ import img1 from "../photo/neon.jpg";
 import img2 from "../photo/redlips.jpg";
 // import { Component } from "react";
 import Slider from "react-slick";
-import img3 from "../photo/TyNsfkl.png";
+import img3 from "../photo/logo.png";
 import axios from "axios";
 
 const Category = () => {

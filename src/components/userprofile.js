@@ -1,4 +1,4 @@
-import Navbar from "./Navbar";
+import Navbar from "./common/Navbar";
 import React from "react";
 import photo from "../photo/redlips.jpg";
 import monika from "../photo/monika.png";

@@ -25,7 +25,7 @@ const Navbar = () => {
           <span className="navbar-nav ">
             <ul className="navbar-nav">
               <li className="nav-item mx-2">
-                <a className="nav-link active" aria-current="page" href="/">
+                <a className="nav-link active" aria-current="page" href="/home">
                   HOME
                 </a>
               </li>
