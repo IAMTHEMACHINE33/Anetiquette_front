@@ -1,58 +1,77 @@
-import React from 'react';
+import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
 const Navbar = () => {
   return (
-    <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand ml-3" href="{}">antiquette</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-    
-      </ul>
-        <span class="navbar-nav ">
-          <ul class='navbar-nav'>
-        <li class="nav-item mx-2">
-            <a class="nav-link active" aria-current="page" href="/dash">HOME</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="{}">CATEGORY</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="{}">ABOUT US</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="{}">HELP</a>
-          </li>
-          <li class="nav-item mx-2" >
-            <a class="nav-link" href="{}">CONTACT</a>
-          </li>
-          <li class="nav-item mx-2" >
-            <a class="nav-link" href="{}"></a>
-          </li>
-          
-          
-        </ul>
-        
-        
-        
-        </span>
-        <span class='navbar-nav '>
-          <ul class='navbar-nav '>
-          <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-    
-  </form>
-          <a class="nav-link" href="/">Cart</a>
-          <a class="nav-link" href="/login">Profile</a>
-          </ul>
-        
-        </span>
+    <nav className="navbar navbar-expand-lg bg-light">
+      <div className="container-fluid">
+        <a className="navbar-brand ml-3" href="/">
+          antiquette
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarText">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+          <span className="navbar-nav ">
+            <ul className="navbar-nav">
+              <li className="nav-item mx-2">
+                <a className="nav-link active" aria-current="page" href="/">
+                  HOME
+                </a>
+              </li>
+              <li className="nav-item mx-2">
+                <a className="nav-link" href="/">
+                  CATEGORY
+                </a>
+              </li>
+              <li className="nav-item mx-2">
+                <a className="nav-link" href="/profile">
+                  ABOUT US
+                </a>
+              </li>
+              <li className="nav-item mx-2">
+                <a className="nav-link" href="/help">
+                  HELP
+                </a>
+              </li>
+              <li className="nav-item mx-2">
+                <a className="nav-link" href="/">
+                  CONTACT
+                </a>
+              </li>
+              <li className="nav-item mx-2">
+                <a className="nav-link" href="/"></a>
+              </li>
+            </ul>
+          </span>
+          <span className="navbar-nav ">
+            
+              <a className="nav-link mx-2" href="/">
+              <i class="fas fa-search"></i>
+              </a>
+              <a className="nav-link mx-2" href="/">
+              <i class="fas fa-shopping-cart"></i>
+              </a>
+              <a className="nav-link mx-2" href="/login">
+              <FontAwesomeIcon icon="fa-regular fa-user" />
+              </a>
+              
+            
+          </span>
+        </div>
       </div>
-    </div>
-  </nav>
-  )
-}
+    </nav>
+  );
+};
 
 export default Navbar;
