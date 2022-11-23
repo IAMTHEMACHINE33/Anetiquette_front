@@ -11,6 +11,131 @@
   }
 }
 
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  h1 {
+    font-size: 1rem !important;
+  }
+  h2{
+    font-size: 1.8rem !important;
+  }
+  h3 {
+    font-size: 1.6rem !important;
+  }
+  h4{
+    font-size: 1.4rem !important;
+  }
+  h5 {
+    font-size: 1.2rem !important;
+  }
+  h6{
+    font-size: 1rem !important;
+  }
+  p {
+    font-size: 1rem !important;
+  }
+}
+
+
+/* 
+@media screen and (min-width: 481px) and (max-width: 768px){
+  h1{
+    font-size: 3rem !important ;
+  }
+  h2{
+    font-size: 2.8rem !important;
+  }
+  h3 {
+    font-size: 2.6rem !important;
+  }
+  h4{
+    font-size: 2.4rem !important;
+  }
+  h5 {
+    font-size: 2.2rem !important;
+  }
+  h6{
+    font-size: 2rem !important;
+  }
+  p {
+    font-size: 2rem !important;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+  h1 {
+    font-size: 4rem !important;
+  }
+  h2{
+    font-size: 3.8rem !important;
+  }
+  h3 {
+    font-size: 3.6rem !important;
+  }
+  h4{
+    font-size: 3.4rem !important;
+  }
+  h5 {
+    font-size: 3.2rem !important;
+  }
+  h6{
+    font-size: 3rem !important;
+  }
+  p {
+    font-size: 3rem !important;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px){
+  h1 {
+    font-size: 5rem !important;
+  }
+  h2{
+    font-size: 4.8rem !important;
+  }
+  h3 {
+    font-size: 4.6rem !important;
+  }
+  h4{
+    font-size: 4.4rem !important;
+  }
+  h5 {
+    font-size: 4.2rem !important;
+  }
+  h6{
+    font-size: 4rem !important;
+  }
+  p {
+    font-size: 4rem !important;
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 2000px){
+  h1 {
+    font-size: 2.18rem !important;
+  }
+  h2{
+    font-size: 1.875rem !important;
+  }
+  h3 {
+    font-size: 3rem !important;
+  }
+  h4{
+    font-size: 2rem !important;
+  }
+  h5 {
+    font-size: 1.5rem !important;
+  }
+  h6{
+    font-size: 1.6rem !important;
+  }
+  p {
+    font-size: 1.6rem !important;
+  }
+} */
+
+a{
+  text-decoration: none;
+};
 
 * {
   box-sizing: border-box;
@@ -21,15 +146,16 @@
   overflow: hidden;
   object-fit:cover;
 }
+/* ============================================    Category    =========================================================== */
 
 .categorycard{
-  width: 20rem;
+  width: 1vh;
   transition: transform .2s;
-  padding: 10%;
+ 
 }
 
 .categorycard:hover {
-  transform: scale(1.2); 
+  transform: scale(1.1); 
 }
 
 .categoryimage{
@@ -41,24 +167,86 @@
 .categoryimage img{
   object-fit: cover;
   position: absolute;
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 50%;
+  max-height: 50%;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
-.categorytxt{
 
-    font-size : clamp(0.1vw, 1.5vw, 5vw);
- 
-  
-}
 
 .dashimg{
-  height: 18rem;
+  height: 10rem;
   object-fit: cover;
 }
 
+/* ============================================    Product Desc    =========================================================== */
+
+
+
+
+
+
+.productmultimg{
+  float: center;
+  width: 100%;
+  height: 35vh;
+  max-height: 40vh;
+  display: block;
+  object-fit: contain;
+}
+
+.productsmall{
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  
+}
+div.user_wallpaper a img{
+  width: 100%;
+  height: 20vw;
+  object-fit: cover;
+  border-radius:3%;
+
+  }
+
+  div.user_wallpaper a img:hover{
+    transition: all 1s ease;
+    cursor:pointer
+
+  }
+  div.card-body-1{
+    background-color: #43219F;
+    color:white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 2%;
+    padding: 10%;
+    margin: 1%;
+  }
+  div.card-body-1:hover{
+    background-color: white;
+    color:crimson;
+    transition: all 1s ease;
+    cursor:pointer
+  }
+  div.card-body-2{
+    background-color: #DC270E;
+    color:white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 2%;
+    padding: 1%;
+    margin: 1%;
+  }
+  div.card-body-2:hover{
+    background-color: white;
+    color:black;
+    transition: all 1s ease;
+    cursor:pointer
+  }
 input[type=submit]{
   border-radius: 20px;
   border: 1px solid #ff4b2b;
