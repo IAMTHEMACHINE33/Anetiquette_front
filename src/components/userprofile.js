@@ -2,25 +2,26 @@ import Navbar from "./common/Navbar";
 import React from "react";
 import photo from "../photo/redlips.jpg";
 import monika from "../photo/monika.png";
-import box  from "../photo/box.jpg";
+import box from "../photo/box.jpg";
 import lens from "../photo/lens.jpg";
 import diluc from "../photo/diluc.png";
-import '../styles.css'
+import "../styles.css";
 
 const Profile = () => {
   return (
     <>
-      <Navbar />    
+      <Navbar />
       <div className="container-fluid">
         <div className="card mb-3 p-5 border-0">
           <div className="row g-0">
             <div className="col-md-4">
-              <img src={monika}
+              <img
+                src={monika}
                 style={{
                   borderRadius: "50%",
                   width: "20vw",
                   height: "20vw",
-                  objectFit: "cover", 
+                  objectFit: "cover",
                 }}
                 alt="PP"
               />
@@ -45,7 +46,7 @@ const Profile = () => {
                   </span>
                 </h3>
                 <p class="card-text"></p>
-                <a href="/">
+                <a href="/Edit_profile">
                   <button type="button" class="btn btn-outline-warning px-5">
                     Edit
                   </button>
@@ -67,15 +68,15 @@ const Profile = () => {
         <div class="row justify-content-between">
           <div class="card col-md-3 p-3 border-0 user_wallpaper">
             <a href="/">
-              <img src={lens} class="card-img-top" alt="Order1"/>
+              <img src={lens} class="card-img-top" alt="Order1" />
             </a>
             <div class="card-body-2">
               <h5 class="card-title text-left">
-                <span >Price:  </span>
+                <span>Price: </span>
               </h5>
               &nbsp;&nbsp;&nbsp;
               <h5 class="card-text">Category:</h5>
-            </div>     
+            </div>
           </div>
           <div class="card col-md-3 p-3 border-0 user_wallpaper">
             <a href="/">
@@ -83,11 +84,11 @@ const Profile = () => {
             </a>
             <div class="card-body-2">
               <h5 class="card-title text-left">
-                <span>Price:  </span>
+                <span>Price: </span>
               </h5>
               &nbsp;&nbsp;&nbsp;
               <h5 class="card-text">Category:</h5>
-            </div>     
+            </div>
           </div>
           <div class="card col-md-3 p-3 border-0 user_wallpaper">
             <a href="/">
@@ -95,23 +96,23 @@ const Profile = () => {
             </a>
             <div class="card-body-2">
               <h5 class="card-title text-left">
-                <span>Price:  </span>
+                <span>Price: </span>
               </h5>
               &nbsp;&nbsp;&nbsp;
               <h5 class="card-text">Category:</h5>
-            </div>     
+            </div>
           </div>
-          <div class="card col-md-3 p-3 border-0 user_wallpaper" >
+          <div class="card col-md-3 p-3 border-0 user_wallpaper">
             <a href="/">
               <img src={diluc} class="card-img-top" alt="Order4" />
             </a>
             <div class="card-body-2">
               <h5 class="card-title text-left">
-                <span>Price:  </span>
+                <span>Price: </span>
               </h5>
               &nbsp;&nbsp;&nbsp;
               <h5 class="card-text">Category:</h5>
-            </div>     
+            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
-import Navbar from "./Navbar";
+import Navbar from "../components/common/Navbar";
 import React, { useEffect, useState } from "react";
+
 // import "../styles.css";
 import "./edit-profile.css";
 
