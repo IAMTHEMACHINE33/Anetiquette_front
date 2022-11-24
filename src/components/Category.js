@@ -7,9 +7,6 @@ import img3 from "../photo/logo.png";
 import axios from "axios";
 
 const Category = () => {
-
-  
-  
     const [details, setDetails] = useState([]);
 
     useEffect(()=>{
@@ -20,7 +17,7 @@ const Category = () => {
       }).catch(e=>{
         console.log(e)
       })
-    },[])
+    },[])  
     const settings = {
       
       dots: true,
