@@ -40,7 +40,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="nav-item mx-2">
-                <a className="nav-link" href="/profile">
+                <a className="nav-link" href="/">
                   ABOUT US
                 </a>
               </li>
@@ -66,8 +66,8 @@ const Navbar = () => {
             <a className="nav-link mx-2" href="/">
               <i class="fas fa-shopping-cart"></i>
             </a>
-            <a className="nav-link mx-2" href="/login">
-              <FontAwesomeIcon icon="fa-regular fa-user" />
+            <a className="nav-link mx-2" href="/profile">
+              <FontAwesomeIcon icon="fa-regular fa-user"/>
             </a>
           </span>
         </div>

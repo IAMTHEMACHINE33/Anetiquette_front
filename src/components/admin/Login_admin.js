@@ -1,12 +1,12 @@
 import React, {useRef, useState, useEffect} from 'react';
-import * as style from '../style';
+import * as style from '../../style';
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import {
     clearErrors,
     login_admin,
     register_admin,
-} from "../actions/adminActions"
+} from "../../actions/adminActions"
 import {useAlert} from "react-alert"
 
 

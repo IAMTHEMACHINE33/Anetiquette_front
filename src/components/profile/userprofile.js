@@ -1,11 +1,11 @@
-import Navbar from "./common/Navbar";
+import Navbar from "../common/Navbar";
 import React from "react";
-import photo from "../photo/redlips.jpg";
-import monika from "../photo/monika.png";
-import box from "../photo/box.jpg";
-import lens from "../photo/lens.jpg";
-import diluc from "../photo/diluc.png";
-import "../styles.css";
+import photo from "../../photo/redlips.jpg";
+import monika from "../../photo/monika.png";
+import box from "../../photo/box.jpg";
+import lens from "../../photo/lens.jpg";
+import diluc from "../../photo/diluc.png";
+
 
 const Profile = () => {
   return (
@@ -47,7 +47,7 @@ const Profile = () => {
                 </h3>
                 <p class="card-text"></p>
 
-                <a href="/">
+                <a href="/Edit_profile">
                   <button type="button" class="btn btn-warning px-5">
 
                     Edit

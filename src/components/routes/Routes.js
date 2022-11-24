@@ -1,16 +1,16 @@
 import { Routes, Route } from "react-router-dom";
 import React from "react";
 import Login from "../Login";
-import Dash from "../Dash";
-import Dash_admin from "../Dash_admin";
+import Dash from "../homepage/Dash";
+import Dash_admin from "../admin/Dash_admin";
 import Navbar from "../common/Navbar";
 import Product from "../Product";
 import Help from "../Help";
-import Profile from "../userprofile";
-import Edit_profile from "../Edit_profile";
+import Profile from "../profile/userprofile";
+import Edit_profile from "../profile/Edit_profile";
 import Add_products from "../Add_products";
-import Login_admin from "../Login_admin";
-import { Home } from "../Home";
+import Login_admin from "../admin/Login_admin";
+import { Home } from "../homepage/Home";
 
 const Url = () => {
   return (

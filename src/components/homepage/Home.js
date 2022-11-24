@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigate from '../components/common/nav'
+import Navigate from '../common/nav'
 
 export const Home = () =>{
     return(
