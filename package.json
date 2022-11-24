@@ -16,6 +16,7 @@
     "cucumber": "^6.0.7",
     "gherkin": "^9.0.0",
     "jest-cucumber": "^3.0.1",
+    "mdb-react-ui-kit": "^5.0.0",
     "nodemon": "^2.0.20",
     "puppeteer": "^19.2.2",
     "react": "^18.2.0",
