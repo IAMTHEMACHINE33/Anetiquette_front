@@ -1,9 +1,9 @@
-import Navbar from "./Navbar";
+import Navbar from "./common/Navbar";
 import React, { Component } from "react";
 import Slider from "react-slick";
 import img1 from "../photo/lens.jpg";
 import img2 from "../photo/neon.jpg";
-import Footer from "./Footer";
+import Footer from "./common/Footer";
 
 export default class Product extends Component {
   constructor(props) {

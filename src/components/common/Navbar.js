@@ -1,6 +1,5 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Navbar = () => {
   return (
@@ -25,13 +24,19 @@ const Navbar = () => {
           <span className="navbar-nav ">
             <ul className="navbar-nav">
               <li className="nav-item mx-2">
-                <a className="nav-link active" aria-current="page" href="/">
+                <a className="nav-link active" aria-current="page" href="/home">
                   HOME
                 </a>
               </li>
               <li className="nav-item mx-2">
                 <a className="nav-link" href="/">
                   CATEGORY
+                </a>
+              </li>
+
+              <li className="nav-item mx-2">
+                <a className="nav-link" href="/Add_products">
+                  Add Product
                 </a>
               </li>
               <li className="nav-item mx-2">
@@ -55,18 +60,15 @@ const Navbar = () => {
             </ul>
           </span>
           <span className="navbar-nav ">
-            
-              <a className="nav-link mx-2" href="/">
+            <a className="nav-link mx-2" href="/">
               <i class="fas fa-search"></i>
-              </a>
-              <a className="nav-link mx-2" href="/">
+            </a>
+            <a className="nav-link mx-2" href="/">
               <i class="fas fa-shopping-cart"></i>
-              </a>
-              <a className="nav-link mx-2" href="/login">
+            </a>
+            <a className="nav-link mx-2" href="/login">
               <FontAwesomeIcon icon="fa-regular fa-user" />
-              </a>
-              
-            
+            </a>
           </span>
         </div>
       </div>

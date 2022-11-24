@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./Navbar";
+import Navbar from "./common/Navbar";
 import CarouselImg from "./Carousel";
 import Category from './Category';
-import Footer from "./Footer";
+import Footer from "./common/Footer";
 import axios from "axios";
 const Dash = () => {
 
