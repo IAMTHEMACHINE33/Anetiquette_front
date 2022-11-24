@@ -114,18 +114,17 @@ export default class Product extends Component {
                     src="https://i0.wp.com/rachelfroud.com/wp-content/uploads/2020/06/Flamingo-Print-Mockup.jpg?fit=2305%2C2000&ssl=1"
                   />
                 </center>
-
                 <center>
                   <img
                     className="productsmall"
-                    src="https://i.ytimg.com/vi/ZNvFCsqCeVg/maxresdefault.jpg"
+                    src="https://w0.peakpx.com/wallpaper/908/997/HD-wallpaper-one-piece-luffy-thumbnail.jpg"
                   />
                 </center>
                 <center>
-                  <img className="productsmall" src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/04/Doflamingo.jpg" />
+                  <img className="productsmall" src={img2} />
                 </center>
                 <center>
-                  <img className="productsmall" src="https://ctl.s6img.com/society6/img/jwursFNDbtn_zDPyJxj_V5wjzIM/w_700/prints/~artwork/s6-0041/a/18686779_12096703/~~/pink-flamingos-zt6-prints.jpg?wait=0&attempt=0" />
+                  <img className="productsmall" src={img1} />
                 </center>
                 <center>
                   <img
@@ -133,7 +132,6 @@ export default class Product extends Component {
                     src="https://d1lss44hh2trtw.cloudfront.net/assets/article/2021/07/09/watch-dogs-legion-preview_feature.jpg"
                   />
                 </center>
-
                 <center>
                   <img
                     className="productsmall"
