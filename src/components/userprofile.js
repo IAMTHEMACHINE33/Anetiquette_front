@@ -46,13 +46,13 @@ const Profile = () => {
                 </h3>
                 <p class="card-text"></p>
                 <a href="/">
-                  <button type="button" class="btn btn-outline-warning px-5">
+                  <button type="button" class="btn btn-warning px-5">
                     Edit
                   </button>
                 </a>
                 &nbsp;&nbsp;&nbsp;
                 <a href="/">
-                  <button type="button" class="btn btn-outline-primary px-5">
+                  <button type="button" class="btn btn-primary px-5">
                     Upload
                   </button>
                 </a>
