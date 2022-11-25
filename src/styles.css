@@ -1,38 +1,38 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-@media only screen and (min-width: 0px) and (max-width: 300px){
-  .categorytxt{
-    font-size : clamp(10vw, 1.5vw, 5vw);
-  }
 
-  .caroimg{
-    height: 10vh  !important;
-    object-fit: cover;
-  }
+
+a {
+  text-decoration: none;
 }
 
-html{
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
   scroll-behavior: smooth;
-  scroll-padding-top: 75px ;
+  scroll-padding-top: 75px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
   h1 {
     font-size: 1rem !important;
   }
-  h2{
+  h2 {
     font-size: 1.8rem !important;
   }
   h3 {
     font-size: 1.6rem !important;
   }
-  h4{
+  h4 {
     font-size: 1.4rem !important;
   }
   h5 {
     font-size: 1.2rem !important;
   }
-  h6{
+  h6 {
     font-size: 1rem !important;
   }
   p {
@@ -41,22 +41,27 @@ html{
 }
 
 
-a{
-  text-decoration: none;
-};
 
-* {
-  box-sizing: border-box;
-}
-
-.caroimg{
-  height: 70vh;
+.caroimg {
+  height: 65vh;
   overflow: hidden;
-  object-fit:cover;
+  object-fit: cover;
+  object-position: 50% 20%;
 }
 
-.back{
+.back {
   background-color: #121212;
+}
+
+.home_container{
+  width: 100%;
+  height: auto;
+  background-color:#fcfcfc;
+}
+
+.slick-prev:before,
+.slick-next:before {
+   display:none;
 }
 
 /* ============================================    Navbar    =========================================================== */
@@ -67,19 +72,18 @@ nav.navbar {
   width: 100%;
   top: 0;
   z-index: 9999;
-  transition:  0.32s ease-in-out;
+  transition: 0.32s ease-in-out;
 }
 nav.navbar.scrolled {
   padding: 0px 0;
   background-color: #121212;
 }
 nav.navbar a.navbar-brand {
-    width: 19%;
-    
+  width: 19%;
 }
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
-  color: #fff !important;
+  color: rgb(255, 255, 255) !important;
   letter-spacing: 0.8px;
   padding: 0 25px;
   font-size: 18px;
@@ -87,47 +91,46 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
 }
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
-    opacity: 1;
+  opacity: 1;
 }
 span.navbar-text {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .navbar-icon {
-    display: inline-block;
-    margin-left: 14px;
+  display: inline-block;
+  margin-left: 14px;
 }
 .navbar-icon a {
-    width: 42px;
-    height: 42px;
-    background: rgba(217, 217, 217, 0.1);
-    display: inline-flex;
-    border-radius: 50%;
-    margin-right: 6px;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+  width: 42px;
+  height: 42px;
+  background: rgba(217, 217, 217, 0.1);
+  display: inline-flex;
+  border-radius: 50%;
+  margin-right: 6px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 .navbar-icon a::before {
-    content: "";
-    width: 42px;
-    height: 42px;
-    position: absolute;
-    background-color: #ffaf01;
-    opacity: 70%;
-    border-radius: 50%;
-    transform: scale(0);
-	transition: 0.3s ease-in-out;
+  content: "";
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  background-color: #ffaf01;
+  opacity: 70%;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.3s ease-in-out;
 }
 .navbar-icon a:hover::before {
-    transform: scale(1);
+  transform: scale(1);
 }
 .navbar-icon a i {
-	width: 40%;
-	z-index: 1;
-	transition: 0.3s ease-in-out;
-  
+  width: 40%;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
 }
 
 .navbar-text button {
@@ -137,9 +140,9 @@ span.navbar-text {
   padding: 18px 34px;
   font-size: 18px;
   margin-left: 18px;
-	position: relative;
-	background-color: transparent;
-	transition: 0.3s ease-in-out;
+  position: relative;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
 }
 .navbar-text button span {
   z-index: 1;
@@ -159,15 +162,15 @@ span.navbar-text {
   color: #121212;
 }
 .navbar-text button:hover::before {
-	content: "";
-	width: 100%;
-	height: 100%;
-	position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 nav.navbar .navbar-toggler:active,
 nav.navbar .navbar-toggler:focus {
-	outline: none;
-    box-shadow: none;
+  outline: none;
+  box-shadow: none;
 }
 nav.navbar .navbar-toggler-icon {
   width: 24px;
@@ -179,80 +182,74 @@ nav.navbar .navbar-toggler-icon {
   top: -2px;
 }
 nav.navbar .navbar-toggler-icon:focus {
-	border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #fff;
 }
 nav.navbar .navbar-toggler-icon:after,
 nav.navbar .navbar-toggler-icon:before {
-	width: 24px;
-	position: absolute;
-	height: 2px;
-	background-color: #fff;
-	top: 0;
-	left: 0;
-	content: '';
-	z-index: 2;
-	transition: all 300ms linear;
+  width: 24px;
+  position: absolute;
+  height: 2px;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  content: "";
+  z-index: 2;
+  transition: all 300ms linear;
 }
 nav.navbar .navbar-toggler-icon:after {
-	top: 8px;
+  top: 8px;
 }
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
-	transform: rotate(45deg);
-	background-color: #fff;
-	height: 2px;
+  transform: rotate(45deg);
+  background-color: #fff;
+  height: 2px;
 }
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
-	transform: translateY(8px) rotate(-45deg);
-	background-color: #fff;
-	height: 2px;
+  transform: translateY(8px) rotate(-45deg);
+  background-color: #fff;
+  height: 2px;
 }
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-	border-color: transparent;
+  border-color: transparent;
 }
 
 
-/* ============================================    Category    =========================================================== */
 
-.categorycard{
-  width: 1vh;
-  transition: transform .2s;
+.dashimg {
+  height: 10rem;
+  width: 10rem;
+  object-fit: cover;
+}
+
+.about_home_img{
+  overflow: hidden;
+  object-fit: cover;
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+.about_text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.readmore{
+  background-color: orange;
+  padding: 15px;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  font-weight: 500;
  
 }
 
-.categorycard:hover {
-  transform: scale(1.1); 
-}
 
-.categoryimage{
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 100%;
-}
-
-.categoryimage img{
-  object-fit: cover;
-  position: absolute;
-  max-width: 50%;
-  max-height: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-}
-
-
-.dashimg{
-  height: 10rem;
-  object-fit: cover;
-}
 
 /* ============================================    Product Desc    =========================================================== */
 
-
-
-
-
-
-.productmultimg{
+.productmultimg {
   float: center;
   width: 100%;
   height: 35vh;
@@ -261,58 +258,55 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   object-fit: contain;
 }
 
-.productsmall{
+.productsmall {
   object-fit: cover;
   width: 50px;
   height: 50px;
   border-radius: 5px;
-  
 }
-div.user_wallpaper a img{
+div.user_wallpaper a img {
   width: 100%;
   height: 20vw;
   object-fit: cover;
-  border-radius:3%;
+  border-radius: 3%;
+}
 
-  }
-
-  div.user_wallpaper a img:hover{
-    transition: all 1s ease;
-    cursor:pointer
-
-  }
-  div.card-body-1{
-    background-color: #43219F;
-    color:white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 2%;
-    padding: 10%;
-    margin: 1%;
-  }
-  div.card-body-1:hover{
-    background-color: white;
-    color:crimson;
-    transition: all 1s ease;
-    cursor:pointer
-  }
-  div.card-body-2{
-    background-color: #DC270E;
-    color:white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-radius: 2%;
-    padding: 1%;
-    margin: 1%;
-  }
-  div.card-body-2:hover{
-    background-color: white;
-    color:black;
-    transition: all 1s ease;
-    cursor:pointer
-  }
-input[type=submit]{
+div.user_wallpaper a img:hover {
+  transition: all 1s ease;
+  cursor: pointer;
+}
+div.card-body-1 {
+  background-color: #43219f;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 2%;
+  padding: 10%;
+  margin: 1%;
+}
+div.card-body-1:hover {
+  background-color: white;
+  color: crimson;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+div.card-body-2 {
+  background-color: #dc270e;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 2%;
+  padding: 1%;
+  margin: 1%;
+}
+div.card-body-2:hover {
+  background-color: white;
+  color: black;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+input[type="submit"] {
   border-radius: 20px;
   border: 1px solid #ff4b2b;
   background-color: #ff4b2b;

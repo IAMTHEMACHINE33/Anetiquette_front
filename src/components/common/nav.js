@@ -68,7 +68,7 @@ const Navigate = () => {
                 About Us
               </Nav.Link>
               <Nav.Link
-                href="#help"
+                href="/help"
                 className={
                   activeLink === "help" ? "active navbar-link" : "navbar-link"
                 }
@@ -92,7 +92,7 @@ const Navigate = () => {
               <div className="navbar-icon">
                 <a className="text-light" href=""><i class="fas fa-search"></i></a>
                 <a className="text-light" href=""><i class="fas fa-shopping-cart"></i></a>
-                <a className="text-light" href=""><i class="fas fa-user-alt"></i></a>
+                <a className="text-light" href="/profile"><i class="fas fa-user-alt"></i></a>
               </div>
             </span>
           </Navbar.Collapse>

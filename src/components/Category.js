@@ -22,7 +22,7 @@ const Category = () => {
       
       dots: true,
       infinite: true,
-      slidesToShow: 4,
+      slidesToShow: 6,
       swipeToSlide: true,
       autoplay: true,
       speed: 500,
@@ -34,6 +34,7 @@ const Category = () => {
         );
       },
       responsive: [
+       
         {
           breakpoint: 1024,
           settings: {
@@ -44,7 +45,7 @@ const Category = () => {
           }
         },
         {
-          breakpoint: 600,
+          breakpoint: 700,
           settings: {
             slidesToShow: 4,
             slidesToScroll: 2,

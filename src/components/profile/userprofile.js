@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from "../common/Navbar";
 import {useNavigate} from 'react-router-dom';
-import "../profile.css";
+import "./profile.css";
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography } from 'mdb-react-ui-kit';
 export default function Profile() {
   const navigate = useNavigate();
