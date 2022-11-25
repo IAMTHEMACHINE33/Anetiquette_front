@@ -12,9 +12,14 @@ const Edit_profile = () => {
   const [password, setPassword] = useState('****');
 
   
+  const config ={
+    headers:{
+        Authorization:"Bearer "+localStorage.getItem("token")
+    }
+  }
 
   useEffect(()=>{
-    axios.get("http://localhost:4000/api/v1/show")
+    axios.get("http://localhost:4000/api/v1/show",config)
     .then(response=>{
       setName(response.data.name);
       setEmail(response.data.email);
@@ -31,7 +36,7 @@ const Edit_profile = () => {
       email: email,
       password: password,
     };
-    axios.put("http://localhost:4000/api/v1/update",data)
+    axios.put("http://localhost:4000/api/v1/update",data, config)
     .then((result)=>{
       console.log(result)
     })
@@ -71,18 +76,18 @@ const Edit_profile = () => {
             <form>
               <div className="control">
                 <label for="fname">Name:</label>
-                <input id="fname" type={"text"} value={name} onChange={(e)=>{setName(e.target.value)}}/> <br />
+                <input id="fname" type="text" value={name} onChange={(e)=>{setName(e.target.value)}}/> <br />
               </div>
               <div className="control">
                 <label for="lname">Email:</label>
-                <input id="lname" type={"text"} value={email} onChange={(e)=>{setEmail(e.target.value)}}/> <br />
+                <input id="lname" type="text" value={email} onChange={(e)=>{setEmail(e.target.value)}}/> <br />
               </div>
 
               <div className="control">
                 <label for="email">Password:</label>
-                <input id="email" type={"text"} value={password} onChange={(e)=>{setPassword(e.target.value)}}/> <br />
+                <input id="email" type="text" value={password} onChange={(e)=>{setPassword(e.target.value)}}/> <br />
               </div>
-              <input type={"submit"} onClick={userUpdate}/>
+              <input type="submit" onClick={userUpdate}/>
             </form>
           </div>
         </div>

@@ -20,6 +20,7 @@ const Url = () => {
         {/* <Routes basename={'dash'
         }> */}
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/logout" element={<Login />}></Route>
         <Route path="/" element={<Dash />}></Route>
         <Route path="/nav" element={<Navbar />}></Route>
         <Route path="/product" element={<Product />}></Route>
