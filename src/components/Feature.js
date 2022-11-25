@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./feature.css";
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
-
+import axios from "axios";
 const Feature = () => {
+
+  const [details, setDetails] = useState([]);
+  
+
+  useEffect(()=>{
+    axios.get("http://localhost:4000/product/show")
+    .then(result=>{
+      console.log(result.data.data)
+      setDetails(result.data.data)
+    }).catch(e=>{console.log(e)})
+  },[])
+
   return (
     <>
       <div className="container feature_container text-center">
@@ -13,7 +25,21 @@ const Feature = () => {
             >
                 <Masonry>
                     
-                
+                {details.map(option=>{
+            return(
+          <div class="card">
+            <img
+              src={"http://localhost:4000/"+option.image}
+              class="card-img-top"
+              alt="Hollywood Sign on The Hill"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{option.product_name}</h5>
+              <p class="card-text">${option.price}</p>
+            </div>
+          </div>
+            )
+          })}
           <div class="card">
             <img
               src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp"
@@ -25,7 +51,6 @@ const Feature = () => {
               <p class="card-text">$1000</p>
             </div>
           </div>
-
           <div class="card">
             <img
               src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp"

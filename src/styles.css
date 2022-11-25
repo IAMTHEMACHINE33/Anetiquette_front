@@ -221,6 +221,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   object-fit: cover;
 }
 
+/* ============================================    Home Desc    =========================================================== */
+
+
 .about_home_img{
   overflow: hidden;
   object-fit: cover;
