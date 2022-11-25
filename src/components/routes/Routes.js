@@ -11,6 +11,7 @@ import Edit_profile from "../profile/Edit_profile";
 import Add_products from "../Add_products";
 import Login_admin from "../admin/Login_admin";
 import { Home } from "../homepage/Home";
+import About from "../about";
 
 const Url = () => {
   return (
@@ -29,6 +30,7 @@ const Url = () => {
         <Route path="/login_admin" element={<Login_admin />}></Route>
         <Route path="/admin/dashboard" element={<Dash_admin />}></Route>
         <Route path="/home" element={<Home />}></Route>
+        <Route path="/about" element={<About/>}></Route>
       </Routes>
     </>
   );

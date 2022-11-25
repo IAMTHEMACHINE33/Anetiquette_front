@@ -40,7 +40,11 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="nav-item mx-2">
+<<<<<<< Updated upstream
                 <a className="nav-link" href="/profile">
+=======
+                <a className="nav-link" href="/about">
+>>>>>>> Stashed changes
                   ABOUT US
                 </a>
               </li>
