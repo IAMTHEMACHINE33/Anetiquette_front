@@ -1,11 +1,15 @@
 import Navbar from "../common/Navbar";
 import React, { useEffect, useState } from "react";
-
+import { Link, useNavigate, useLocation } from "react-router-dom";
 // import "../styles.css";
 import "./edit-profile.css";
 import axios from "axios";
 
 const Edit_profile = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const redirect=location.search ? location.search.split("=")[1] : "/profile"
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -39,6 +43,7 @@ const Edit_profile = () => {
     axios.put("http://localhost:4000/api/v1/update",data, config)
     .then((result)=>{
       console.log(result)
+      navigate(redirect)
     })
     .catch(e=>{
       console.log(e)
