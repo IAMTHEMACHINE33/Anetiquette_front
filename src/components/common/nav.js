@@ -3,11 +3,11 @@ import { Navbar, Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import logo from "../../photo/logo.png";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Navigate = () => {
   const { activeLink, setActiveLink } = useState("home");
-  const [ scrolled, setScrolled ] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -29,8 +29,7 @@ const Navigate = () => {
     <>
       <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
         <Container>
-          <Navbar.Brand href="#home">
-            
+          <Navbar.Brand href="/home">
             <img src={logo} alt="Logo"></img>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
@@ -90,9 +89,15 @@ const Navigate = () => {
             </Nav>
             <span className="navbar-text">
               <div className="navbar-icon">
-                <a className="text-light" href=""><i class="fas fa-search"></i></a>
-                <a className="text-light" href=""><i class="fas fa-shopping-cart"></i></a>
-                <a className="text-light" href="/profile"><i class="fas fa-user-alt"></i></a>
+                <a className="text-light" href="">
+                  <i class="fas fa-search"></i>
+                </a>
+                <a className="text-light" href="">
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
+                <a className="text-light" href="/profile">
+                  <i class="fas fa-user-alt"></i>
+                </a>
               </div>
             </span>
           </Navbar.Collapse>

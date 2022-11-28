@@ -50,7 +50,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="nav-item mx-2">
-                <a className="nav-link" href="/">
+                <a className="nav-link" href="/Order_form">
                   CONTACT
                 </a>
               </li>
@@ -67,7 +67,7 @@ const Navbar = () => {
               <i class="fas fa-shopping-cart"></i>
             </a>
             <a className="nav-link mx-2" href="/profile">
-              <FontAwesomeIcon icon="fa-regular fa-user"/>
+              <FontAwesomeIcon icon="fa-regular fa-user" />
             </a>
           </span>
         </div>

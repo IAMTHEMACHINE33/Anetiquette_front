@@ -12,6 +12,7 @@ import Add_products from "../Add_products";
 import Login_admin from "../admin/Login_admin";
 import { Home } from "../homepage/Home";
 import About from "../about";
+import Order_form from "../order_form/Order_form";
 
 const Url = () => {
   return (
@@ -31,7 +32,8 @@ const Url = () => {
         <Route path="/login_admin" element={<Login_admin />}></Route>
         <Route path="/admin/dashboard" element={<Dash_admin />}></Route>
         <Route path="/home" element={<Home />}></Route>
-        <Route path="/about" element={<About/>}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/Order_form" element={<Order_form />}></Route>
       </Routes>
     </>
   );
