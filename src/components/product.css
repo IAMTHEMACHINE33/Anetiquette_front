@@ -8,18 +8,29 @@
 }
 
 .slider_container{
+  width: 65vh !important;
     margin-left: 100px;
+}
+
+.productmultimg {
+  float: left;
+  width: 73%;
+  height: 45vh;
+  max-height: 50vh;
+  display: block;
+  object-fit: contain;
 }
 
 
 .smallimg{
    
-   display: flexbox !important;
-   justify-content: flex-start !important;
-    
+   /* display: flexbox !important;
+   justify-content: flex-end !important; */
+   position: absolute;
+   left: 73%;
    width: 100px !important;
    height: 50vh !important;
-   
+   background-color: white !important;
   
    overflow: scroll !important;
     scroll-behavior: smooth !important;
@@ -29,9 +40,9 @@
 }
 
 .smallimg li{
-    width: 50px !important;
-    height: 50px !important;
-   
+    width: 40px !important;
+    height: 60px !important;
+    
     filter: grayscale(100%);
     
 }
@@ -104,15 +115,7 @@ textarea::-webkit-scrollbar-thumb {
 
 /* ============================================    Product Desc    =========================================================== */
 
-.productmultimg {
-    float: center;
-    width: 100%;
-    height: 45vh;
-    max-height: 50vh;
-    display: block;
-    object-fit: contain;
-  }
-  
+
   .productsmall {
     object-fit: cover;
     width: 50px;
@@ -186,3 +189,26 @@ textarea::-webkit-scrollbar-thumb {
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(121, 255, 108)'><polygon points='50,00 0,50 100,50'/></svg>");
   } */
 
+
+  .highestbid{
+    display: flex;
+  }
+
+.bidtxt{
+  width: 50%;
+  height: 50px !important;
+}
+  .bidbtn{
+    background-color: rgb(255, 132, 0);
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    width: 7em;
+    margin-top: 10px;
+    border: none;
+    border-radius: 15px;
+  }
+
+  .bidbtn i{
+    margin-left: 10px !important;
+  }
