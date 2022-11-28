@@ -6,6 +6,7 @@
     z-index: 9999;
     transition:  0.32s ease-in-out;
     background-color: #121212;
+    
   }
   nav.navbar.scrolled {
     padding: 0px 0;

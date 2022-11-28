@@ -3,7 +3,12 @@ import { Navbar, Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import logo from "../../photo/logo.png";
+<<<<<<< Updated upstream
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+=======
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import "./nav.css";
+>>>>>>> Stashed changes
 
 const Navigate = () => {
   const { activeLink, setActiveLink } = useState("home");
