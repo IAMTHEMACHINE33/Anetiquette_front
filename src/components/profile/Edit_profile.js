@@ -13,7 +13,7 @@ const Edit_profile = () => {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('****');
+  const [password, setPassword] = useState('');
 
   
   const config ={
@@ -25,8 +25,8 @@ const Edit_profile = () => {
   useEffect(()=>{
     axios.get("http://localhost:4000/api/v1/show",config)
     .then(response=>{
-      setName(response.data.name);
-      setEmail(response.data.email);
+      setName(response.data.data.name);
+      setEmail(response.data.data.email);
     })
     .catch(e=>{
       console.log(e);
@@ -90,7 +90,7 @@ const Edit_profile = () => {
 
               <div className="control">
                 <label for="email">Password:</label>
-                <input id="email" type="text" value={password} onChange={(e)=>{setPassword(e.target.value)}}/> <br />
+                <input id="email" type="text" placeholder="*****" onChange={(e)=>{setPassword(e.target.value)}}/> <br />
               </div>
               <input type="submit" onClick={userUpdate}/>
             </form>
