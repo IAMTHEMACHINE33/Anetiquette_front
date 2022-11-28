@@ -1,6 +1,5 @@
 import Navbar from "./common/Navbar";
-import React, { Component, useState } from "react";
-import React from "react";
+import React, { Component, useEffect, useState } from "react";
 import Slider from "react-slick";
 import img1 from "../photo/lens.jpg";
 import img2 from "../photo/neon.jpg";
@@ -8,8 +7,26 @@ import Footer from "./common/Footer";
 import { useParams } from "react-router-dom";
 import NavigateBlack from "./common/navblack";
 import "./product.css";
+import axios from "axios";
 
 const Product = () => {
+  const {pid} = useParams();
+  const [details, setDetails] = useState([]);
+
+  const config={
+    headers:{
+      Authorization:"Bearer "+localStorage.getItem("token")
+    }
+  }
+
+  useEffect(()=>{
+    axios.get("http://localhost:4000/product/single/"+pid, config)
+    .then(response =>{
+      console.log(response.data.data)
+      setDetails(response.data.data)
+    })
+  },[])
+
   const data = [
     "https://i0.wp.com/rachelfroud.com/wp-content/uploads/2020/06/Flamingo-Print-Mockup.jpg?fit=2305%2C2000&ssl=1",
     "https://w0.peakpx.com/wallpaper/908/997/HD-wallpaper-one-piece-luffy-thumbnail.jpg",
@@ -63,11 +80,11 @@ const Product = () => {
             </Slider>
           </div>
           <div className="col container desc_container">
-            <h3 className="desc_head p-2">Flamingo Painting Collection</h3>
-            <h4 className="desc_price p-2">$2000</h4>
+            <h3 className="desc_head p-2">{details.product_name}</h3>
+            <h4 className="desc_price p-2">${details.price}</h4>
             <br></br>
             <textarea readOnly className="container-fluid border-0">
-              Contrary to popular belief, Lorem Ipsum is not simply random text.
+              Contrary to popular belief,Lorem Ipsum is not simply random text.
               It has roots in a piece of classical Latin literature from 45 BC,
               making it over 2000 years old. Richard McClintock, a Latin
               professor at Hampden-Sydney College in Virginia, looked up one of
@@ -109,7 +126,7 @@ const Product = () => {
         <div className="row">
           <div className="col-5 text-center">
             <h1>1:00:00</h1>
-            <h4>2000$</h4>
+            <h4>{details.price}$</h4>
             <br />
             <h1>Highest Bidder</h1>
             <div className="row mt-3">

@@ -24,7 +24,7 @@ const Url = () => {
         <Route path="/logout" element={<Login />}></Route>
         <Route path="/" element={<Dash />}></Route>
         <Route path="/nav" element={<Navbar />}></Route>
-        <Route path="/product" element={<Product />}></Route>
+        <Route path="/product/:pid" element={<Product />}></Route>
         <Route path="/help" element={<Help />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
         <Route path="/Edit_profile" element={<Edit_profile />}></Route>
