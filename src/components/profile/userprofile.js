@@ -1,11 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from "../common/Navbar";
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useSearchParams} from 'react-router-dom';
 import "./profile.css";
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography } from 'mdb-react-ui-kit';
+import axios from 'axios';
 export default function Profile() {
   const navigate = useNavigate();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  
 
+  const config={
+    headers:{
+      Authorization: "Bearer "+localStorage.getItem("token")
+    }
+  }
+
+  useEffect(()=>{
+    axios.get("http://localhost:4000/api/v1/show",config)
+    .then((response)=>{
+      setName(response.data.data.name)
+      setEmail(response.data.data.email)
+    })
+    .catch(e=>{
+      console.log(e);
+    })
+  })
   const Edit_Profile = () => {
     navigate('/Edit_profile');
   };
@@ -28,9 +48,9 @@ export default function Profile() {
                   </MDBBtn>
                 </div>
                 <div className="ms-5" style={{ marginTop: '150px' }}>              
-                  <MDBTypography tag="h5">Makima <i class="fas fa-check"></i> </MDBTypography>
+                  <MDBTypography tag="h5">{name} <i class="fas fa-check"></i> </MDBTypography>
         
-                  <MDBCardText>Chainsaw Man</MDBCardText>
+                  <MDBCardText>{email}</MDBCardText>
 
                 </div>
               </div>
