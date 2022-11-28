@@ -40,7 +40,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="nav-item mx-2">
-                <a className="nav-link" href="/profile">
+                <a className="nav-link" href="/about">
                   ABOUT US
                 </a>
               </li>
@@ -50,7 +50,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="nav-item mx-2">
-                <a className="nav-link" href="/">
+                <a className="nav-link" href="/Order_form">
                   CONTACT
                 </a>
               </li>
@@ -66,7 +66,7 @@ const Navbar = () => {
             <a className="nav-link mx-2" href="/">
               <i class="fas fa-shopping-cart"></i>
             </a>
-            <a className="nav-link mx-2" href="/login">
+            <a className="nav-link mx-2" href="/profile">
               <FontAwesomeIcon icon="fa-regular fa-user" />
             </a>
           </span>

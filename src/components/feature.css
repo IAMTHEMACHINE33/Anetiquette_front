@@ -1,0 +1,35 @@
+.feature_container {
+    margin-top:22em;
+    margin-bottom: 5em;
+    
+  }
+
+  .feature_img{
+    object-fit: cover;
+  }
+
+
+ .header{
+    margin-bottom: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20rem;
+    border-radius: 10px;
+	height: 50px;
+	background: #ff7a28;
+	color: #fff;
+	text-align: center;
+	display: flex;
+    align-items: center ;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-weight: 900;
+}
+
+
+
+
+

@@ -7,9 +7,6 @@ import img3 from "../photo/logo.png";
 import axios from "axios";
 
 const Category = () => {
-
-  
-  
     const [details, setDetails] = useState([]);
 
     useEffect(()=>{
@@ -20,12 +17,12 @@ const Category = () => {
       }).catch(e=>{
         console.log(e)
       })
-    },[])
+    },[])  
     const settings = {
       
       dots: true,
       infinite: true,
-      slidesToShow: 4,
+      slidesToShow: 6,
       swipeToSlide: true,
       autoplay: true,
       speed: 500,
@@ -37,6 +34,7 @@ const Category = () => {
         );
       },
       responsive: [
+       
         {
           breakpoint: 1024,
           settings: {
@@ -47,7 +45,7 @@ const Category = () => {
           }
         },
         {
-          breakpoint: 600,
+          breakpoint: 700,
           settings: {
             slidesToShow: 4,
             slidesToScroll: 2,

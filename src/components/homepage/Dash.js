@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./common/Navbar";
-import CarouselImg from "./Carousel";
-import Category from './Category';
-import Footer from "./common/Footer";
+import Navbar from "../common/Navbar";
+import CarouselImg from "../Carousel";
+import Category from '../Category';
+import Footer from "../common/Footer";
 import axios from "axios";
+import {Link} from "react-router-dom";
+
 const Dash = () => {
 
   const [details, setDetails] = useState([]);
@@ -35,7 +37,7 @@ const Dash = () => {
               <div className="card-body">
                 <ul className="list-group list-group-flush">
                   <li className="list-group-item text-center">0:00:00</li>
-                  <li className="list-group-item">{option.product_name}</li>
+                  <li className="list-group-item"><Link to={"/product/"+option._id}>{option.product_name}</Link></li>
                   <li className="list-group-item">${option.price}</li>
                 </ul>
               </div>

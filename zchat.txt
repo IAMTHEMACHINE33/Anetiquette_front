@@ -20,3 +20,8 @@ shift + alt + F ra prettier le code milaidincha
 landing page is in package.json
 
 =======================================================================
+
+npm install react-responsive-masonry --save
+
+for pininterest design
+documentation: https://www.npmjs.com/package/react-responsive-masonry

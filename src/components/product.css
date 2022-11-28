@@ -1,0 +1,188 @@
+.product_container{
+    margin-top: 10rem;
+}
+
+
+.slider_container, .desc_container{
+    height: 55vh;
+}
+
+.slider_container{
+    margin-left: 100px;
+}
+
+
+.smallimg{
+   
+   display: flexbox !important;
+   justify-content: flex-start !important;
+    
+   width: 100px !important;
+   height: 50vh !important;
+   
+  
+   overflow: scroll !important;
+    scroll-behavior: smooth !important;
+
+    overflow-x: hidden !important; 
+    
+}
+
+.smallimg li{
+    width: 50px !important;
+    height: 50px !important;
+   
+    filter: grayscale(100%);
+    
+}
+
+/* .slick-dots li:nth-last-child(1),
+.slick-dots li:nth-last-child(2),
+.slick-dots li:nth-last-child(3) {
+    display: block !important;
+} */
+.smallimg li.slick-active{
+
+    filter: grayscale(0%);
+}
+
+.smallimg::-webkit-scrollbar {
+    width: 0.2em;
+}
+
+.smallimg::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.smallimg::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 136, 0);
+  outline: 1px solid slategrey;
+}
+
+
+.desc_head{
+    font-weight: 500;
+}
+
+.desc_price{
+    color: green;
+}
+
+
+
+.desc_container textarea{
+    height: 40vh ;
+    resize: none;
+    overflow-y: scroll;
+    border: none;
+    outline: none;
+    
+}
+
+textarea::-webkit-scrollbar {
+    width: 0.2em;
+}
+
+textarea::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 136, 0);
+  outline: 1px solid slategrey;
+}
+
+
+
+.desc_container p:hover{
+    cursor: pointer;
+    overflow: visible;
+    
+
+}
+
+
+/* ============================================    Product Desc    =========================================================== */
+
+.productmultimg {
+    float: center;
+    width: 100%;
+    height: 45vh;
+    max-height: 50vh;
+    display: block;
+    object-fit: contain;
+  }
+  
+  .productsmall {
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+  }
+  div.user_wallpaper a img {
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
+    border-radius: 3%;
+  }
+  
+  div.user_wallpaper a img:hover {
+    transition: all 1s ease;
+    cursor: pointer;
+  }
+  div.card-body-1 {
+    background-color: #43219f;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 2%;
+    padding: 10%;
+    margin: 1%;
+  }
+  div.card-body-1:hover {
+    background-color: white;
+    color: crimson;
+    transition: all 1s ease;
+    cursor: pointer;
+  }
+  div.card-body-2 {
+    background-color: #dc270e;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 2%;
+    padding: 1%;
+    margin: 1%;
+  }
+  div.card-body-2:hover {
+    background-color: white;
+    color: black;
+    transition: all 1s ease;
+    cursor: pointer;
+  }
+  input[type="submit"] {
+    border-radius: 20px;
+    border: 1px solid #ff4b2b;
+    background-color: #ff4b2b;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+  }
+  
+
+
+
+
+/* ::-webkit-scrollbar-button:single-button:vertical:decrement {
+    border-radius: 5px 5px 0 0;
+    height: 16px;
+    width: 16px;
+    background-position: center 4px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(121, 255, 108)'><polygon points='50,00 0,50 100,50'/></svg>");
+  } */
+
