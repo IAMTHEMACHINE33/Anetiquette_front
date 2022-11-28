@@ -1,19 +1,13 @@
-<<<<<<< Updated upstream
 import Navbar from "./common/Navbar";
 import React, { Component, useState } from "react";
-=======
 import React from "react";
->>>>>>> Stashed changes
 import Slider from "react-slick";
 import img1 from "../photo/lens.jpg";
 import img2 from "../photo/neon.jpg";
 import Footer from "./common/Footer";
-<<<<<<< Updated upstream
 import { useParams } from "react-router-dom";
-=======
 import NavigateBlack from "./common/navblack";
 import "./product.css";
->>>>>>> Stashed changes
 
 const Product = () => {
   const data = [
@@ -23,81 +17,6 @@ const Product = () => {
     img1,
     "https://cdn.vox-cdn.com/thumbor/8wbWvZmEgMB1Ukx_A51_nfl-uCU=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/23929708/tekken_8.jpg",
 
-<<<<<<< Updated upstream
-  componentDidMount() {
-    this.setState({
-      nav1: this.slider1,
-      nav2: this.slider2,
-    });
-  }
-  
-  render() {
-
-    var settings = {
-      responsive: [
-        {
-          breakpoint: 2000,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 3,
-            infinite: true,
-            
-          },
-        },
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-          },
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            infinite: true,
-          },
-        },
-      ],
-    };
-    return (
-      <>
-        <Navbar />
-        <div className="container-fluid">
-          <div className="row my-2 p-3">
-            <div className="col-7 container">
-              <Slider
-                asNavFor={this.state.nav2}
-                ref={(slider) => (this.slider1 = slider)}
-                
-              >
-                <div>
-                  <img
-                    className="productmultimg"
-                    src="https://i0.wp.com/rachelfroud.com/wp-content/uploads/2020/06/Flamingo-Print-Mockup.jpg?fit=2305%2C2000&ssl=1"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="productmultimg"
-                    src="https://w0.peakpx.com/wallpaper/908/997/HD-wallpaper-one-piece-luffy-thumbnail.jpg"
-                  />
-                </div>
-                <div>
-                  <img className="productmultimg" src={img2} />
-                </div>
-                <div>
-                  <img className="productmultimg" src={img1} />
-                </div>
-                <div>
-                  <img
-                    className="productmultimg"
-                    src="https://d1lss44hh2trtw.cloudfront.net/assets/article/2021/07/09/watch-dogs-legion-preview_feature.jpg"
-                  />
-                </div>
-=======
     "https://c4.wallpaperflare.com/wallpaper/966/456/890/tekken-tag-tournament-2-jin-kazama-2560x1600-video-games-tekken-hd-art-wallpaper-preview.jpg",
     "https://i.pinimg.com/736x/56/13/e7/5613e70ac2f1b34ccfbe8145dd7ad43a--virtual-games-tekken-.jpg",
     "https://w0.peakpx.com/wallpaper/638/623/HD-wallpaper-akuma-capcom-street-fighter-videogames-thumbnail.jpg",
@@ -133,7 +52,6 @@ const Product = () => {
           <div className="col container-fluid slider_container">
             <Slider {...settings}>
               {data.map((item) => (
->>>>>>> Stashed changes
                 <div>
                   <img
                     className="productmultimg"
