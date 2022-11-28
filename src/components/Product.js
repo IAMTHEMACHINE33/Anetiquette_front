@@ -1,9 +1,10 @@
 import Navbar from "./common/Navbar";
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Slider from "react-slick";
 import img1 from "../photo/lens.jpg";
 import img2 from "../photo/neon.jpg";
 import Footer from "./common/Footer";
+import { useParams } from "react-router-dom";
 
 export default class Product extends Component {
   constructor(props) {
@@ -20,7 +21,9 @@ export default class Product extends Component {
       nav2: this.slider2,
     });
   }
+  
   render() {
+
     var settings = {
       responsive: [
         {
