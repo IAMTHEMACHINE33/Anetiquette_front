@@ -4,6 +4,7 @@ import {useNavigate, useSearchParams} from 'react-router-dom';
 import "./profile.css";
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography } from 'mdb-react-ui-kit';
 import axios from 'axios';
+import NavigateBlack from '../common/navblack';
 export default function Profile() {
   const navigate = useNavigate();
   const [name, setName] = useState('');
@@ -31,7 +32,7 @@ export default function Profile() {
   };
   return (
     <>
-    <Navbar />
+    <NavigateBlack />
     <div className="gradient-custom-2" style={{ backgroundColor: '#9de2ff' }}>
       <MDBContainer className="py-5 h-100">
         <MDBRow className="justify-content-center align-items-center h-100">

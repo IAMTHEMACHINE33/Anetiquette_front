@@ -1,4 +1,3 @@
-import Navbar from "./common/Navbar";
 import React, { Component, useEffect, useState } from "react";
 import Slider from "react-slick";
 import img1 from "../photo/lens.jpg";
