@@ -81,16 +81,16 @@ const Edit_profile = () => {
             <form>
               <div className="control">
                 <label for="fname">Name:</label>
-                <input id="fname" type="text" value={name} onChange={(e)=>{setName(e.target.value)}}/> <br />
+                <input id="fname" name="name" type="text" value={name} onChange={(e)=>{setName(e.target.value)}}/> <br />
               </div>
               <div className="control">
                 <label for="lname">Email:</label>
-                <input id="lname" type="text" value={email} onChange={(e)=>{setEmail(e.target.value)}}/> <br />
+                <input id="lname" name="email" type="text" value={email} onChange={(e)=>{setEmail(e.target.value)}}/> <br />
               </div>
 
               <div className="control">
                 <label for="email">Password:</label>
-                <input id="email" type="text" placeholder="*****" onChange={(e)=>{setPassword(e.target.value)}}/> <br />
+                <input id="email" type="text" name="password" placeholder="*****" onChange={(e)=>{setPassword(e.target.value)}}/> <br />
               </div>
               <input type="submit" onClick={userUpdate}/>
             </form>
