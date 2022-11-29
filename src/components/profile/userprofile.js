@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from "../common/Navbar";
 import {useNavigate, useSearchParams} from 'react-router-dom';
 import "./profile.css";
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography } from 'mdb-react-ui-kit';
 import axios from 'axios';
 import NavigateBlack from '../common/navblack';
+import Slide from './purchaseslider';
 export default function Profile() {
   const navigate = useNavigate();
   const [name, setName] = useState('');
@@ -77,29 +77,15 @@ export default function Profile() {
                   </div>
                 </div>
                 <div className="d-flex justify-content-between align-items-center mb-4">
-                  <MDBCardText className="lead fw-normal mb-0">Recent Products</MDBCardText>
+                  <MDBCardText className="lead fw-normal mb-0">Products Purchased</MDBCardText>
                   <MDBCardText className="mb-0"><a href="/OrderDetails" className="text-muted">Show all</a></MDBCardText>
                 </div>
-                <MDBRow>
-                  <MDBCol className="mb-2">
-                    <MDBCardImage src="https://antiqueresourcesinc.com/wp-content/uploads/2022/06/Wheel-left-side-3-scaled.jpg"
-                      alt="image 1" className="w-100 rounded-3" />
-                  </MDBCol>
-                  <MDBCol className="mb-2">
-                    <MDBCardImage src="https://antiqueresourcesinc.com/wp-content/uploads/2022/06/Wheel-left-side-3-scaled.jpg"
-                      alt="image 2" className="w-100 rounded-3" />
-                  </MDBCol>
-                </MDBRow>
-                <MDBRow className="g-2">
-                  <MDBCol className="mb-2">
-                    <MDBCardImage src="https://antiqueresourcesinc.com/wp-content/uploads/2022/06/Wheel-left-side-3-scaled.jpg"
-                      alt="image 3" className="w-100 rounded-3" />
-                  </MDBCol>
-                  <MDBCol className="mb-2">
-                    <MDBCardImage src="https://antiqueresourcesinc.com/wp-content/uploads/2022/06/Wheel-left-side-3-scaled.jpg"
-                      alt="image 4" className="w-100 rounded-3" />
-                  </MDBCol>
-                </MDBRow>
+                <Slide/>
+                <div className="d-flex justify-content-between align-items-center mb-4">
+                  <MDBCardText className="lead fw-normal mb-0">Products Sold</MDBCardText>
+                  <MDBCardText className="mb-0"><a href="/OrderDetails" className="text-muted">Show all</a></MDBCardText>
+                </div>
+                <Slide/>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
