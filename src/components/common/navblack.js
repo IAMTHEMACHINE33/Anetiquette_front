@@ -3,25 +3,26 @@ import { Navbar, Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import logo from "../../photo/logo.png";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "./navblack.css";
 
 const NavigateBlack = () => {
   const { activeLink, setActiveLink } = useState("home");
-  const [ scrolled, setScrolled ] = useState(false);
-
-  
+  const [scrolled, setScrolled] = useState(false);
 
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
   };
+
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       <Navbar expand="lg" id="blacknav" className={scrolled ? "scrolled" : ""}>
         <Container>
-          <Navbar.Brand href="#home">
-            
-            <img src={logo} alt="Logo"></img>
+          <Navbar.Brand href="/">
+            <a href="/">
+              <img src={logo} alt="Logo"></img>
+            </a>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
@@ -80,9 +81,67 @@ const NavigateBlack = () => {
             </Nav>
             <span className="navbar-text">
               <div className="navbar-icon">
-                <a className="text-light" href=""><i class="fas fa-search"></i></a>
-                <a className="text-light" href=""><i class="fas fa-shopping-cart"></i></a>
-                <a className="text-light" href=""><i class="fas fa-user-alt"></i></a>
+                <a className="text-light" href="">
+                  <i className="fas fa-search"></i>
+                </a>
+                <a className="text-light" href="">
+                  <i className="fas fa-shopping-cart"></i>
+                </a>
+                <a>
+                  <div
+                    className="dropdown "
+                    onClick={() => {
+                      setOpen(!open);
+                    }}
+                  >
+                    <i id="nav-profile" className="fas fa-user-alt"></i>
+
+                    <div
+                      className={`dropdown-content ${
+                        open ? "active" : "inactive"
+                      }`}
+                    >
+                      <div className="dropdown-profile">
+                        <img
+                          src="https://st4.depositphotos.com/15934180/22428/v/450/depositphotos_224288844-stock-illustration-man-with-cowboy-hat-silhouette.jpg"
+                          alt="profile.jpg"
+                        ></img>
+                      </div>
+                      <h3>Username</h3>
+                      <ul>
+                      <li>
+                          <a href="/profile">
+                          <i class="far fa-user-circle"></i>
+                          <span>Profile</span>
+                          </a>
+                          
+                        </li>
+                        <li>
+                          <a href="/Add_products">
+                          
+                          <span>Add product</span>
+                          </a>
+                          
+                        </li>
+                        <li>
+                          <a href="/Order_form">
+                          
+                          <span>Checkout</span>
+                          </a>
+                          
+                        </li>
+                        <li>
+                          <a href="">
+                          <i class="fas fa-power-off"></i>
+                          <span>Logout</span>
+                          </a>
+                          
+                        </li>
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </a>
               </div>
             </span>
           </Navbar.Collapse>

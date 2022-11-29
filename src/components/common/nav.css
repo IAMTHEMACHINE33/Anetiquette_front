@@ -58,14 +58,6 @@ nav.navbar {
     transform: scale(0);
     transition: 0.3s ease-in-out;
   }
-  .navbar-icon a:hover::before {
-    transform: scale(1);
-  }
-  .navbar-icon a i {
-    width: 40%;
-    z-index: 1;
-    transition: 0.3s ease-in-out;
-  }
   
   .navbar-text button {
     font-weight: 700;

@@ -23,7 +23,7 @@ const Url = () => {
         }> */}
         <Route path="/login" element={<Login />}></Route>
         <Route path="/logout" element={<Login />}></Route>
-        <Route path="/" element={<Dash />}></Route>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/nav" element={<Navbar />}></Route>
         <Route path="/product/:pid" element={<Product />}></Route>
         <Route path="/help" element={<Help />}></Route>
@@ -32,7 +32,7 @@ const Url = () => {
         <Route path="/Add_products" element={<Add_products />}></Route>
         <Route path="/login_admin" element={<Login_admin />}></Route>
         <Route path="/admin/dashboard" element={<Dash_admin />}></Route>
-        <Route path="/home" element={<Home />}></Route>
+       
         <Route path="/about" element={<About />}></Route>
         <Route path="/Order_form" element={<Order_form />}></Route>
         <Route path="/OrderDetails" element={<OrderDetails/>}></Route>

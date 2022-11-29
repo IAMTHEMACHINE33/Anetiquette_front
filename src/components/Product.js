@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, Component, useState } from "react";
 import Slider from "react-slick";
 import img1 from "../photo/lens.jpg";
 import img2 from "../photo/neon.jpg";

@@ -3,12 +3,12 @@ import { Navbar, Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import logo from "../../photo/logo.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./nav.css";
 
 const Navigate = () => {
   const { activeLink, setActiveLink } = useState("home");
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -30,8 +30,10 @@ const Navigate = () => {
     <>
       <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
         <Container>
-          <Navbar.Brand href="/home">
-            <img src={logo} alt="Logo"></img>
+          <Navbar.Brand href="/">
+            <a href="/">
+              <img src={logo} alt="Logo"></img>
+            </a>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
@@ -59,13 +61,13 @@ const Navigate = () => {
                 Category
               </Nav.Link>
               <Nav.Link
-                href="/Add_products"
+                href="/about"
                 className={
                   activeLink === "about" ? "active navbar-link" : "navbar-link"
                 }
                 onClick={() => onUpdateActiveLink("about")}
               >
-                add product
+                About Us
               </Nav.Link>
               <Nav.Link
                 href="/help"
@@ -77,7 +79,7 @@ const Navigate = () => {
                 Help
               </Nav.Link>
               <Nav.Link
-                href="/Order_form"
+                href="/contact"
                 className={
                   activeLink === "contact"
                     ? "active navbar-link"
@@ -85,7 +87,7 @@ const Navigate = () => {
                 }
                 onClick={() => onUpdateActiveLink("contact")}
               >
-                Checkout
+                Contact
               </Nav.Link>
             </Nav>
             <span className="navbar-text">
@@ -96,9 +98,62 @@ const Navigate = () => {
                 <a className="text-light" href="">
                   <i class="fas fa-shopping-cart"></i>
                 </a>
-                <a className="text-light" href="/profile">
-                  <i class="fas fa-user-alt"></i>
+                <a>
+                  <div
+                    className="dropdown "
+                    onClick={() => {
+                      setOpen(!open);
+                    }}
+                  >
+                    <i id="nav-profile" className="fas fa-user-alt"></i>
+
+                    <div
+                      className={`dropdown-content ${
+                        open ? "active" : "inactive"
+                      }`}
+                    >
+                      <div className="dropdown-profile">
+                        <img
+                          src="https://st4.depositphotos.com/15934180/22428/v/450/depositphotos_224288844-stock-illustration-man-with-cowboy-hat-silhouette.jpg"
+                          alt="profile.jpg"
+                        ></img>
+                      </div>
+                      <h3>Username</h3>
+                      <ul>
+                      <li>
+                          <a href="/profile">
+                          <i class="far fa-user-circle"></i>
+                          <span>Profile</span>
+                          </a>
+                          
+                        </li>
+                        <li>
+                          <a href="/Add_products">
+                          
+                          <span>Add product</span>
+                          </a>
+                          
+                        </li>
+                        <li>
+                          <a href="/Order_form">
+                          
+                          <span>Checkout</span>
+                          </a>
+                          
+                        </li>
+                        <li>
+                          <a href="">
+                          <i class="fas fa-power-off"></i>
+                          <span>Logout</span>
+                          </a>
+                          
+                        </li>
+                        
+                      </ul>
+                    </div>
+                  </div>
                 </a>
+                
               </div>
             </span>
           </Navbar.Collapse>
