@@ -13,6 +13,7 @@ import Login_admin from "../admin/Login_admin";
 import { Home } from "../homepage/Home";
 import About from "../about";
 import Order_form from "../order_form/Order_form";
+import OrderDetails from "../order_form/Order_history";
 
 const Url = () => {
   return (
@@ -34,6 +35,7 @@ const Url = () => {
         <Route path="/home" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/Order_form" element={<Order_form />}></Route>
+        <Route path="/OrderDetails" element={<OrderDetails/>}></Route>
       </Routes>
     </>
   );
