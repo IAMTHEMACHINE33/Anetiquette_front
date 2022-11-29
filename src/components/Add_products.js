@@ -29,7 +29,7 @@ const AddProduts = () => {
     // };
 
     const data = new FormData();
-    data.append("name", name);
+    data.append("product_name", name);
     data.append("price", price);
     data.append("description", description);
     data.append("category", category);
@@ -55,6 +55,9 @@ const AddProduts = () => {
   return (
     <>
       <NavigateBlack />
+      <br></br>
+      <br></br>
+      <br></br> 
       <div className="container mt-5">
         <h2 className="add products text-center mt-5 text-primary">
           Add New Product

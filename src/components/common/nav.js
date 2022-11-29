@@ -59,13 +59,13 @@ const Navigate = () => {
                 Category
               </Nav.Link>
               <Nav.Link
-                href="/about"
+                href="/Add_products"
                 className={
                   activeLink === "about" ? "active navbar-link" : "navbar-link"
                 }
                 onClick={() => onUpdateActiveLink("about")}
               >
-                About Us
+                add product
               </Nav.Link>
               <Nav.Link
                 href="/help"
@@ -77,7 +77,7 @@ const Navigate = () => {
                 Help
               </Nav.Link>
               <Nav.Link
-                href="#contact"
+                href="/Order_form"
                 className={
                   activeLink === "contact"
                     ? "active navbar-link"
@@ -85,7 +85,7 @@ const Navigate = () => {
                 }
                 onClick={() => onUpdateActiveLink("contact")}
               >
-                Contact
+                Checkout
               </Nav.Link>
             </Nav>
             <span className="navbar-text">
