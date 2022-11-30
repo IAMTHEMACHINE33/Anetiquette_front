@@ -7,6 +7,8 @@ import NavigateBlack from '../common/navblack';
 import PurchaseSlide from './sliders/purchaseslider';
 import OrderSlide from './sliders/orderslider';
 import Footer from "../common/Footer";
+import Typical from "react-typical";
+
 export default function Profile() {
   const navigate = useNavigate();
   const [name, setName] = useState('');
@@ -73,9 +75,17 @@ export default function Profile() {
                 <div className="mb-5">
                   <p className="lead fw-normal mb-1">About You</p>
                   <div className="p-4" style={{ backgroundColor: '#E9E2D8' }}>
-                    <MDBCardText className="font-italic mb-1"></MDBCardText>
-                    <MDBCardText className="font-italic mb-1">Fictional</MDBCardText>
-                    <MDBCardText className="font-italic mb-0">Character</MDBCardText>
+                    <MDBCardText className="font-italic mb-1">Hello Wassup</MDBCardText>
+                    <Typical
+                    loop={Infinity}
+                    wrapper="b"
+                    steps={[
+                    'I am *insert name*😳',1000,
+                    'From Planet Nova😱',1000,
+                    'Woka Woka😖 ',1000,
+                    'Quack Quack😡',1000,              
+                    ]}
+                    />
                   </div>
                 </div>
                 <div className="d-flex justify-content-between align-items-center mb-4">
