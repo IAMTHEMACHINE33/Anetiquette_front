@@ -4,10 +4,73 @@ import { useState, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import logo from "../../photo/logo.png";
 import "./navblack.css";
+import Logout from "../Logout";
 
 const NavigateBlack = () => {
   const { activeLink, setActiveLink } = useState("home");
   const [scrolled, setScrolled] = useState(false);
+
+  var navbar;
+  if (localStorage.getItem("ticket")) {
+    navbar = (
+      <>
+        <div className="dropdown-profile">
+          <img
+            src="https://i.pinimg.com/550x/18/b9/ff/18b9ffb2a8a791d50213a9d595c4dd52.jpg"
+            alt="default-profile.jpg"
+          ></img>
+        </div>
+        <h3>Sign Up</h3>
+        <ul>
+          <li>
+            <a href="/login">
+              <i class="far fa-user-circle"></i>
+              <span>Login</span>
+            </a>
+          </li>
+          
+        </ul>
+      </>
+    );
+  }
+  else{
+    navbar=(
+      <>
+      <div className="dropdown-profile">
+          <img
+            src="https://st4.depositphotos.com/15934180/22428/v/450/depositphotos_224288844-stock-illustration-man-with-cowboy-hat-silhouette.jpg"
+            alt="profile.jpg"
+          ></img>
+        </div>
+        <h3>Username</h3>
+        <ul>
+          <li>
+            <a href="/profile">
+              <i class="far fa-user-circle"></i>
+              <span>Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="/Add_products">
+              <span>Add product</span>
+            </a>
+          </li>
+          <li>
+            <a href="/Order_form">
+              <span>Checkout</span>
+            </a>
+          </li>
+          <li>
+            <a onClick={Logout}>
+              <i class="fas fa-power-off"></i>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      
+      </>
+    )
+  }
 
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
@@ -101,44 +164,7 @@ const NavigateBlack = () => {
                         open ? "active" : "inactive"
                       }`}
                     >
-                      <div className="dropdown-profile">
-                        <img
-                          src="https://st4.depositphotos.com/15934180/22428/v/450/depositphotos_224288844-stock-illustration-man-with-cowboy-hat-silhouette.jpg"
-                          alt="profile.jpg"
-                        ></img>
-                      </div>
-                      <h3>Username</h3>
-                      <ul>
-                      <li>
-                          <a href="/profile">
-                          <i class="far fa-user-circle"></i>
-                          <span>Profile</span>
-                          </a>
-                          
-                        </li>
-                        <li>
-                          <a href="/Add_products">
-                          
-                          <span>Add product</span>
-                          </a>
-                          
-                        </li>
-                        <li>
-                          <a href="/Order_form">
-                          
-                          <span>Checkout</span>
-                          </a>
-                          
-                        </li>
-                        <li>
-                          <a href="/login">
-                          <i class="fas fa-power-off"></i>
-                          <span>Logout</span>
-                          </a>
-                          
-                        </li>
-                        
-                      </ul>
+                      <div>{navbar}</div>
                     </div>
                   </div>
                 </a>

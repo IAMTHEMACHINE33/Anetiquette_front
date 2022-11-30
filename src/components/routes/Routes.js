@@ -14,6 +14,7 @@ import { Home } from "../homepage/Home";
 import About from "../about";
 import Order_form from "../order_form/Order_form";
 import OrderDetails from "../order_form/Order_history";
+import PrivateRoute from "./protectRoutes";
 
 const Url = () => {
   return (
@@ -22,20 +23,24 @@ const Url = () => {
         {/* <Routes basename={'dash'
         }> */}
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/logout" element={<Login />}></Route>
+
         <Route path="/" element={<Home />}></Route>
+
         <Route path="/nav" element={<Navbar />}></Route>
+
         <Route path="/product/:pid" element={<Product />}></Route>
+
         <Route path="/help" element={<Help />}></Route>
-        <Route path="/profile" element={<Profile />}></Route>
-        <Route path="/Edit_profile" element={<Edit_profile />}></Route>
-        <Route path="/Add_products" element={<Add_products />}></Route>
+
+        <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>}></Route>
+        <Route path="/Edit_profile" element={<PrivateRoute><Edit_profile /></PrivateRoute>}></Route>
+        <Route path="/Add_products" element={<PrivateRoute><Add_products /></PrivateRoute>}></Route>
         <Route path="/login_admin" element={<Login_admin />}></Route>
-        <Route path="/admin/dashboard" element={<Dash_admin />}></Route>
+        <Route path="/admin/dashboard" element={<PrivateRoute><Dash_admin /></PrivateRoute>}></Route>
        
         <Route path="/about" element={<About />}></Route>
-        <Route path="/Order_form" element={<Order_form />}></Route>
-        <Route path="/OrderDetails" element={<OrderDetails/>}></Route>
+        <Route path="/Order_form" element={<PrivateRoute><Order_form /></PrivateRoute>}></Route>
+        <Route path="/OrderDetails" element={<PrivateRoute><OrderDetails/></PrivateRoute>}></Route>
       </Routes>
     </>
   );

@@ -32,7 +32,9 @@ const Login=()=> {
 
      const loginSubmit=(e)=>{
         e.preventDefault();
+        
         dispatch(login(loginEmail, loginPassword))
+        
      }
 
      const registerSubmit=(e)=>{
@@ -58,6 +60,7 @@ const Login=()=> {
             dispatch(clearErrors())
         }
         if(isAuthenticated){
+
             navigate(redirect)
         }
      }, [dispatch, error, navigate, isAuthenticated, redirect])
