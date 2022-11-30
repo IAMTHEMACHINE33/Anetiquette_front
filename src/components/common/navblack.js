@@ -131,7 +131,7 @@ const NavigateBlack = () => {
                           
                         </li>
                         <li>
-                          <a href="">
+                          <a href="/login">
                           <i class="fas fa-power-off"></i>
                           <span>Logout</span>
                           </a>
