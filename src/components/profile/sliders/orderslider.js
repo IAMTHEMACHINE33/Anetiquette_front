@@ -41,7 +41,7 @@ function OrderSlide() {
   };
 
   return (
-    <div className="Slider">
+    <div className="Slider"style={{ backgroundColor: '#E4DEDD' }}>
       <Slider {...settings}>
         {images.map((img, idx) => (
           <div className={idx === imageIndex ? "slides activeSlide" : "slides"}>

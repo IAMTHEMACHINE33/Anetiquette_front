@@ -6,6 +6,7 @@ import axios from 'axios';
 import NavigateBlack from '../common/navblack';
 import PurchaseSlide from './sliders/purchaseslider';
 import OrderSlide from './sliders/orderslider';
+import Footer from "../common/Footer";
 export default function Profile() {
   const navigate = useNavigate();
   const [name, setName] = useState('');
@@ -71,7 +72,7 @@ export default function Profile() {
               <MDBCardBody className="text-black p-4">
                 <div className="mb-5">
                   <p className="lead fw-normal mb-1">About You</p>
-                  <div className="p-4" style={{ backgroundColor: '#E4DEDD' }}>
+                  <div className="p-4" style={{ backgroundColor: '#E9E2D8' }}>
                     <MDBCardText className="font-italic mb-1"></MDBCardText>
                     <MDBCardText className="font-italic mb-1">Fictional</MDBCardText>
                     <MDBCardText className="font-italic mb-0">Character</MDBCardText>
@@ -82,6 +83,7 @@ export default function Profile() {
                   <MDBCardText className="mb-0"><a href="/OrderDetails" className="text-muted">Show all</a></MDBCardText>
                 </div>
                 <PurchaseSlide/>
+                <br/>
                 <div className="d-flex justify-content-between align-items-center mb-4">
                   <MDBCardText className="lead fw-normal mb-0">Products Sold</MDBCardText>
                   <MDBCardText className="mb-0"><a href="/OrderDetails" className="text-muted">Show all</a></MDBCardText>
@@ -93,6 +95,7 @@ export default function Profile() {
         </MDBRow>
       </MDBContainer>
     </div>
+    <Footer />
     </>
   );
 }
