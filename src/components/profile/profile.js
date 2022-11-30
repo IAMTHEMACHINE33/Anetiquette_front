@@ -4,7 +4,8 @@ import "./profile.css";
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography } from 'mdb-react-ui-kit';
 import axios from 'axios';
 import NavigateBlack from '../common/navblack';
-import Slide from './purchaseslider';
+import PurchaseSlide from './sliders/purchaseslider';
+import OrderSlide from './sliders/orderslider';
 export default function Profile() {
   const navigate = useNavigate();
   const [name, setName] = useState('');
@@ -80,12 +81,12 @@ export default function Profile() {
                   <MDBCardText className="lead fw-normal mb-0">Products Purchased</MDBCardText>
                   <MDBCardText className="mb-0"><a href="/OrderDetails" className="text-muted">Show all</a></MDBCardText>
                 </div>
-                <Slide/>
+                <PurchaseSlide/>
                 <div className="d-flex justify-content-between align-items-center mb-4">
                   <MDBCardText className="lead fw-normal mb-0">Products Sold</MDBCardText>
                   <MDBCardText className="mb-0"><a href="/OrderDetails" className="text-muted">Show all</a></MDBCardText>
                 </div>
-                <Slide/>
+                <OrderSlide/>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>

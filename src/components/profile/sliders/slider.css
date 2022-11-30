@@ -1,18 +1,18 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
-.Slide {
+.Slide   {
   width: 50%;
   margin: 10rem auto;
   height: 250px;
 }
 
-.slide img {
+.slides img {
   width: 20rem; 
   margin: 0 auto;
 }
 
-.slide {
+.slides{
   transform: scale(0.2);
   transition: transform 300ms;
   opacity: 0.5;

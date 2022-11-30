@@ -6,7 +6,7 @@ import Dash_admin from "../admin/Dash_admin";
 import Navbar from "../common/Navbar";
 import Product from "../Product";
 import Help from "../Help";
-import Profile from "../profile/userprofile";
+import Profile from "../profile/profile";
 import Edit_profile from "../profile/Edit_profile";
 import Add_products from "../Add_products";
 import Login_admin from "../admin/Login_admin";

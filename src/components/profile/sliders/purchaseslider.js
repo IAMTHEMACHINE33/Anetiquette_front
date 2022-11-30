@@ -1,15 +1,15 @@
-import "../profile/slider.css";
+import "../sliders/slider.css"
 import { useState } from "react";
 import Slider from "react-slick";
-import box from "/colz/Agile Development/Anetiquette_front/src/photo/box.jpg";
-import lens from "/colz/Agile Development/Anetiquette_front/src/photo/lens.jpg";
-import logo from "/colz/Agile Development/Anetiquette_front/src/photo/logo.png";
-import monika from "/colz/Agile Development/Anetiquette_front/src/photo/monika.png";
+import box from "../../../photo/box.jpg";
+import lens from "../../../photo/box.jpg";
+import logo from "../../../photo/box.jpg";
+import monika from '../../../photo/box.jpg';
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 const images = [box, lens, logo, monika];
 
-function Slide() {
+function PurchaseSlide() {
   const NextArrow = ({ onClick }) => {
     return (
       <div className="arrow next" onClick={onClick}>
@@ -44,7 +44,7 @@ function Slide() {
     <div className="Slider">
       <Slider {...settings}>
         {images.map((img, idx) => (
-          <div className={idx === imageIndex ? "slide activeSlide" : "slide"}>
+          <div className={idx === imageIndex ? "slides activeSlide" : "slides"}>
             <img src={img} alt={img} />
           </div>
         ))}
@@ -53,4 +53,4 @@ function Slide() {
   );
 }
 
-export default Slide;
+export default PurchaseSlide;
