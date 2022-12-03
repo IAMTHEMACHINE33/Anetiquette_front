@@ -8,13 +8,14 @@ import Product from "../Product";
 import Help from "../Help";
 import Profile from "../profile/profile";
 import Edit_profile from "../profile/Edit_profile";
-import Add_products from "../Add_products";
 import Login_admin from "../admin/Login_admin";
 import { Home } from "../homepage/Home";
 import About from "../about";
 import Order_form from "../order_form/Order_form";
 import OrderDetails from "../order_form/Order_history";
 import PrivateRoute from "./protectRoutes";
+import Add_products from "../add_product/Add_products";
+import Cart from "../cart/Cart";
 
 const Url = () => {
   return (
@@ -32,14 +33,15 @@ const Url = () => {
 
         <Route path="/help" element={<Help />}></Route>
 
-        <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>}></Route>
-        <Route path="/Edit_profile" element={<PrivateRoute><Edit_profile /></PrivateRoute>}></Route>
-        <Route path="/Add_products" element={<PrivateRoute><Add_products /></PrivateRoute>}></Route>
+        <Route path="/profile" element={<Profile />}></Route>
+        <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/Edit_profile" element={<Edit_profile />}></Route>
+        <Route path="/Add_products" element={<Add_products />}></Route>
         <Route path="/login_admin" element={<Login_admin />}></Route>
         <Route path="/admin/dashboard" element={<PrivateRoute><Dash_admin /></PrivateRoute>}></Route>
        
         <Route path="/about" element={<About />}></Route>
-        <Route path="/Order_form" element={<PrivateRoute><Order_form /></PrivateRoute>}></Route>
+        <Route path="/Order_form" element={<Order_form />}></Route>
         <Route path="/OrderDetails" element={<PrivateRoute><OrderDetails/></PrivateRoute>}></Route>
       </Routes>
     </>

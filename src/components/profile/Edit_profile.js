@@ -1,53 +1,55 @@
-import Navbar from "../common/Navbar";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 // import "../styles.css";
 import "./edit-profile.css";
 import axios from "axios";
+import Footer from "../common/Footer";
+import NavigateBlack from "../common/navblack";
 
 const Edit_profile = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const redirect=location.search ? location.search.split("=")[1] : "/profile"
+  const redirect = location.search ? location.search.split("=")[1] : "/profile";
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  
-  const config ={
-    headers:{
-        Authorization:"Bearer "+localStorage.getItem("token")
-    }
-  }
+  const config = {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
+  };
 
-  useEffect(()=>{
-    axios.get("http://localhost:4000/api/v1/show",config)
-    .then(response=>{
-      setName(response.data.data.name);
-      setEmail(response.data.data.email);
-    })
-    .catch(e=>{
-      console.log(e);
-    })
-  },[])
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/api/v1/show", config)
+      .then((response) => {
+        setName(response.data.data.name);
+        setEmail(response.data.data.email);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
 
-  const userUpdate = (e)=>{
+  const userUpdate = (e) => {
     e.preventDefault();
-    const data={
+    const data = {
       name: name,
       email: email,
       password: password,
     };
-    axios.put("http://localhost:4000/api/v1/update",data, config)
-    .then((result)=>{
-      console.log(result)
-      navigate(redirect)
-    })
-    .catch(e=>{
-      console.log(e)
-    });
+    axios
+      .put("http://localhost:4000/api/v1/update", data, config)
+      .then((result) => {
+        console.log(result);
+        navigate(redirect);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   const [file, setFile] = useState(
@@ -61,10 +63,11 @@ const Edit_profile = () => {
     console.log(file);
   };
   return (
-    <>
-      <Navbar />
-      <div className="edit-profile-container">
-        <h1 className="edit__title">Edit Profile</h1>
+    <div className="edit-profile-container-fluid">
+      <NavigateBlack />
+
+      <div className="">
+        <h1 className="edit__title p-2">Edit Profile</h1>
         <hr />
         <div className="edit-profile__content">
           <div className="edit_left">
@@ -79,26 +82,56 @@ const Edit_profile = () => {
           <div className="edit_right">
             <h3 className="personal-info"> Personal Info</h3>
             <form>
-              <div className="control">
-                <label for="fname">Name:</label>
-                <input id="fname" name="name" type="text" value={name} onChange={(e)=>{setName(e.target.value)}}/> <br />
+              <div className="edit-control">
+                <label for="fname">Name</label>
+                <input
+                  id="fname"
+                  type="text"
+                  placeholder="John wick"
+                  required
+                  value={name}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
+                />{" "}
+                <br />
               </div>
-              <div className="control">
-                <label for="lname">Email:</label>
-                <input id="lname" name="email" type="text" value={email} onChange={(e)=>{setEmail(e.target.value)}}/> <br />
+              <div className="edit-control">
+                <label for="lname">Email</label>
+                <input
+                  id="lname"
+                  type="email"
+                  placeholder="test@gmail.com"
+                  required
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />{" "}
+                <br />
               </div>
 
-              <div className="control">
-                <label for="email">Password:</label>
-                <input id="email" type="text" name="password" placeholder="*****" onChange={(e)=>{setPassword(e.target.value)}}/> <br />
+              <div className="edit-control">
+                <label for="email">Password</label>
+                <input
+                  id="email"
+                  type="password"
+                  placeholder="*****"
+                  required
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                />{" "}
+                <br />
               </div>
-              <input type="submit" onClick={userUpdate}/>
+              <input type="submit" onClick={userUpdate} />
             </form>
           </div>
         </div>
       </div>
-    </>
+      <Footer />
+    </div>
   );
 };
-//asd
+
 export default Edit_profile;

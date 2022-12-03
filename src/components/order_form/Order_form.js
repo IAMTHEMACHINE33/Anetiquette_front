@@ -10,92 +10,101 @@ const OrderForm = () => {
   return (
     <>
       <NavigateBlack />
-
-      <div className="maincontainer mt-5">
+      <div className="maincontainer">
         <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow"></div>
         <div class="container">
           <div class="py-5 text-center">
-            <h2>Checkout form</h2>
+            <h2 class="mt-5">Checkout form</h2>
           </div>
 
           <div class="row">
-            <div class="col-md-4 order-md-2 mb-4">
+            <div class="col-md-4 order-md-2">
               <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-muted">Your cart</span>
+                <span class="text-muted text-white">Your cart</span>
                 <span class="badge badge-secondary badge-pill">3</span>
               </h4>
               <ul class="list-group mb-3">
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <li
+                  id="list"
+                  class="list-group-item d-flex justify-content-between lh-condensed"
+                >
                   <div>
                     <h6 class="my-0">Product name</h6>
                     <small class="text-muted">Brief description</small>
                   </div>
-                  <span class="text-muted">Rs 12</span>
+                  <span class="text-muted">Rs.12</span>
                 </li>
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <li
+                  id="list"
+                  class="list-group-item d-flex justify-content-between lh-condensed"
+                >
                   <div>
                     <h6 class="my-0">Second product</h6>
                     <small class="text-muted">Brief description</small>
                   </div>
-                  <span class="text-muted">Rs 8</span>
+                  <span class="text-muted">Rs.8</span>
                 </li>
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <li
+                  id="list"
+                  class="list-group-item d-flex justify-content-between lh-condensed"
+                >
                   <div>
                     <h6 class="my-0">Third item</h6>
                     <small class="text-muted">Brief description</small>
                   </div>
-                  <span class="text-muted">Rs 5</span>
+                  <span class="text-muted">Rs.5</span>
                 </li>
 
-                <li class="list-group-item d-flex justify-content-between">
+                <li
+                  id="list"
+                  class="list-group-item d-flex justify-content-between"
+                >
                   <span>Total (Rupee)</span>
-                  <strong>Rs 20</strong>
+                  <strong>Rs.20</strong>
                 </li>
               </ul>
             </div>
-            <div class="col-md-8 order-md-1">
-              <h4 class="mb-3">Billing address</h4>
-              <form class="needs-validation" novalidate>
+            <div id="maincard" class=" card col-md-7 order-md-1 border-light">
+              <h4 class="mb-3 mt-2">Billing address</h4>
+              <form class="validation" novalidate>
                 <div class="row">
                   <div class="col-md-6 mb-3">
-                    <label for="firstName">First name</label>
+                    <label for="firstName">First Name</label>
                     <input
                       type="text"
                       class="form-control"
                       id="firstName"
-                      placeholder=""
-                      value=""
+                      placeholder="Mik"
                       required
                     />
                     <div class="invalid-feedback">
-                      Valid first name is required.
+                      Your firstname is required.
                     </div>
                   </div>
                   <div class="col-md-6 mb-3">
-                    <label for="lastName">Last name</label>
+                    <label for="lastName">Last Name</label>
                     <input
                       type="text"
                       class="form-control"
                       id="lastName"
-                      placeholder=""
-                      value=""
+                      placeholder="smith"
                       required
                     />
                     <div class="invalid-feedback">
-                      Valid last name is required.
+                      Your lastname is required.
                     </div>
                   </div>
                 </div>
 
                 <div class="mb-3">
                   <label for="username">Username</label>
-                  <div className="input-group">
+                  <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text">@</span>
                     </div>
                     <input
                       type="text"
-                      class="col"
+                      class="form-control"
                       id="username"
                       placeholder="Username"
                       required
@@ -111,11 +120,10 @@ const OrderForm = () => {
                     Email <span class="text-muted"></span>
                   </label>
                   <input
-                    type="email"
+                    type="text"
                     class="form-control"
                     id="email"
                     placeholder="you@example.com"
-                    required
                   />
                   <div class="invalid-feedback">
                     Please enter a valid email address for shipping updates.
@@ -128,7 +136,7 @@ const OrderForm = () => {
                     type="text"
                     class="form-control"
                     id="address"
-                    placeholder="Dillibazar"
+                    placeholder="1234 Main St"
                     required
                   />
                   <div class="invalid-feedback">
@@ -137,45 +145,35 @@ const OrderForm = () => {
                 </div>
 
                 <div class="mb-3">
-                  <label for="address2">
-                    Address 2 <span class="text-muted">(Optional)</span>
+                  <label for="phoneno">
+                    Phone no. <span class="text-muted"></span>
                   </label>
                   <input
                     type="text"
                     class="form-control"
-                    id="address2"
-                    placeholder="Apartment or suite"
+                    id="phoneno"
+                    placeholder="+9779835......"
                   />
                 </div>
 
                 <div class="row">
-                  <div class="col-md-5 mb-3">
-                    <label for="country">Country</label>
-                    <select
-                      className="custom-select d-block w-100"
-                      id="country"
-                      required
-                    >
-                      <option value="">Choose...</option>
-                      <option>Nepal</option>
+                  <div class="col-md-4 mb-3">
+                    <label for="district">Country</label>
+                    <select class="form-control" id="district" required>
+                      <option value="">Choose</option>
+                      <option value="country">Nepal</option>
                     </select>
-                    <div class="invalid-feedback">
-                      Please select a valid country.
-                    </div>
+
+                    <div class="invalid-feedback">State is required.</div>
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="state">State</label>
-                    <select
-                      class="custom-select d-block w-100"
-                      id="state"
-                      required
-                    >
-                      <option value="">Choose...</option>
-                      <option>Kathmandu</option>
+                    <label for="district">State</label>
+                    <select class="form-control" id="district" required>
+                      <option value="">Choose</option>
+                      <option value="kathmandu">Kathmandu</option>
                     </select>
-                    <div class="invalid-feedback">
-                      Please provide a valid state.
-                    </div>
+
+                    <div class="invalid-feedback">State is required.</div>
                   </div>
                   <div class="col-md-3 mb-3">
                     <label for="zip">Zip</label>
@@ -190,38 +188,10 @@ const OrderForm = () => {
                   </div>
                 </div>
                 <hr class="mb-4" />
-                <div class=" d-flex">
-                  <input type="checkbox" class="mr-4" id="same-address" />
-                  <label className="col" for="same-address">
-                    Shipping address is the same as my billing address
-                  </label>
-                </div>
-                <br></br>
-                <div className=" d-flex">
-                  <input type="checkbox" class="mr-4" id="save-info" />
-                  <label class="col" for="save-info">
-                    Save this information for next time
-                  </label>
-                </div>
 
-                <hr class="mb-4" />
-
-                <h4 class="mb-3">Payment Option</h4>
+                <h4 class="mb-3">Payment</h4>
 
                 <div class="d-block my-3">
-                  <div className="custom-radio">
-                    <input
-                      id="cash in hand"
-                      name="paymentMethod"
-                      type="radio"
-                      class="col"
-                      checked
-                      required
-                    />
-                    <label class="label" for="credit">
-                      Cash in hand
-                    </label>
-                  </div>
                   <div class="custom-control custom-radio">
                     <input
                       id="credit"
@@ -235,7 +205,7 @@ const OrderForm = () => {
                       Credit card
                     </label>
                   </div>
-                  <div className="payment custom-radio">
+                  <div class="custom-control custom-radio">
                     <input
                       id="debit"
                       name="paymentMethod"
@@ -260,73 +230,72 @@ const OrderForm = () => {
                     </label>
                   </div>
                 </div>
-                <div class="row gy-3">
-                  <div class="col-md-5">
-                    <label for="cc-name" class="form-label">
-                      Name on card
-                    </label>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="cc-name">Name on card</label>
                     <input
                       type="text"
                       class="form-control"
                       id="cc-name"
-                      placeholder="Full name as displayed on card"
-                      required=""
+                      placeholder=""
+                      required
                     />
-
+                    <small class="text-muted">
+                      Full name as displayed on card
+                    </small>
                     <div class="invalid-feedback">Name on card is required</div>
                   </div>
-                  <div class="col-md-5">
-                    <label for="cc-name" class="form-label">
-                      Credit
-                    </label>
+                  <div class="col-md-6 mb-3">
+                    <label for="cc-number">Credit card number</label>
                     <input
-                      type="number"
+                      type="text"
                       class="form-control"
-                      id="cc-name"
-                      placeholder="Credit card number"
-                      required=""
+                      id="cc-number"
+                      placeholder=""
+                      required
                     />
+                    <div class="invalid-feedback">
+                      Credit card number is required
+                    </div>
                   </div>
-
-                  <div class="col-md-3">
-                    <label for="cc-expiration" class="form-label">
-                      Expiration
-                    </label>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 mb-3">
+                    <label for="cc-expiration">Expiration</label>
                     <input
                       type="text"
                       class="form-control"
                       id="cc-expiration"
                       placeholder=""
-                      required=""
+                      required
                     />
                     <div class="invalid-feedback">Expiration date required</div>
                   </div>
-
-                  <div class="col-md-3">
-                    <label for="cc-cvv" class="form-label">
-                      CVV
-                    </label>
+                  <div class="col-md-3 mb-3">
+                    <label for="cc-expiration">CVV</label>
                     <input
                       type="text"
                       class="form-control"
                       id="cc-cvv"
                       placeholder=""
-                      required=""
+                      required
                     />
                     <div class="invalid-feedback">Security code required</div>
                   </div>
                 </div>
                 <hr class="mb-4" />
-                <button class="btn btn-primary btn-lg btn-block" type="button">
+                <button
+                  class="btn btn-danger btn-md btn-block mb-3"
+                  type="button"
+                >
                   Continue to checkout
                 </button>
               </form>
             </div>
           </div>
         </div>
+        <Footer />
       </div>
-
-      <Footer />
     </>
   );
 };

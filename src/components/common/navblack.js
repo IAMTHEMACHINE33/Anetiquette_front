@@ -147,7 +147,7 @@ const NavigateBlack = () => {
                 <a className="text-light" href="">
                   <i className="fas fa-search"></i>
                 </a>
-                <a className="text-light" href="">
+                <a className="text-light" href="/cart">
                   <i className="fas fa-shopping-cart"></i>
                 </a>
                 <a>

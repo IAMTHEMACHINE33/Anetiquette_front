@@ -1,8 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Navbar } from "react-bootstrap";
+import { ImageBackground } from "react-native-web";
+import Footer from "../common/Footer";
 
-import NavigateBlack from "./common/navblack";
+import "../add_product/add_product.css";
+
+import NavigateBlack from "../common/navblack";
 
 const AddProduts = () => {
   const [name, setName] = useState("");
@@ -29,7 +33,7 @@ const AddProduts = () => {
     // };
 
     const data = new FormData();
-    data.append("product_name", name);
+    data.append("name", name);
     data.append("price", price);
     data.append("description", description);
     data.append("category", category);
@@ -55,27 +59,28 @@ const AddProduts = () => {
   return (
     <>
       <NavigateBlack />
-      <br></br>
-      <br></br>
-      <br></br> 
-      <div className="container mt-5">
-        <h2 className="add products text-center mt-5 text-primary">
-          Add New Product
-        </h2>
-        <div className="container col-5">
+
+      <div className="product-container mt-5">
+        <div class="py-5">
+          <h2 className="add-products text-center mt-5 text-secondary">
+            Add New Product
+          </h2>
+        </div>
+        <div id="pcard" className="card container col-5 ">
           <form>
-            <div class="form-group mt-2 text-secondary">
+            <div class="form-group mt-2  p-2">
               <label for="FormControlInput1">Product name</label>
               <input
                 type="text"
                 class="form-control"
+                placeholder="Apple"
                 onChange={(e) => {
                   setName(e.target.value);
                 }}
               ></input>
             </div>
 
-            <div class="form-group mt-2 text-secondary">
+            <div class="form-group mt-2  p-2">
               <label for="FormControlInput1">Price</label>
               <input
                 type="number"
@@ -86,7 +91,7 @@ const AddProduts = () => {
               ></input>
             </div>
 
-            <div class="form-group mt-2 text-secondary">
+            <div class="form-group mt-2  p-2">
               <label for="FormControlSelect1">Category</label>
               <select
                 class="form-control"
@@ -102,7 +107,7 @@ const AddProduts = () => {
               </select>
             </div>
 
-            <div class="form-group mt-2 text-secondary">
+            <div class="form-group mt-2  p-2">
               <label for="FormControlTextarea1 ">Description</label>
               <textarea
                 class="form-control"
@@ -115,7 +120,7 @@ const AddProduts = () => {
               ></textarea>
             </div>
 
-            <div class="form-group  mt-3 text-secondary ">
+            <div class="form-group  mt-3  p-2 ">
               <label for="FormControlFile1  text-secondary">Select file</label>
               <input
                 type="file"
@@ -130,12 +135,13 @@ const AddProduts = () => {
 
           <button
             type="button"
-            class="btn btn-success mt-3"
+            class="btn btn-danger mt-3 mb-3"
             onClick={productAdd}
           >
             Submit
           </button>
         </div>
+        <Footer />
       </div>
     </>
   );
