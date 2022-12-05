@@ -61,12 +61,12 @@ const AddProduts = () => {
       <NavigateBlack />
 
       <div className="product-container mt-5">
-        <div class="py-5">
+        <div class="pt-5 pb-3">
           <h2 className="add-products text-center mt-5 text-secondary">
-            Add New Product
+            Sell Your Item
           </h2>
         </div>
-        <div id="pcard" className="card container col-5 ">
+        <div id="pcard" className="card container col-4 ">
           <form>
             <div class="form-group mt-2  p-2">
               <label for="FormControlInput1">Product name</label>
@@ -120,7 +120,7 @@ const AddProduts = () => {
               ></textarea>
             </div>
 
-            <div class="form-group  mt-3  p-2 ">
+            <div class="form-group  mt-1 p-2 ">
               <label for="FormControlFile1  text-secondary">Select file</label>
               <input
                 type="file"
@@ -132,10 +132,9 @@ const AddProduts = () => {
               ></input>
             </div>
           </form>
-
+                
           <button
-            type="button"
-            class="btn btn-danger mt-3 mb-3"
+            className="btn btn-primary profile-button mb-3"
             onClick={productAdd}
           >
             Submit
