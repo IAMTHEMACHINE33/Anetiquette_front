@@ -3,7 +3,7 @@ import React from 'react';
 
 function PrivateRoute({children}){
     var isAuth;
-    if(localStorage.getItem("ticket")){
+    if(localStorage.getItem("token")){
         isAuth = true
     }
     else{

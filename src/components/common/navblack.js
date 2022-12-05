@@ -12,32 +12,10 @@ const NavigateBlack = () => {
   const [scrolled, setScrolled] = useState(false);
 
   var navbar;
-  if (localStorage.getItem("ticket")) {
+  if (localStorage.getItem("token")) {
     navbar = (
       <>
         <div className="dropdown-profile">
-          <img
-            src="https://i.pinimg.com/550x/18/b9/ff/18b9ffb2a8a791d50213a9d595c4dd52.jpg"
-            alt="default-profile.jpg"
-          ></img>
-        </div>
-        <h3>Sign Up</h3>
-        <ul>
-          <li>
-            <a href="/login">
-              <i class="far fa-user-circle"></i>
-              <span>Login</span>
-            </a>
-          </li>
-          
-        </ul>
-      </>
-    );
-  }
-  else{
-    navbar=(
-      <>
-      <div className="dropdown-profile">
           <img
             src="https://st4.depositphotos.com/15934180/22428/v/450/depositphotos_224288844-stock-illustration-man-with-cowboy-hat-silhouette.jpg"
             alt="profile.jpg"
@@ -68,6 +46,29 @@ const NavigateBlack = () => {
             </a>
           </li>
         </ul>
+      </>
+    );
+  }
+  else{
+    navbar=(
+      <>
+      <div className="dropdown-profile">
+          <img
+            src="https://i.pinimg.com/550x/18/b9/ff/18b9ffb2a8a791d50213a9d595c4dd52.jpg"
+            alt="default-profile.jpg"
+          ></img>
+        </div>
+        <h3>Sign Up</h3>
+        <ul>
+          <li>
+            <a href="/login">
+              <i class="far fa-user-circle"></i>
+              <span>Login</span>
+            </a>
+          </li>
+          
+        </ul>
+      
       
       </>
     )
