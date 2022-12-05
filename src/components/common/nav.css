@@ -2,9 +2,9 @@
 
 nav.navbar {
   padding: 18px 0;
-  /* position: sticky; */
+  position: fixed;
   width: 100%;
-  /* top: 0; */
+  top: 0;
   z-index: 9999;
   transition: 0.32s ease-in-out;
 }
