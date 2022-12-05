@@ -25,7 +25,8 @@ const Product = () => {
       .then((response) => {
         console.log(response.data.data);
         setDetails(response.data.data);
-        console.log(response.data.data.type)
+        console.log(response.data.data.type);
+        setType(response.data.data.type);
       });
   }, []);
 
