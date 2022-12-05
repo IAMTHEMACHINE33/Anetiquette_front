@@ -12,6 +12,7 @@ const AddProduts = () => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
+  const [type, setType] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
   const [details, setDetails] = useState([]);
@@ -33,10 +34,11 @@ const AddProduts = () => {
     // };
 
     const data = new FormData();
-    data.append("name", name);
+    data.append("product_name", name);
     data.append("price", price);
     data.append("description", description);
     data.append("category", category);
+    data.append("type",type);
     data.append("product_img", image);
     axios
       .post("http://localhost:4000/product/add", data, config)
@@ -104,6 +106,21 @@ const AddProduts = () => {
                 {details.map((option) => {
                   return <option value={option._id}>{option.name}</option>;
                 })}
+              </select>
+            </div>
+
+            <div class="form-group mt-2  p-2">
+              <label for="FormControlSelect1">type</label>
+              <select
+                class="form-control"
+                id="FormControlSelect1"
+                onChange={(e) => {
+                  setType(e.target.value);
+                }}
+              >
+                <option>Select Type</option>
+                <option value="Auction">Auction</option>
+                <option value="Purchase">Purchase</option>
               </select>
             </div>
 
