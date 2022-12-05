@@ -8,6 +8,29 @@ import { Link } from "react-router-dom";
 
 const SearchResult = () => {
   const [details, setDetails] = useState([]);
+  const [search, setSearch] = useState('');
+
+  const config={
+    headers:{
+      Authorization:"Bearer "+localStorage.getItem("token")
+    }
+  }
+  const searchRe = (e)=>{
+    e.preventDefault();
+
+    const data ={
+      search:search
+    }
+    axios.post("http://localhost:4000/product/search",data)
+    .then(response=>{
+      setDetails(response.data.data)
+      console.log(response.data.data)
+    })
+    .catch((e)=>{
+      console.log(e);
+    })
+  }
+  
 
   useEffect(() => {
     axios
@@ -32,11 +55,13 @@ const SearchResult = () => {
               placeholder="dummy data"
               aria-label="Search"
               aria-describedby="search-addon"
+              onChange={(e)=>{setSearch(e.target.value)}}
             />
-            <span class="input-group-text border-0" id="search-addon">
+            <span><button class="input-group-text border-0" id="search-addon" onClick={searchRe}>
               <i class="fas fa-search"></i>
-            </span>
+            </button></span>
           </div>
+          <button onClick={searchRe}>asd</button>
         </div>
         <h4 className="mt-2 mb-3 p-2">
           Search results for " <span>dummy data</span> "

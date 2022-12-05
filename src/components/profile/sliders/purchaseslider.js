@@ -52,7 +52,8 @@ function PurchaseSlide() {
     infinite: true,
     lazyLoad: true,
     speed: 300,
-    slidesToShow: 3,
+    slidesToShow: 1,
+    slidesToScroll:1,
     centerMode: true,
     centerPadding: 0,
     nextArrow: <NextArrow />,
@@ -63,17 +64,16 @@ function PurchaseSlide() {
   return (
     <div className="Slider"style={{ backgroundColor: '#E4DEDD' }} >
       <Slider {...settings}>
-        {images.map((img, idx) => (
+        {details.map((option, idx) => (
+          <div className={idx === imageIndex ? "slides activeSlide" : "slides"}>
+            <img src={'http://localhost:4000/' + option.image} alt={'http://localhost:4000/' + option.image} />
+          </div>
+        ))}
+        {/* {images.map((img, idx) => (
           <div className={idx === imageIndex ? "slides activeSlide" : "slides"}>
             <img src={img} alt={img} />
           </div>
-        ))}
-        
-        {/* {details.map((option,a)=>{
-          <div className={a === imageIndex ? "slides activeSlide" : "slides"}>
-          <img src={"http://localhost:4000/" + option.image}/>
-        </div>
-        })} */}
+        ))} */}
       </Slider>
     </div>
   );
