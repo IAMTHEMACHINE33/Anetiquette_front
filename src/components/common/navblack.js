@@ -5,6 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import logo from "../../photo/logo.png";
 import "./navblack.css";
 import Logout from "../Logout";
+import "../common/search.css"
 
 const NavigateBlack = () => {
   const { activeLink, setActiveLink } = useState("home");
@@ -143,8 +144,10 @@ const NavigateBlack = () => {
               </Nav.Link>
             </Nav>
             <span className="navbar-text">
-              <div className="navbar-icon">
-                <a className="text-light" href="">
+              <div className="navbar-icon ">
+                
+                
+                <a className="text-light" href="/search">
                   <i className="fas fa-search"></i>
                 </a>
                 <a className="text-light" href="/cart">

@@ -16,6 +16,8 @@ import OrderDetails from "../order_form/Order_history";
 import PrivateRoute from "./protectRoutes";
 import Add_products from "../add_product/Add_products";
 import Cart from "../cart/Cart";
+import Search from "../common/search";
+import SearchResult from "../searchResult";
 
 const Url = () => {
   return (
@@ -23,10 +25,12 @@ const Url = () => {
       <Routes>
         {/* <Routes basename={'dash'
         }> */}
+        <Route path="/search" element={<Search/>}></Route>
+        <Route path="/searchres" element={<SearchResult/>}></Route>
         <Route path="/login" element={<Login />}></Route>
 
         <Route path="/" element={<Home />}></Route>
-
+        <Route path="/cart" element={<Cart />}></Route>
         <Route path="/nav" element={<Navbar />}></Route>
 
         <Route path="/product/:pid" element={<Product />}></Route>
@@ -34,9 +38,8 @@ const Url = () => {
         <Route path="/help" element={<Help />}></Route>
 
         <Route path="/profile" element={<Profile />}></Route>
-        <Route path="/cart" element={<Cart />}></Route>
         <Route path="/Edit_profile" element={<Edit_profile />}></Route>
-        <Route path="/Add_products" element={<Add_products />}></Route>
+        <Route path="/Add_products" element={<PrivateRoute><Add_products /></PrivateRoute>}></Route>
         <Route path="/login_admin" element={<Login_admin />}></Route>
         <Route path="/admin/dashboard" element={<PrivateRoute><Dash_admin /></PrivateRoute>}></Route>
        

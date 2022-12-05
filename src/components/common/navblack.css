@@ -1,12 +1,13 @@
 #blacknav {
-    padding: 18px 0;
+    padding: 5px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 9999;
     transition:  0.32s ease-in-out;
-    background-color: #121212;
-    
+    background-color: #121212;  
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px; 
   }
   nav.navbar.scrolled {
     padding: 0px 0;

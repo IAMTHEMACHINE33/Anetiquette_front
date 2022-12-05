@@ -155,7 +155,7 @@ const Navigate = () => {
             </Nav>
             <span className="navbar-text">
               <div className="navbar-icon">
-                <a className="text-light" href="">
+                <a className="text-light" href="/search">
                   <i class="fas fa-search"></i>
                 </a>
                 <a className="text-light" href="">
