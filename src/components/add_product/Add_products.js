@@ -5,6 +5,7 @@ import { ImageBackground } from "react-native-web";
 import Footer from "../common/Footer";
 
 import "../add_product/add_product.css";
+import toast, {Toaster} from 'react-hot-toast';
 
 import NavigateBlack from "../common/navblack";
 
@@ -45,8 +46,11 @@ const AddProduts = () => {
       .then((response) => {
         console.log(response);
         console.log(config);
+        toast.success("Product added");
+        setTimeout(function(){window.location.href("/");},2000);
       })
       .catch((e) => {
+        toast.error("Failed to add product");
         console.log(e);
       });
   };
@@ -157,6 +161,7 @@ const AddProduts = () => {
             Submit
           </button>
         </div>
+        <Toaster/>
         <Footer />
       </div>
     </>

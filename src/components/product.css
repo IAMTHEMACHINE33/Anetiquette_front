@@ -1,5 +1,5 @@
 .product_container{
-    margin-top: 10rem;
+    margin-top: 8rem;
 }
 
 
@@ -10,13 +10,14 @@
 .slider_container{
   width: 65vh !important;
     margin-left: 100px;
+    margin-bottom: 30px;
 }
 
 .productmultimg {
   float: left;
   width: 73%;
-  height: 45vh;
-  max-height: 50vh;
+  height: 55vh;
+  max-height: 60vh;
   display: block;
   object-fit: contain;
 }
@@ -28,8 +29,9 @@
    justify-content: flex-end !important; */
    position: absolute;
    left: 73%;
+   top:8%;
    width: 100px !important;
-   height: 50vh !important;
+   height: 45vh !important;
    background-color: white !important;
   
    overflow: scroll !important;

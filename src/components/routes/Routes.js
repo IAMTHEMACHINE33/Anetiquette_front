@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import React from "react";
 import Login from "../Login";
-import Dash from "../homepage/Dash";
 import Dash_admin from "../admin/Dash_admin";
 import Navbar from "../common/Navbar";
 import Product from "../Product";
@@ -23,28 +22,26 @@ const Url = () => {
   return (
     <>
       <Routes>
-        {/* <Routes basename={'dash'
-        }> */}
         <Route path="/search" element={<Search/>}></Route>
         <Route path="/searchres" element={<SearchResult/>}></Route>
         <Route path="/login" element={<Login />}></Route>
 
         <Route path="/" element={<Home />}></Route>
-        <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/cart" element={<PrivateRoute><Cart /></PrivateRoute>}></Route>
         <Route path="/nav" element={<Navbar />}></Route>
 
         <Route path="/product/:pid" element={<Product />}></Route>
 
         <Route path="/help" element={<Help />}></Route>
 
-        <Route path="/profile" element={<Profile />}></Route>
-        <Route path="/Edit_profile" element={<Edit_profile />}></Route>
+        <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>}></Route>
+        <Route path="/Edit_profile" element={<PrivateRoute><Edit_profile /></PrivateRoute>}></Route>
         <Route path="/Add_products" element={<PrivateRoute><Add_products /></PrivateRoute>}></Route>
         <Route path="/login_admin" element={<Login_admin />}></Route>
         <Route path="/admin/dashboard" element={<PrivateRoute><Dash_admin /></PrivateRoute>}></Route>
        
         <Route path="/about" element={<About />}></Route>
-        <Route path="/Order_form" element={<Order_form />}></Route>
+        <Route path="/Order_form" element={<PrivateRoute><Order_form /></PrivateRoute>}></Route>
         <Route path="/OrderDetails" element={<PrivateRoute><OrderDetails/></PrivateRoute>}></Route>
       </Routes>
     </>

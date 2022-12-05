@@ -1,5 +1,5 @@
 import "../sliders/slider.css"
-import { useEffect, useState } from "react";
+import React, {useEffect, useState } from "react";
 import Slider from "react-slick";
 import box from "../../../photo/box.jpg";
 import lens from "../../../photo/box.jpg";
@@ -7,6 +7,7 @@ import logo from "../../../photo/box.jpg";
 import monika from '../../../photo/box.jpg';
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import axios from "axios";
+
 
 const images = [box, lens, logo, monika];
 
@@ -27,6 +28,7 @@ function PurchaseSlide() {
       setDetails(response.data.data)
       console.log(details.length)
       const a = details.length
+     
     })
   },[])
 

@@ -57,9 +57,9 @@ const SearchResult = () => {
               aria-describedby="search-addon"
               onChange={(e)=>{setSearch(e.target.value)}}
             />
-            <span><button class="input-group-text border-0" id="search-addon" onClick={searchRe}>
+            <button class="input-group-text border-0" id="search-addon" onClick={searchRe}>
               <i class="fas fa-search"></i>
-            </button></span>
+            </button>
           </div>
           <button onClick={searchRe}>asd</button>
         </div>

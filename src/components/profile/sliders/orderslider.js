@@ -1,5 +1,5 @@
 import "../sliders/slider.css"
-import { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import box from "../../../photo/lens.jpg";
 import lens from "../../../photo/lens.jpg";

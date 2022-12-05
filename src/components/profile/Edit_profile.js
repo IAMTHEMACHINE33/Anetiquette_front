@@ -5,12 +5,16 @@ import "./edit-profile.css";
 import axios from "axios";
 import Footer from "../common/Footer";
 import NavigateBlack from "../common/navblack";
+import toast , {Toaster} from "react-hot-toast";
 
 const Edit_profile = () => {  
   const location = useLocation();
   const navigate = useNavigate();
 
-  const redirect = location.search ? location.search.split("=")[1] : "/profile";
+  const redirect = 
+    location.search ? location.search.split("=")[1] : "/profile"
+  
+
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -45,7 +49,9 @@ const Edit_profile = () => {
       .put("http://localhost:4000/api/v1/update", data, config)
       .then((result) => {
         console.log(result);
-        navigate(redirect);
+        toast.success("Profile Updated");
+      //  navigate(redirect);
+        setTimeout(function(){navigate(redirect);},1000);
       })
       .catch((e) => {
         console.log(e);
@@ -89,6 +95,7 @@ const Edit_profile = () => {
           </div>
       </div>
     </div>
+    <Toaster/>
     <Footer />
     </div>
     
