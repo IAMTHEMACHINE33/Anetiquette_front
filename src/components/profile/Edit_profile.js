@@ -68,21 +68,21 @@ const Edit_profile = () => {
     <div className="main">
     <div className="container-fluid p-3">
       <div className="container w-50 outbox rounded bg-white edit-profile">
-          <div className="row justify-content-center mt-5">
-              <div className="col-md-3 border-right">
+          <div className="row justify-content-evenly mt-5">
+              <div className="col-md-3 border-right mt-4">
                   <div className="d-flex flex-column align-items-center text-center p-3 py-5"><img className="rounded-circle mt-5" src="https://i.imgur.com/O1RmJXT.jpg" width="90"/><span className="font-weight-bold">{name}</span><span className="text-black-50">{email}</span></div>
               </div>
               <div className="col-md-5 border-right">
                   <div className="p-3 py-5">
                       <div className="d-flex justify-content-between align-items-center mb-3">
-                          <h6 className="text-right">Edit your profile</h6>
+                          <h5 className="text-right">Edit your profile</h5>
                       </div>
                       <div className="row mt-3">
-                          <div className="col-md-12"><label className="labels">Name</label><input type="text" className="form-control" placeholder={name} onChange={(e)=>setName(e.target.value)}/></div>
-                          <div className="col-md-12"><label className="labels">Email</label><input type="email" className="form-control" placeholder={email} onChange={(e)=>setEmail(e.target.value)}/></div>
+                          <div className="col-md-12"><label className="labels">Name</label><input type="text" className="form-control" placeholder={name} value={name} onChange={(e)=>setName(e.target.value)}/></div>
+                          <div className="col-md-12"><label className="labels">Email</label><input type="email" className="form-control" placeholder={email} value={email} onChange={(e)=>setEmail(e.target.value)}/></div>
                           <div className="col-md-12"><label className="labels">Password</label><input type="password" className="form-control" placeholder={password} onChange={(e)=>setPassword  (e.target.value)}/></div>
                       </div>
-                      <div className="mt-5 text-center"><button className="btn btn-primary profile-button" type="submit" onClick={userUpdate}>Save Profile</button></div>
+                      <div className="mt-4 text-center"><button className="btn btn-primary profile-button" type="submit" onClick={userUpdate}>Save Profile</button></div>
                   </div>
               </div>
           

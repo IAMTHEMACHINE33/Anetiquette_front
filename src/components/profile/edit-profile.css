@@ -16,14 +16,15 @@
     border-color: #BA68C8;
 }
 
+
 .profile-button {
-    background: #BA68C8;
+    background: #e38800!important;
     box-shadow: none;
-    border: none;
+    border: none!important;
 }
 
 .profile-button:hover {
-    background: #682773;
+    background: #fa8100!important;
 }
 
 .profile-button:focus {
