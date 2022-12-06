@@ -108,17 +108,17 @@ export default function Profile() {
                     <p className="lead fw-normal mb-1">About You</p>
                     <div className="p-4" style={{ backgroundColor: "#E9E2D8" }}>
                       <MDBCardText className="font-italic mb-1">
-                        Hello Wassup
+                        Hello {name}
                       </MDBCardText>
                       <Typical
                         loop={Infinity}
                         wrapper="b"
                         steps={[
-                          "I am *insert name*😳",
+                          "😳",
                           1000,
-                          "From Planet Nova😱",
+                          "😱",
                           1000,
-                          "Woka Woka😖 ",
+                          "😖 ",
                           1000,
                           "Quack Quack😡",
                           1000,

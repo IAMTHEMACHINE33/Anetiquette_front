@@ -8,6 +8,7 @@ import {
     register,
 } from "../actions/userActions"
 import {useAlert} from "react-alert"
+import Navlog from './common/navlogin';
 
 
 const Login=()=> {
@@ -67,6 +68,8 @@ const Login=()=> {
 
     const [signIn, toggle] = React.useState(true);
       return(
+        <>
+        <Navlog/>
           <style.Container>
               <style.SignUpContainer>
                   <style.Form encType='multipart/form-data' onSubmit={registerSubmit}>
@@ -150,6 +153,7 @@ const Login=()=> {
               </style.OverlayContainer>
 
           </style.Container>
+          </>
       )
     }
 
