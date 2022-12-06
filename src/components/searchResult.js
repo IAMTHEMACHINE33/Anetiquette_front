@@ -61,7 +61,6 @@ const SearchResult = () => {
               <i class="fas fa-search"></i>
             </button>
           </div>
-          <button onClick={searchRe}>asd</button>
         </div>
         <h4 className="mt-2 mb-3 p-2">
           Search results for " <span>dummy data</span> "
