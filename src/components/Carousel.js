@@ -25,7 +25,7 @@ const CarouselImg=()=>{
             <Carousel.Item>
                 <img
                 className="d-block w-100 h-10 caroimg"
-                src="https://scontent.fktm8-1.fna.fbcdn.net/v/t39.30808-6/316241089_1994754090729416_5423699763535147202_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_ohc=qWo9IkUbfoIAX9lfW0L&_nc_oc=AQnr08TSdP9ge0bRnaWD21Ogn2lNCPTj33JUVe2s0PSQ1TVoOLFKIYfC2dwJYqhgFMWtj-vaxbZgnKCi-BrLQ5bu&_nc_ht=scontent.fktm8-1.fna&oh=00_AfASGao0JrJuOM9KC1w4UxPDfzlPhUZqMexkPRHO5NS4nw&oe=6385E69A"
+                src="https://c0.wallpaperflare.com/preview/1024/195/816/black-bike-bicycle-product.jpg"
                 alt="Second slide"
                 />
 

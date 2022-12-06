@@ -8,6 +8,7 @@ import {
     register,
 } from "../actions/userActions"
 import {useAlert} from "react-alert"
+import Navlog from './common/navlogin';
 
 
 const Login=()=> {
@@ -32,7 +33,9 @@ const Login=()=> {
 
      const loginSubmit=(e)=>{
         e.preventDefault();
+        
         dispatch(login(loginEmail, loginPassword))
+        
      }
 
      const registerSubmit=(e)=>{
@@ -58,12 +61,15 @@ const Login=()=> {
             dispatch(clearErrors())
         }
         if(isAuthenticated){
+
             navigate(redirect)
         }
      }, [dispatch, error, navigate, isAuthenticated, redirect])
 
     const [signIn, toggle] = React.useState(true);
       return(
+        <>
+        <Navlog/>
           <style.Container>
               <style.SignUpContainer>
                   <style.Form encType='multipart/form-data' onSubmit={registerSubmit}>
@@ -147,6 +153,7 @@ const Login=()=> {
               </style.OverlayContainer>
 
           </style.Container>
+          </>
       )
     }
 

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./feature.css";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import axios from "axios";
+import {Link} from "react-router-dom";
+
 const Feature = () => {
   const [details, setDetails] = useState([]);
 
@@ -27,6 +29,7 @@ const Feature = () => {
             {details.map((option) => {
               return (
                 <a href="/product" className="text-black">
+                  <Link to={"/product/"+option._id}>
                   <div class="card m-2">
                     <img
                       src={"http://localhost:4000/" + option.image}
@@ -38,27 +41,12 @@ const Feature = () => {
                       <p class="card-text">${option.price}</p>
                     </div>
                   </div>
+                  </Link>
                 </a>
               );
             })}
 
-{details.map((option) => {
-              return (
-                <a href="/product" className="text-black">
-                  <div class="card m-2">
-                    <img
-                      src={"http://localhost:4000/" + option.image}
-                      class="card-img-top"
-                      alt="hot-sale.jpg"
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">{option.product_name}</h5>
-                      <p class="card-text">${option.price}</p>
-                    </div>
-                  </div>
-                </a>
-              );
-            })}
+
             
           </Masonry>
         </ResponsiveMasonry>

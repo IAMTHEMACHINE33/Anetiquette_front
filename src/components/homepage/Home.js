@@ -36,7 +36,7 @@ export const Home = () => {
                   better ones will give you the benefits too. But that's not
                   what the real answer is....
                 </p>
-                <button className="readmore" href="/about"> READ MORE</button>
+                <a href="/about"><button className="readmore" > READ MORE</button></a>
               </div>
             </div>
           </div>
