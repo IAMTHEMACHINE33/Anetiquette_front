@@ -159,7 +159,7 @@ const Navigate = () => {
                 <a className="text-light" href="/search">
                   <i class="fas fa-search"></i>
                 </a>
-                <a className="text-light" href="">
+                <a className="text-light" href="/carts">
                   <i class="fas fa-shopping-cart"></i>
                 </a>
                 <a>
