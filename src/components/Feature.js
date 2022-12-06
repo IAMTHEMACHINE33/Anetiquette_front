@@ -46,23 +46,7 @@ const Feature = () => {
               );
             })}
 
-{details.map((option) => {
-              return (
-                <a href="/product" className="text-black">
-                  <div class="card m-2">
-                    <img
-                      src={"http://localhost:4000/" + option.image}
-                      class="card-img-top"
-                      alt="hot-sale.jpg"
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">{option.product_name}</h5>
-                      <p class="card-text">${option.price}</p>
-                    </div>
-                  </div>
-                </a>
-              );
-            })}
+
             
           </Masonry>
         </ResponsiveMasonry>

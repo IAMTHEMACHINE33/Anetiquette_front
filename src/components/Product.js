@@ -59,7 +59,7 @@ const Product = () => {
         toast.success("Bid Successfully");
         setTimeout(function() {
           window.location.reload(1);
-        }, 5000);
+        }, 3000);
       })
       .catch((e) => {
         toast.error("Cannot bid (404)");
@@ -205,7 +205,7 @@ const Product = () => {
         </div>
       </div>
       <div className="container-fluid  mt-5">
-        {type == "auction" ? (
+        {type == "Auction" ? (
           <div className="row row-cols-1 row-cols-md-2">
             <div className="col mt-5 ">
               <div className="row row-cols-2 text-center">
