@@ -4,15 +4,33 @@ import { useState, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import logo from "../../photo/logo.png";
 import Logout from "../Logout";
+import './testbar.css';
 import "../common/search.css"
 
 const TestBar = () => {
     const { activeLink, setActiveLink } = useState("home");
-    const [scrolled, setScrolled] = useState(false);
+    const [show,setShow] = useState(false);
 
-  var navbar;
+    const controlNavbar = () =>{
+      if(window.scrollY > 20){
+        setShow(true);
+      }
+      else{
+        setShow(false);
+      }
+    }
+    useEffect(()=>{
+      window.addEventListener('scroll',controlNavbar)
+      return() =>{
+        window.removeEventListener('scroll',
+        controlNavbar)
+      }
+    }, []
+    );
+
+  var aboutbar;
   if (localStorage.getItem("token")) {
-    navbar = (
+    aboutbar = (
       <>
         <div className="dropdown-profile">
           <img
@@ -49,7 +67,7 @@ const TestBar = () => {
     );
   }
   else{
-    navbar=(
+    aboutbar=(
       <>
       <div className="dropdown-profile">
           <img
@@ -81,7 +99,8 @@ const TestBar = () => {
 
   return (
     <>
-      <Navbar className="testbar" style={{ backgroundColor: "transparent" }}>
+    <div className="testbar">
+      <Navbar className={`nav  ${show && 'nav_blue' }`} >
         <Container>
           <Navbar.Brand href="/">
             <a href="/">
@@ -167,7 +186,7 @@ const TestBar = () => {
                         open ? "active" : "inactive"
                       }`}
                     >
-                      <div>{navbar}</div>
+                      <div>{aboutbar}</div>
                     </div>
                   </div>
                 </a>
@@ -176,6 +195,7 @@ const TestBar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      </div>
     </>
   );
 };
