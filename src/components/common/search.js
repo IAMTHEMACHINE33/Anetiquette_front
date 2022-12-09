@@ -2,7 +2,7 @@ import React from "react";
 import "../common/search.css";
 import NavigateBlack from "./navblack";
 import Typical from "react-typical";
-import SearchResult from "../searchResult";
+import SearchResult from "../search/searchResult";
 
 const Search = () => {
 
