@@ -65,6 +65,8 @@
 	border-radius: 8px;
 }
 
+
+
 .cardbox .team-section .team-items .item .inner{
 	position: relative;
 	z-index: 11;
@@ -83,6 +85,12 @@
 }
 .cardbox .team-section .team-items .item:hover{
  transform: translateY(-10px);	
+}
+.team-items:hover .item{
+	filter: blur(2px);
+}
+.team-items .item:hover{
+	filter: blur(0px);
 }
 .cardbox .team-section .team-items .item .inner .info h5{
 	margin:0;

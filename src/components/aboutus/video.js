@@ -42,22 +42,33 @@ const Video = () => {
           <br />
         </div>
       </div>
-      <div className="subtopic">
+      <div
+        className="subtopic"
+        style={{
+          backgroundColor: "#8a8169",
+          opacity: 0.9,
+        }}
+      >
         <p
           className="lead fw-normal mb-1"
           style={{
-            backgroundColor: "#8a8169",
             "text-align": "center",
-            "font-size": "25px",
-            opacity: 0.9,
+            "font-size": "30px",
+            fontFamily: "Garamond",
           }}
         >
+          {" "}
+          <hr /> <hr />
           What is Antiquete?
-          <div
-            className="p-4"
-            style={{ backgroundColor: "#8a8169", "font-size": "15px","text-align": "start" }}
-          >
-            <MDBCardText className="font-italic mb-1">
+          <hr />
+          <div className="p-4">
+            <MDBCardText
+              className="font-italic mb-1"
+              style={{
+                "font-family": "Bookman Old Style",
+                "font-size": "17px",
+              }}
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               ornare lectus sit amet est. Duis at consectetur lorem donec massa
@@ -70,27 +81,29 @@ const Video = () => {
               orcieu lobortis elementum nibh. Magna fermentum iaculis eu non
               diam phasellus vestibulum lorem sed. Quam nulla porttitor massa id
               neque aliquam vestibulum.
-              <br/>
-              Pulvinar proin gravida hendrerit lectus.
-              Sagittis aliquam malesuada bibendum arcu vitae elementum curabitur
-              vitae nunc. Augue neque gravida in fermentum et sollicitudin ac
-              orci. Sagittis orci a scelerisque purus semper. Facilisis leo vel
-              fringilla est ullamcorper eget. Viverra accumsan in nisl nisi
-              scelerisque eu ultrices vitae auctor. Arcu cursus euismod quis
-              viverra. Massa id neque aliquam vestibulum morbi blandit cursus
-              risus at. Morbi non arcu risus quis varius. Tristique risus nec
-              feugiat in. In metus vulputate eu scelerisque felis. Amet
-              venenatis urna cursus eget nunc scelerisque. Habitant morbi
-              tristique senectus et netus et malesuada. Mauris pharetra et
-              ultrices neque ornare aenean euismod. Feugiat in ante metus dictum
-              at. Sed blandit libero volutpat sed cras. Venenatis cras sed felis
-              eget velit aliquet sagittis. Quis auctor elit sed vulputate mi sit
-              amet mauris. Tincidunt lobortis feugiat vivamus at augue eget arcu
-              dictum. Lectus arcu bibendum at varius vel pharetra vel. Aenean
-              vel elit scelerisque mauris. Tellus molestie nunc non blandit
-              massa enim nec dui nunc. Odio pellentesque diam volutpat commodo
-              sed egestas egestas. Volutpat est velit egestas dui id.
+              <br />
+              <br />
+              Pulvinar proin gravida hendrerit lectus. Sagittis aliquam
+              malesuada bibendum arcu vitae elementum curabitur vitae nunc.
+              Augue neque gravida in fermentum et sollicitudin ac orci. Sagittis
+              orci a scelerisque purus semper. Facilisis leo vel fringilla est
+              ullamcorper eget. Viverra accumsan in nisl nisi scelerisque eu
+              ultrices vitae auctor. Arcu cursus euismod quis viverra. Massa id
+              neque aliquam vestibulum morbi blandit cursus risus at. Morbi non
+              arcu risus quis varius. Tristique risus nec feugiat in. In metus
+              vulputate eu scelerisque felis. Amet venenatis urna cursus eget
+              nunc scelerisque. Habitant morbi tristique senectus et netus et
+              malesuada. Mauris pharetra et ultrices neque ornare aenean
+              euismod. Feugiat in ante metus dictum at. Sed blandit libero
+              volutpat sed cras. Venenatis cras sed felis eget velit aliquet
+              sagittis. Quis auctor elit sed vulputate mi sit amet mauris.
+              Tincidunt lobortis feugiat vivamus at augue eget arcu dictum.
+              Lectus arcu bibendum at varius vel pharetra vel. Aenean vel elit
+              scelerisque mauris. Tellus molestie nunc non blandit massa enim
+              nec dui nunc. Odio pellentesque diam volutpat commodo sed egestas
+              egestas. Volutpat est velit egestas dui id.
             </MDBCardText>
+            <hr />
           </div>
         </p>
       </div>
