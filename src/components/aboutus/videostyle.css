@@ -26,6 +26,11 @@
     font-size: 3rem;
     color: #fff;
 }
+.hero .subtopic{
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 1.6rem;
+}
 
 .hero p{
     font-size: 70px;

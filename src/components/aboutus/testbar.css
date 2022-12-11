@@ -2,7 +2,7 @@
     height: 100px;
     width: 100%;
     position: fixed;
-    background-color: rgb(69, 147, 139);
+    background-color: #8a8169;
     top: 0;
     transition-timing-function: ease-in;
     transition: 0.5s;
@@ -14,6 +14,43 @@
     cursor: pointer;
     
   }
+  /* Navbar.css */
+
+.testbar .basic-navbar-nav {
+  display: none;
+}
+
+.testbar .me-auto {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 1000px) {
+  .testbar .basic-navbar-nav {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  /* .testbar .testbar-toggler-icon {
+    display: block;
+    position: inline-block;
+    top: 10px;
+    right: 10px;
+  } */
+
+  .testbar .me-auto {
+    display: none;
+
+  }
+
+  .testbar .navbar-icon{
+    display: none;
+  }
+  
+}
+
 
 .testbar .nav_blue{
    position: fixed;

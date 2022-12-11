@@ -108,7 +108,7 @@ const TestBar = () => {
             </a>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
-            <span className="navbar-toggler-icon"></span>
+            <span className="testbar-toggler-icon"></span>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
