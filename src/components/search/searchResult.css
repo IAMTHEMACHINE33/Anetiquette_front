@@ -15,3 +15,23 @@
     color: white;
 }
 
+#search-addon{
+    background: orange;
+}
+
+#search{
+    color: white !important;
+    background: orange !important;
+}
+
+#dropdown-menu-align-end, #dropdown-menu-align-start{
+    color:white !important;
+    background: orange !important;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+}
+
+.dropdown-toggle::after {
+    display: none !important; 
+  }
