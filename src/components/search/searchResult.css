@@ -1,0 +1,37 @@
+.button-value{
+    margin-left: 0.5em;
+    background-color: transparent;
+    margin-top: 0.5em;
+    padding: 1em 2.2em;
+    color: orange;
+    border-radius: 3em;
+    border: 1px solid orange;
+    cursor: pointer;
+    
+}
+
+.button-value:hover{
+    background-color: orange;
+    color: white;
+}
+
+#search-addon{
+    background: orange;
+}
+
+#search{
+    color: white !important;
+    background: orange !important;
+}
+
+#dropdown-menu-align-end, #dropdown-menu-align-start{
+    color:white !important;
+    background: orange !important;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+}
+
+.dropdown-toggle::after {
+    display: none !important; 
+  }

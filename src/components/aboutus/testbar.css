@@ -1,0 +1,148 @@
+.testbar .nav{
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    background-color: #8a8169;
+    top: 0;
+    transition-timing-function: ease-in;
+    transition: 0.5s;
+    top: -100px;
+}
+  
+  .testbar #nav-profile{
+    color:white !important;
+    cursor: pointer;
+    
+  }
+  /* Navbar.css */
+
+.testbar .basic-navbar-nav {
+  display: none;
+}
+
+.testbar .me-auto {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 1000px) {
+  .testbar .basic-navbar-nav {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  /* .testbar .testbar-toggler-icon {
+    display: block;
+    position: inline-block;
+    top: 10px;
+    right: 10px;
+  } */
+
+  .testbar .me-auto {
+    display: none;
+
+  }
+
+  .testbar .navbar-icon{
+    display: none;
+  }
+  
+}
+
+
+.testbar .nav_blue{
+   position: fixed;
+   top: 0px;
+}
+.testbar .dropdown {
+    position: relative !important;
+    display: inline-block !important;
+  }
+  
+  .testbar .dropdown-content {
+    
+    flex-direction: column;
+    
+    left: -70px;
+    top: 40px;
+    position: absolute !important;
+    background-color: #f9f9f9;
+    min-width: 10em;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  
+  }
+
+  .testbar  .dropdown-content.active{
+    visibility: visible;
+  }
+  .testbar .dropdown-content.inactive{
+    visibility: hidden;
+  }
+  
+  
+  /* Links inside the dropdown */
+  .testbar .dropdown-content a {
+    text-align: center;
+    color: black;
+    
+    text-decoration: none;
+   
+  }
+  
+
+  .testbar.dropdown-content .dropdown-profile img{
+    position: absolute;
+    top: 1em;
+    left: 3em;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    align-items: center;
+  }
+
+  .testbar .dropdown-content h3{
+    margin-top: 70px;
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    padding: 20px 0;
+    font-weight: 500;
+    font-size: 18px;
+    color: orange;
+    line-height: 1em;
+  }
+
+  .testbar .dropdown-content ul li{
+    list-style:none;
+    padding:10px 0;
+    /* border-top : 1px solid rgba(128, 128, 128, 0.349); */
+    
+  }
+
+  .testbar .dropdown-content ul li span{
+    max-width: 50%;
+    margin-left: 10px !important;
+    opacity: 0.5;
+    transition: 0.5s;
+    
+  }
+
+  .testbar .dropdown-content ul li:hover i{
+    opacity: 1;
+  }
+
+  .testbar .dropdown-content ul li a{
+    display: flex;
+    text-decoration: none;
+    color: #555;
+  }
+
+  .testbar .dropdown-content ul li:hover a{
+    
+    color: orange;
+  }
+  
