@@ -1,0 +1,123 @@
+.faq-main body{margin-top:20px;}
+.faq-main .section_padding_130 {
+    padding-top: 200px;
+    padding-bottom: 150px;
+}
+.faq-main .faq_area {
+    position: static;
+    z-index: 1;
+    background-color: #f5f5ff;
+}
+
+.faq-main .faq-accordian {
+    position: relative;
+    z-index: 1;
+}
+.faq-main .faq-accordian .card {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1.5rem;
+}
+.faq-main .faq-accordian .card:last-child {
+    margin-bottom: 0;
+}
+.faq-main .faq-accordian .card .card-header {
+    background-color: #ffffff;
+    padding: 0;
+    border-bottom-color: #ebebeb;
+}
+.faq-main .faq-accordian .card .card-header h6 {
+    cursor: pointer;
+    padding: 1.75rem 2rem;
+    color: #3f43fd;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.faq-main .faq-accordian .card .card-header h6 span {
+    font-size: 1.5rem;
+}
+.faq-main .faq-accordian .card .card-header h6.collapsed {
+    color: #070a57;
+}
+.faq-main .faq-accordian .card .card-header h6.collapsed span {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+.faq-main .faq-accordian .card .card-body {
+    padding: 1.75rem 2rem;
+}
+.faq-main .faq-accordian .card .card-body p:last-child {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 575px) {
+    .support-button p {
+        font-size: 14px;
+    }
+}
+
+.faq-main .support-button i {
+    color: #3f43fd;
+    font-size: 1.25rem;
+}
+.faq-main .btn1{
+    margin: .5em;
+    padding: .7em 1.5em;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #d1c3a2;
+    background: #fff;
+    border: 2px solid rgba(112, 111, 211, 0);
+    border-radius: 15px;
+    outline: none;
+    transition: .3s ;
+    cursor: pointer;
+}
+.faq-main .btn1:focus{
+    color: #706fd3;
+    border: 2px solid rgba(112, 111, 211, 1);
+    box-shadow: 0px 0px 0px 1px rgba(112, 111, 211, 1);
+    animation: anim-shadow .3s forwards;
+}
+@keyframes anim-shadow {
+    100% {
+        box-shadow: 0px 0px 50px 20px rgba(112, 111, 211, 0);
+    }
+    
+}
+@media only screen and (max-width: 575px) {
+    .faq-main .support-button i {
+        font-size: 1rem;
+    }
+}
+
+.faq-main .support-button a {
+    text-transform: capitalize;
+    color: #2ecc71;
+}
+.faq-main .modal-header {
+    background: #F7941E;
+    color: #fff;
+}
+.faq-main .modal{
+    padding: 10%;
+}
+
+.faq-main .required:after {
+    content: "*";
+    color: red;
+}
+@media only screen and (max-width: 575px) {
+    .faq-main .support-button a {
+        font-size: 13px;
+    }
+}

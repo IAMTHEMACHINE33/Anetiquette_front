@@ -4,7 +4,6 @@ import Login from "../Login";
 import Dash_admin from "../admin/Dash_admin";
 import Navbar from "../common/Navbar";
 import Product from "../Product";
-import Help from "../Help";
 import Profile from "../profile/profile";
 import Edit_profile from "../profile/Edit_profile";
 import Login_admin from "../admin/Login_admin";
@@ -17,6 +16,7 @@ import Add_products from "../add_product/Add_products";
 import Cart from "../cart/Cart";
 import Search from "../common/search";
 import SearchResult from "../search/searchResult";
+import Faq from "../FAQ/faq";
 
 const Url = () => {
   return (
@@ -32,7 +32,7 @@ const Url = () => {
 
         <Route path="/product/:pid" element={<Product />}></Route>
 
-        <Route path="/help" element={<Help />}></Route>
+        <Route path="/help" element={<Faq/>}></Route>
 
         <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>}></Route>
         <Route path="/Edit_profile" element={<PrivateRoute><Edit_profile /></PrivateRoute>}></Route>
