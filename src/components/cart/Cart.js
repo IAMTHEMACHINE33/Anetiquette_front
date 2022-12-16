@@ -4,8 +4,30 @@ import "../cart/cart.css";
 
 import NavigateBlack from "../common/navblack";
 import Footer from "../common/Footer";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 
 const Cart = () => {
+
+  const [details, setDetails]=useState([]);
+
+  const config={
+    headers:{
+      Authorization:"Bearer "+localStorage.getItem("token")
+    }
+  }
+  useEffect(()=>{
+    axios.get("http://localhost:4000/cart/show",config)
+    .then((response)=>{
+      console.log(response.data.data.products)
+      setDetails(response.data.data.products)
+    })
+    .catch((e)=>{
+      console.log(e)
+    })
+  },[])
+
   return (
     <>
       <NavigateBlack />
@@ -17,46 +39,51 @@ const Cart = () => {
                 Cart items
               </h3>
               <hr class="my-2"></hr>
-              <div class="row">
-                <div id="ml" class="col-md-3 mb-2">
-                  <img
-                    src="https://bridportantiques.co.uk/wp-content/uploads/2021/08/Slide2.jpg"
-                    class="w-100"
-                    alt="picture"
-                  ></img>
-                </div>
-                <div class="col-md-6 mb-2">
-                  <p>
-                    <strong>Name</strong>
-                  </p>
-                  <p>
-                    This is product name where name and description are given
-                  </p>
-                  <p>Category: </p>
-                  <button
-                    type="button"
-                    class="btn btn-primary btn-sm me-1 mb-2"
-                    data-mdb-toggle="tooltip"
-                    title="Remove item"
-                  >
-                    <i class="fas fa-trash"></i>
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-danger btn-sm mb-2"
-                    data-mdb-toggle="tooltip"
-                    title="Move to the wish list"
-                  >
-                    <i class="fas fa-heart"></i>
-                  </button>
-                </div>
-                <div id="mll" class="col-md-2 mb-2">
-                  <p>
-                    <strong>Price</strong>
-                  </p>
-                  <p>Rs.18</p>
-                </div>
-              </div>
+              {details.map((option)=>{
+                return(
+                  <div class="row">
+                    <div id="ml" class="col-md-3 mb-2">
+                      <img
+                        src="https://bridportantiques.co.uk/wp-content/uploads/2021/08/Slide2.jpg"
+                        class="w-100"
+                        alt="picture"
+                      ></img>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                      <p>
+                        <strong>{option.added_product.product_name}</strong>
+                      </p>
+                      <p>
+                        {option.added_product.description}
+                      </p>
+                      <p>Category: {option.added_product.category}</p>
+                      <button
+                        type="button"
+                        class="btn btn-primary btn-sm me-1 mb-2"
+                        data-mdb-toggle="tooltip"
+                        title="Remove item"
+                      >
+                        <i class="fas fa-trash"></i>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-danger btn-sm mb-2"
+                        data-mdb-toggle="tooltip"
+                        title="Move to the wish list"
+                      >
+                        <i class="fas fa-heart"></i>
+                      </button>
+                    </div>
+                    <div id="mll" class="col-md-2 mb-2">
+                      <p>
+                        <strong>Price</strong>
+                      </p>
+                      <p>Rs. {option.added_product.price}</p>
+                    </div>
+                  </div>
+                );
+              })}
+              
               <hr class="my-2"></hr>
               <div class="row">
                 <div id="ml" class="col-md-3 mb-2">
