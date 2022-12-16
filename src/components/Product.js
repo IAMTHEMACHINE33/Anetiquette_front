@@ -34,6 +34,20 @@ const Product = () => {
       Authorization: "Bearer " + localStorage.getItem("token"),
     },
   };
+  
+  const addToCart = (e)=>{
+    const add = {
+      added_product: pid
+    }
+    axios.post("http://localhost:4000/cart/add",add,config)
+    .then((response)=>{
+      console.log(response)
+    })
+    .catch((e)=>{
+      console.log(e)
+    })
+  }
+
   const bidding = (e) => {
     const money = {
       bid_price: bid,
@@ -271,6 +285,13 @@ const Product = () => {
                 onClick={bought}
               >
                 Purchase
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-success"
+                onClick={addToCart}
+              >
+                Add
               </button>
             </div>
           </div>
