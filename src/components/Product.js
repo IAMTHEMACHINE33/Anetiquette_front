@@ -281,6 +281,7 @@ const Product = () => {
             <div className="col container-fluid d-flex justify-content-center">
               <button
                 type="button"
+                name="purchase"
                 class="btn btn-outline-success"
                 onClick={bought}
               >
@@ -288,6 +289,7 @@ const Product = () => {
               </button>
               <button
                 type="button"
+                name="addtocart"
                 class="btn btn-outline-success"
                 onClick={addToCart}
               >
