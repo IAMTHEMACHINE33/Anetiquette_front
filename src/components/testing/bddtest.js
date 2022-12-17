@@ -83,6 +83,7 @@ const puppeteer = require('puppeteer');
     else 
     throw new Error('4: Add To Cart Fail')
 
+  browser.close()
 
 
 })();
