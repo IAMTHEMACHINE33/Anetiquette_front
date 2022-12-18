@@ -2,8 +2,106 @@ import React from "react";
 import Footer from "../common/Footer";
 import NavigateBlack from "../common/navblack";
 import "./faq.css";
+import { Link } from "react-router-dom";
 
-const Faq=()=>{
+const Faq = () => {
+  var complain;
+  if (localStorage.getItem("token")) {
+    complain = (
+      <>
+        <div className="container mt-5">
+          <button
+            type="button"
+            className="btn1 btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#myModal"
+          >
+            Any Problems?
+          </button>
+
+          <div
+            className="modal"
+            id="myModal"
+            role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog" role="document">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="exampleModalLabel">
+                    Contact Us
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div className="modal-body">
+                  <form>
+                    <div className="mb-3">
+                      <label className="form-label required">Name</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="fullName"
+                        required
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label className="form-label required">Email</label>
+                      <input
+                        type="email"
+                        className="form-control"
+                        name="email"
+                        required
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label className="form-label required">
+                        Type your message here
+                      </label>
+                      <textarea
+                        className="form-control"
+                        name="message"
+                        required
+                      ></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div className="modal-footer">
+                  <button type="submit" className="btn btn-primary">
+                    Submit
+                  </button>
+                  <button
+                    type="submit"
+                    className="btn btn-danger"
+                    data-bs-dismiss="modal"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  } else {
+    complain = (
+      <>
+        <div className="container mt-5">
+          <Link to="/login">
+            <button type="button" className="btn1 btn-primary">Login for feedback</button>
+          </Link>
+        </div>
+      </>
+    );
+  }
   return (
     <>
       <NavigateBlack />
@@ -53,7 +151,7 @@ const Faq=()=>{
                         aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        Why are you gay?
+                        Question1?
                         <span class="lni-chevron-up"></span>
                       </h6>
                     </div>
@@ -93,7 +191,7 @@ const Faq=()=>{
                         aria-expanded="true"
                         aria-controls="collapseTwo"
                       >
-                        You are gay?
+                        Question2?
                         <span class="lni-chevron-up"></span>
                       </h6>
                     </div>
@@ -166,91 +264,7 @@ const Faq=()=>{
                     animationName: "fadeInUp",
                   }}
                 ></div>
-                <div className="container mt-5">
-                  <button
-                    type="button"
-                    className="btn1 btn-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#myModal"
-                  >
-                    Any Problems?
-                  </button>
-
-                  <div
-                    className="modal"
-                    id="myModal"
-                    role="dialog"
-                    aria-labelledby="exampleModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div className="modal-dialog" role="document">
-                      <div className="modal-content">
-                        <div className="modal-header">
-                          <h5 className="modal-title" id="exampleModalLabel">
-                            Contact Us
-                          </h5>
-                          <button
-                            type="button"
-                            class="close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          >
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div className="modal-body">
-                          <form>
-                            <div className="mb-3">
-                              <label className="form-label required">
-                                Name
-                              </label>
-                              <input
-                                type="text"
-                                className="form-control"
-                                name="fullName"
-                                required
-                              />
-                            </div>
-                            <div className="mb-3">
-                              <label className="form-label required">
-                                Email
-                              </label>
-                              <input
-                                type="email"
-                                className="form-control"
-                                name="email"
-                                required
-                              />
-                            </div>
-                            <div className="mb-3">
-                              <label className="form-label required">
-                                Type your message here
-                              </label>
-                              <textarea
-                                className="form-control"
-                                name="message"
-                                required
-                              ></textarea>
-                            </div>
-                          </form>
-                        </div>
-                        <div className="modal-footer">
-                          <button type="submit" className="btn btn-primary">
-                            Submit
-                          </button>
-                          <button
-                            type="submit"
-                            className="btn btn-danger"
-                            data-bs-dismiss="modal"
-                          >
-                            Cancel
-                          </button>
-                         
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <div>{complain}</div>
               </div>
             </div>
           </div>
