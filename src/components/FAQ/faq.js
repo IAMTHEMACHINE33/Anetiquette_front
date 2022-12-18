@@ -78,24 +78,7 @@ const Faq = () => {
                 </div>
                 <div className="modal-body">
                   <form>
-                    <div className="mb-3">
-                      <label className="form-label required">Name</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        name="fullName"
-                        required
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <label className="form-label required">Email</label>
-                      <input
-                        type="email"
-                        className="form-control"
-                        name="email"
-                        required
-                      />
-                    </div>
+
                     <div className="mb-3">
                       <label className="form-label required">
                         Type your message here
