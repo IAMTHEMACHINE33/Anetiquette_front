@@ -17,6 +17,7 @@ const AddProduts = () => {
   const [type, setType] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
+  const [time, setTime] = useState("");
   const [details, setDetails] = useState([]);
 
   const config = {
@@ -41,6 +42,7 @@ const AddProduts = () => {
     data.append("description", description);
     data.append("category", category);
     data.append("type",type);
+    data.append("last_time",time);
     data.append("product_img", image);
     axios
       .post("http://localhost:4000/product/add", data, config)
@@ -167,9 +169,9 @@ const AddProduts = () => {
                 name="Auction"
                 style={{visibility:"hidden"}}
                 class="form-control"
-                // onChange={(e) => {
-                //   setDate(e.target.value);
-                // }}
+                onChange={(e) => {
+                  setTime(e.target.value);
+                }}
 
               ></input>
             </div>

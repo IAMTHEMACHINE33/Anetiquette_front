@@ -2,9 +2,44 @@ import React from "react";
 import Footer from "../common/Footer";
 import NavigateBlack from "../common/navblack";
 import "./faq.css";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
+import axios from "axios";
+import { useState } from "react";
 
 const Faq = () => {
+  const [feed, setFeed]=useState('');
+
+  const config = {
+    headers:{
+      Authorization:"Bearer "+ localStorage.getItem("token")
+    }
+  }
+
+  const addFeed =(e)=>{
+    e.preventDefault();
+    const data ={
+      feed:feed
+    };
+    axios.post("http://localhost:4000/feedback/add",data,config)
+    .then((response)=>{
+      console.log(response)
+    })
+    .catch((e)=>{
+      console.log(e)
+    })
+  }
+
+  useEffect(()=>{
+    axios.get("http://localhost:4000/feedback/show",config)
+    .then((response)=>{
+      console.log(response.data.data)
+    })
+    .catch((e)=>{
+      console.log(e)
+    })
+  },[])
+
   var complain;
   if (localStorage.getItem("token")) {
     complain = (
@@ -69,12 +104,15 @@ const Faq = () => {
                         className="form-control"
                         name="message"
                         required
+                        onChange={(e)=>{
+                          setFeed(e.target.value);
+                        }}
                       ></textarea>
                     </div>
                   </form>
                 </div>
                 <div className="modal-footer">
-                  <button type="submit" className="btn btn-primary">
+                  <button type="submit" className="btn btn-primary" onClick={addFeed}>
                     Submit
                   </button>
                   <button
