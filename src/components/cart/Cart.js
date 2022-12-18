@@ -27,6 +27,9 @@ const Cart = () => {
       console.log(e)
     })
   },[])
+  var total = 0;
+  var totalwo = 0;
+  var percentage = 0;
 
   return (
     <>
@@ -175,10 +178,22 @@ const Cart = () => {
               </div>
               <div class="card-body">
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                  {/* <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                     Products
                     <span>Rs.53.98</span>
-                  </li>
+                  </li> */}
+                  {details.map((option)=>{
+                      totalwo = option.added_product.price + total; 
+                      percentage = total*0.13;
+                      total = totalwo + percentage;
+
+                    return(
+                      <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                      {option.added_product.product_name}
+                        <span>Rs. {option.added_product.price}</span>
+                      </li>
+                    );
+                  })}
                   <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                     Shipping
                     <span>Gratis</span>
@@ -191,7 +206,7 @@ const Cart = () => {
                       </strong>
                     </div>
                     <span>
-                      <strong>Rs.53.98</strong>
+                      <strong>Rs. {total}</strong>
                     </span>
                   </li>
                 </ul>
