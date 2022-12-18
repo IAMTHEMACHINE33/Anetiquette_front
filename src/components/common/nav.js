@@ -143,7 +143,7 @@ const Navigate = () => {
                 Help
               </Nav.Link>
               <Nav.Link
-                href="/contact"
+                href="/cat"
                 className={
                   activeLink === "contact"
                     ? "active navbar-link"

@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../cart/cart.css";
+import "./cart.css";
 
 import NavigateBlack from "../common/navblack";
 import Footer from "../common/Footer";
@@ -211,8 +211,8 @@ const Cart = () => {
                   </li>
                 </ul>
 
-                <button type="button" class="btn btn-danger btn-lg btn-block">
-                  Go to checkout
+                <button type="button" class="btn btn-danger btn-lg btn-block" >
+                  <a href="/Order_form" style={{color:"white"}}>Go to checkout</a>
                 </button>
               </div>
             </div>

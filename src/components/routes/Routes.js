@@ -17,11 +17,13 @@ import Cart from "../cart/Cart";
 import Search from "../common/search";
 import SearchResult from "../search/searchResult";
 import Faq from "../FAQ/faq";
+import Final from "../search/finaltest";
 
 const Url = () => {
   return (
     <>
       <Routes>
+      <Route path="/cat" element={<Final/>}></Route>
         <Route path="/searchres" element={<Search/>}></Route>
         <Route path="/search" element={<SearchResult/>}></Route>
         <Route path="/login" element={<Login />}></Route>

@@ -7,10 +7,13 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
+import { useMemo } from "react";
+import { element } from "prop-types";
 
 const SearchResult = () => {
   const [details, setDetails] = useState([]);
   const [category, setCategory] = useState([]);
+
   const [search, setSearch] = useState("");
   const [order, setOrder] = useState("asc");
   const [moneyhigh, setMoneyHigh] = useState("high");
@@ -71,9 +74,9 @@ const SearchResult = () => {
   
                                                             // category use effect
 
-  // const filter_category= (catItem) =>{
-  //   const result = details.filter((curDate)=>{
-  //     return curDate.details === catItem;
+  // const filter_category= (col) =>{
+  //   const result = category.filter((curDate)=>{
+  //     return curDate.category === catItem;
   //   });
   //   setDetails(result);
   // }
@@ -88,6 +91,61 @@ const SearchResult = () => {
         console.log(e);
       });
   }, []);
+
+  // function getFilteredCategory(){
+  //   if (!category){
+  //     return details;
+  //   }
+  //   return details.filter((option)=>option.category === category);
+  // }
+
+  // var filteredCategory = useMemo(getFilteredCategory, [category, details]);
+
+  //   const show_category = () =>{
+  //     return(
+  //       <>
+  //       {filteredCategory
+  //         .map((option) => {
+  //           return (
+  //             <a href="/product" className="text-black">
+  //               <Link to={"/product/" + option._id}>
+  //                 <div className="card m-2">
+  //                   <img
+  //                     src={"http://localhost:4000/" + option.image}
+  //                     className="card-img-top"
+  //                     alt="hot-sale.jpg"
+  //                   />
+  //                   <div className="card-body">
+  //                     <h6 className="card-title">{option.product_name}</h6>
+  //                     <p className="card-text">${option.price}</p>
+  //                   </div>
+  //                 </div>
+  //               </Link>
+  //             </a>
+  //           );
+          
+  //       })}
+  //       </>
+  //     )}
+  // const showFilteredCategory = (col) =>{
+  //   <>
+  //     {filteredCategory.map((element,index)=>(
+  //       <option {...element} key={index}/>
+  //     ))}
+  //   </>
+  // }
+
+  // function showFilteredCategory(){
+  //   console.log("working")
+  // }
+  const filterCategory = (col) =>{
+    const result = [...details].filter((curDate)=>{
+      return curDate.category === col
+    })
+    setDetails(result);
+    console.log(result);
+  }
+
 
   const sorting = (col) => {
     if (order === "asc") {
@@ -183,12 +241,21 @@ const SearchResult = () => {
                         title="Categories"
                         id="dropdown-menu-align-start"
                       >
+                        <Dropdown.Item onClick={()=>setDetails([])}>All</Dropdown.Item>
                         {category.map((option) => {
-                          return <Dropdown.Item 
-                          onClick={()=>moneyHigh("price")}
-                          // onClick={()=>filter_category("_id")}
-                          >{option.name}</Dropdown.Item>;
+                          return (
+                            <>
+                          
+                          <Dropdown.Item 
+                          // onClick={showFilteredCategory}
+                          onClick={()=>filterCategory("638310d12f766a6b5a2202dd")}
+                          >{option.name}</Dropdown.Item>
+                          
+                          </>
+                          );
+                          
                         })}
+                        
                       </DropdownButton>
                     </div>
                   </div>
