@@ -34,6 +34,7 @@ const Cart = () => {
   return (
     <>
       <NavigateBlack />
+      <div className="cart-container mt-5">
       <div class="cart-container-fluid py-5 ">
         <div class="container d-flex justify-content-center">
           <div class="row ">
@@ -60,28 +61,17 @@ const Cart = () => {
                         {option.added_product.description}
                       </p>
                       <p>Category: {option.added_product.category}</p>
-                      <button
-                        type="button"
-                        class="btn btn-primary btn-sm me-1 mb-2"
-                        data-mdb-toggle="tooltip"
-                        title="Remove item"
-                      >
-                        <i class="fas fa-trash"></i>
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-danger btn-sm mb-2"
-                        data-mdb-toggle="tooltip"
-                        title="Move to the wish list"
-                      >
-                        <i class="fas fa-heart"></i>
-                      </button>
                     </div>
                     <div id="mll" class="col-md-2 mb-2">
                       <p>
                         <strong>Price</strong>
                       </p>
                       <p>Rs. {option.added_product.price}</p>
+                    </div>
+                    <div class="col-1 mt-5 m-4">
+                      <button type="button" class="btn btn-danger">
+                        <i class="fa fa-times"></i>
+                      </button>
                     </div>
                   </div>
                 );
@@ -104,7 +94,7 @@ const Cart = () => {
                     This is product name where name and description are given
                   </p>
                   <p>Category: </p>
-                  <button
+                  {/* <button
                     type="button"
                     class="btn btn-primary btn-sm me-1 mb-2"
                     data-mdb-toggle="tooltip"
@@ -119,13 +109,20 @@ const Cart = () => {
                     title="Move to the wish list"
                   >
                     <i class="fas fa-heart"></i>
-                  </button>
+                  </button> */}
+
                 </div>
-                <div id="mll" class="col-md-2 mb-2  ">
+                <div id="mll" class="col-md-1 mb-2 ">
                   <p>
                     <strong>Price</strong>
                   </p>
                   <p>Rs.18</p>
+                </div>
+
+                <div class="col-1 mt-5 m-4">
+                <button type="button" class="btn btn-danger">
+                  <i class="fa fa-times"></i>
+                </button>
                 </div>
               </div>
             </div>
@@ -220,6 +217,9 @@ const Cart = () => {
         </div>
       </div>
       <Footer />
+
+      </div>
+     
     </>
   );
 };
