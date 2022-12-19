@@ -239,6 +239,7 @@ const Product = () => {
                 <form>
                   <input
                     type="text"
+                    name="bidinput"
                     height="120px"
                     className="bidtxt"
                     placeholder="Enter bid amount"
@@ -249,6 +250,7 @@ const Product = () => {
                   <span>
                     <button
                       type="button"
+                      name="bidbutton"
                       className="bidbtn mx-3"
                       onClick={bidding}
                     >

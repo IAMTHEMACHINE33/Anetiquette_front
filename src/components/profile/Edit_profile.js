@@ -84,9 +84,9 @@ const Edit_profile = () => {
                           <h5 className="text-right">Edit your profile</h5>
                       </div>
                       <div className="row mt-3">
-                          <div className="col-md-12"><label className="labels">Name</label><input type="text" name="name" className="form-control" placeholder={name} value={name} onChange={(e)=>setName(e.target.value)}/></div>
-                          <div className="col-md-12"><label className="labels">Email</label><input type="email" name="email" className="form-control" placeholder={email} value={email} onChange={(e)=>setEmail(e.target.value)}/></div>
-                          <div className="col-md-12"><label className="labels">Password</label><input type="password" name="password" className="form-control" placeholder={password} onChange={(e)=>setPassword  (e.target.value)}/></div>
+                          <div className="col-md-12"><label className="labels">Name</label><input type="text" id="name" name="name" className="form-control" placeholder={name} value={name} onChange={(e)=>setName(e.target.value)}/></div>
+                          <div className="col-md-12"><label className="labels">Email</label><input type="email" id="email" name="email" className="form-control" placeholder={email} value={email} onChange={(e)=>setEmail(e.target.value)}/></div>
+                          <div className="col-md-12"><label className="labels">Password</label><input type="password" id="password" name="password" className="form-control" placeholder={password} onChange={(e)=>setPassword  (e.target.value)}/></div>
                       </div>
                       <div className="mt-4 text-center"><button className="btn btn-primary profile-button" type="submit" onClick={userUpdate}>Save Profile</button></div>
                   </div>

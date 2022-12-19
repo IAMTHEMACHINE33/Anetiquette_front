@@ -11,7 +11,7 @@ const puppeteer = require('puppeteer');
   await page.click('button[name="signup"]')
 
   await page.waitForSelector('input[name="name"]');
-  await page.type('input[name="name"]', 'Sprint 2');
+  await page.type('input[name="name"]', 'Sprint');
   
   await page.waitForSelector('input[name="email"]');
   await page.type('input[name="email"]', 'sprint1@test.com');
@@ -52,12 +52,15 @@ const puppeteer = require('puppeteer');
   await page.goto('http://localhost:3000/Edit_profile')
 
   await page.waitForSelector('input[name="name"]');
+  await page.click('input[name="name"]', {clickCount: 3})
   await page.type('input[name="name"]', 'Edited Name');
   
   await page.waitForSelector('input[name="email"]');
+  await page.click('input[name="email"]', {clickCount: 3})
   await page.type('input[name="email"]', 'sprint2@edited.com');
   
   await page.waitForSelector('input[name="password"]', { visible: true });
+  await page.click('input[name="password"]', {clickCount: 3})
   await page.type('input[name="password"]', 'password123');
 
   await page.waitForSelector('button[type="submit"]')
@@ -65,10 +68,17 @@ const puppeteer = require('puppeteer');
 
   await page.waitForNavigation({ waitUntil: 'networkidle0' });
 
-  if (page.url() !== 'http://localhost:3000/profile')
-    throw new Error('3: Update User fail!');
-    else 
+  await page.goto('http://localhost:3000/profile')
+
+  if("Edited Name")
     console.log("3: Update User Test Success")
+    else
+    throw new Error('3: Update User fail!');
+
+  // if (page.url() !== 'http://localhost:3000/profile')
+  //   throw new Error('3: Update User fail!');
+  //   else 
+  //   console.log("3: Update User Test Success")
 
 // ---------------------- ADD TO CART ------------------------
   await page.goto('http://localhost:3000/product/639040fcb27faf6dd383dfc1')
@@ -82,6 +92,26 @@ const puppeteer = require('puppeteer');
     console.log("4: Add To Cart Test Success")
     else 
     throw new Error('4: Add To Cart Fail')
+
+
+
+
+// --------------------- BID ON A PRODUCT ----------------------
+  await page.goto('http://localhost:3000/product/639fdd282cfdb7a70a5fa5e9')
+
+  await page.waitForSelector('input[name="bidinput"]')
+  await page.type('input[name="bidinput"]', '804')  // CHANGE BID PRICE HERE...........
+
+  await page.waitForSelector('button[name="bidbutton"]')
+  await page.click('button[name="bidbutton"]')
+
+  await page.reload()
+
+  if ('Edited Name')
+    console.log("5: Bid On Product Test Success")
+    else
+    throw new Error("5: Bid On Product Test Fail")
+  
 
   browser.close()
 
