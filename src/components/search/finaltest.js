@@ -63,7 +63,6 @@ export default function Final() {
     <>
     <NavigateBlack/>
     <div className="mt-5 p-3">
-      <h1 className="mt-5 text-center">f**k you</h1>
       <div className="container-fluid">
         <div className="row">
           <div className="filter-container">

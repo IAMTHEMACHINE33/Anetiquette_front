@@ -97,7 +97,7 @@ const puppeteer = require('puppeteer');
 
 
 // --------------------- BID ON A PRODUCT ----------------------
-  await page.goto('http://localhost:3000/product/639fdd282cfdb7a70a5fa5e9')
+  await page.goto('http://localhost:3000/product/63a04b2ccda0151ffe58c10c')
 
   await page.waitForSelector('input[name="bidinput"]')
   await page.type('input[name="bidinput"]', '804')  // CHANGE BID PRICE HERE...........
