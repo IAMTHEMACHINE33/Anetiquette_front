@@ -4,7 +4,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import axios from "axios";
 import {Link} from "react-router-dom";
 
-const Feature = () => {
+const   Feature = () => {
   const [details, setDetails] = useState([]);
 
   useEffect(() => {

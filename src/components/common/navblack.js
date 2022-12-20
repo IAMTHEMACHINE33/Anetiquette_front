@@ -124,7 +124,7 @@ const NavigateBlack = () => {
                 About Us
               </Nav.Link>
               <Nav.Link
-                href="#help"
+                href="/help"
                 className={
                   activeLink === "help" ? "active navbar-link" : "navbar-link"
                 }
@@ -133,7 +133,7 @@ const NavigateBlack = () => {
                 Help
               </Nav.Link>
               <Nav.Link
-                href="#contact"
+                href="/cat"
                 className={
                   activeLink === "contact"
                     ? "active navbar-link"

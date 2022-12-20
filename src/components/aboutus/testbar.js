@@ -122,7 +122,7 @@ const TestBar = () => {
                 Home
               </Nav.Link>
               <Nav.Link
-                href="#category"
+                href="/category"
                 className={
                   activeLink === "category"
                     ? "active navbar-link"
@@ -142,7 +142,7 @@ const TestBar = () => {
                 About Us
               </Nav.Link>
               <Nav.Link
-                href="#help"
+                href="/help"
                 className={
                   activeLink === "help" ? "active navbar-link" : "navbar-link"
                 }
@@ -151,7 +151,7 @@ const TestBar = () => {
                 Help
               </Nav.Link>
               <Nav.Link
-                href="#contact"
+                href="/contact"
                 className={
                   activeLink === "contact"
                     ? "active navbar-link"

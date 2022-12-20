@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Navbar } from "react-bootstrap";
 import { ImageBackground } from "react-native-web";
 import Footer from "../common/Footer";
+import $ from 'jquery';
 
 import "../add_product/add_product.css";
 import toast, {Toaster} from 'react-hot-toast';
@@ -16,6 +17,7 @@ const AddProduts = () => {
   const [type, setType] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
+  const [time, setTime] = useState("");
   const [details, setDetails] = useState([]);
 
   const config = {
@@ -40,6 +42,7 @@ const AddProduts = () => {
     data.append("description", description);
     data.append("category", category);
     data.append("type",type);
+    data.append("last_time",time);
     data.append("product_img", image);
     axios
       .post("http://localhost:4000/product/add", data, config)
@@ -73,7 +76,7 @@ const AddProduts = () => {
           </h2>
         </div>
         <div id="pcard" className="card container col-4 ">
-          <form>
+          <form name="myform">
             <div class="form-group mt-2  p-2">
               <label for="FormControlInput1">Product name</label>
               <input
@@ -112,21 +115,9 @@ const AddProduts = () => {
                 })}
               </select>
             </div>
+            
 
-            <div class="form-group mt-2  p-2">
-              <label for="FormControlSelect1">type</label>
-              <select
-                class="form-control"
-                id="FormControlSelect1"
-                onChange={(e) => {
-                  setType(e.target.value);
-                }}
-              >
-                <option>Select Type</option>
-                <option value="Auction">Auction</option>
-                <option value="Purchase">Purchase</option>
-              </select>
-            </div>
+            
 
             <div class="form-group mt-2  p-2">
               <label for="FormControlTextarea1 ">Description</label>
@@ -152,10 +143,43 @@ const AddProduts = () => {
                 }}
               ></input>
             </div>
+
+            <div class="form-group mt-2  p-2">
+              <label for="FormControlSelect1">Type</label>
+              
+              <select
+                class="form-control"
+                id="FormControlSelect1"
+                onChange={(e) => {
+                  setType(e.target.value);
+                  if(e.target.value=='Auction'){
+                    document.myform['Auction'].style.visibility='visible'
+                  }
+                  else{
+                    document.myform['Auction'].style.visibility='hidden'
+                  }
+                }}
+              >
+                <option>Select Type</option>
+                <option value="Auction">Auction - Select Time Limit</option>
+                <option value="Purchase">Purchase</option>
+              </select>
+              <input
+                type="datetime-local"
+                name="Auction"
+                style={{visibility:"hidden"}}
+                class="form-control"
+                onChange={(e) => {
+                  setTime(e.target.value);
+                }}
+
+              ></input>
+            </div>
           </form>
+          
                 
           <button
-            className="btn btn-primary profile-button mb-3"
+            className="btn btn-primary profile-button mt-2 mb-3"
             onClick={productAdd}
           >
             Submit
@@ -167,5 +191,7 @@ const AddProduts = () => {
     </>
   );
 };
+
+
 
 export default AddProduts;
