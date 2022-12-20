@@ -6,10 +6,29 @@ import lens from "../../../photo/lens.jpg";
 import logo from "../../../photo/lens.jpg";
 import monika from '../../../photo/lens.jpg';
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import axios from "axios";
 
 const images = [box, lens, logo, monika];
 
 function OrderSlide() {
+  const [details, setDetails]=useState([]);
+
+  const config={
+    headers:{
+      Authorization:"Bearer "+localStorage.getItem("token")
+    }
+  }
+  useEffect(()=>{
+    axios.get("http://localhost:4000/product/sell_display",config)
+    .then(response=>{
+      console.log(response.data.data)
+      setDetails(response.data.data)
+      console.log(details.length)
+      const a = details.length
+     
+    })
+  },[])
+
   const NextArrow = ({ onClick }) => {
     return (
       <div className="arrow next" onClick={onClick}>
@@ -32,7 +51,7 @@ function OrderSlide() {
     infinite: true,
     lazyLoad: true,
     speed: 300,
-    slidesToShow: 3,
+    slidesToShow: 1,
     centerMode: true,
     centerPadding: 0,
     nextArrow: <NextArrow />,
@@ -43,11 +62,16 @@ function OrderSlide() {
   return (
     <div className="Slider"style={{ backgroundColor: '#E4DEDD' }}>
       <Slider {...settings}>
-        {images.map((img, idx) => (
+      {details.map((option, idx) => (
+          <div className={idx === imageIndex ? "slides activeSlide" : "slides"}>
+            <img src={'http://localhost:4000/' + option.image} alt={'http://localhost:4000/' + option.image} />
+          </div>
+        ))}
+        {/* {images.map((img, idx) => (
           <div className={idx === imageIndex ? "slides activeSlide" : "slides"}>
             <img src={img} alt={img} />
           </div>
-        ))}
+        ))} */}
       </Slider>
     </div>
   );

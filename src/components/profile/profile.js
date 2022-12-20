@@ -140,7 +140,7 @@ export default function Profile() {
                   <br />
                   <div className="d-flex justify-content-between align-items-center mb-4">
                     <MDBCardText className="lead fw-normal mb-0">
-                      Products Sold
+                      Products Selling
                     </MDBCardText>
                     <MDBCardText className="mb-0">
                       <a href="/OrderDetails" className="text-muted">
