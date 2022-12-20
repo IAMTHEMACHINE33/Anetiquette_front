@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import React from "react";
 import Login from "../Login";
-import Dash_admin from "../admin/Dash_admin";
+import Dash_admin from "../ADMIN/Dashboard/Dash_admin";
 import Navbar from "../common/Navbar";
 import Product from "../Product";
 import Profile from "../profile/profile";
 import Edit_profile from "../profile/Edit_profile";
-import Login_admin from "../admin/Login_admin";
+import Login_admin from "../ADMIN/Login_admin";
 import { Home } from "../homepage/Home";
 import Video from "../aboutus/video";
 import Order_form from "../order_form/Order_form";
