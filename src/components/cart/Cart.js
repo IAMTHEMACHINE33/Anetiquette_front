@@ -34,7 +34,7 @@ const Cart = () => {
   return (
     <>
       <NavigateBlack />
-      <div className="cart-container mt-5">
+      <div className="cart-container">
       <div class="cart-container-fluid py-5 ">
         <div class="container d-flex justify-content-center">
           <div class="row ">
@@ -68,10 +68,8 @@ const Cart = () => {
                       </p>
                       <p>Rs. {option.added_product.price}</p>
                     </div>
-                    <div class="col-1 mt-5 m-4">
-                      <button type="button" class="btn btn-danger">
-                        <i class="fa fa-times"></i>
-                      </button>
+                    <div class="col-md-1 mb-2">
+                    <button class="btn-close"></button>
                     </div>
                   </div>
                 );
@@ -110,20 +108,23 @@ const Cart = () => {
                   >
                     <i class="fas fa-heart"></i>
                   </button> */}
-
+                 
                 </div>
-                <div id="mll" class="col-md-1 mb-2 ">
+                <div id="mll" class="col-md-2 mb-2 ">
                   <p>
                     <strong>Price</strong>
                   </p>
                   <p>Rs.18</p>
                 </div>
 
-                <div class="col-1 mt-5 m-4">
-                <button type="button" class="btn btn-danger">
-                  <i class="fa fa-times"></i>
-                </button>
+                <div class="col-md-1 mb-2">
+                <button class="btn-close"></button>
                 </div>
+
+                  
+
+               
+                
               </div>
             </div>
             <div class="card py-3 col-md-11 mt-3">
@@ -142,27 +143,16 @@ const Cart = () => {
                 <img
                   class="me-2"
                   width="45px"
-                  src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
-                  alt="Visa"
+                  src="https://dao578ztqooau.cloudfront.net/static/img/logo1.png"
+                  alt="Khalti"
                 />
                 <img
                   class="me-2"
                   width="45px"
-                  src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
-                  alt="American Express"
+                  src="https://cdn-icons-png.flaticon.com/512/1554/1554401.png"
+                  alt="Cash on delivery"
                 />
-                <img
-                  class="me-2"
-                  width="45px"
-                  src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
-                  alt="Mastercard"
-                />
-                <img
-                  class="me-2"
-                  width="50px"
-                  src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
-                  alt="PayPal acceptance mark"
-                />
+                
               </div>
             </div>
           </div>
