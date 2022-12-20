@@ -29,6 +29,7 @@ const Cart = () => {
       setTimeout(function () {
         window.location.reload(1);
       }, 1000);
+      //asdasd
     })
     .catch((e)=>{
       console.log(e)
