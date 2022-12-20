@@ -179,7 +179,9 @@ const Product = () => {
             <h3 className="desc_head p-2">{details.product_name}</h3>
             <h4 className="desc_price p-2">${details.price}</h4>
             <br></br>
+            <p>{details.description}</p>
             <textarea readOnly className="container-fluid border-0">
+              
               Contrary to popular belief,Lorem Ipsum is not simply random text.
               It has roots in a piece of classical Latin literature from 45 BC,
               making it over 2000 years oit ld. Richard McClintock, a Latin
