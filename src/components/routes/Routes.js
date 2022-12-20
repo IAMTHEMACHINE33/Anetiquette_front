@@ -17,7 +17,7 @@ import Cart from "../cart/Cart";
 import Search from "../common/search";
 import SearchResult from "../search/searchResult";
 import Faq from "../FAQ/faq";
-import Final from "../search/finaltest";
+import Final from "../search/testing";
 
 const Url = () => {
   return (

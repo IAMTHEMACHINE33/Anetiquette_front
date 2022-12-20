@@ -1,0 +1,12 @@
+.categorybtn{
+    background: orange;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    
+}
+
+button{
+    display: flex;
+    border: 1px solid black;
+}

@@ -1,37 +1,54 @@
-.button-value{
-    margin-left: 0.5em;
-    background-color: transparent;
-    margin-top: 0.5em;
-    padding: 1em 2.2em;
-    color: orange;
-    border-radius: 3em;
-    border: 1px solid orange;
-    cursor: pointer;
-    
+#search-addon {
+  background: orange;
 }
 
-.button-value:hover{
-    background-color: orange;
-    color: white;
+#search {
+  color: white !important;
+  background: orange !important;
 }
 
-#search-addon{
-    background: orange;
-}
-
-#search{
-    color: white !important;
-    background: orange !important;
-}
-
-#dropdown-menu-align-end, #dropdown-menu-align-start{
-    color:white !important;
-    background: orange !important;
-    font-weight: bold;
-    border: none;
-    border-radius: 15px;
+#dropdown-menu-align-end,
+#dropdown-menu-align-start {
+  color: white !important;
+  background: orange !important;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
 }
 
 .dropdown-toggle::after {
-    display: none !important; 
-  }
+  display: none !important;
+}
+
+.filter_sort {
+  width: 20% !important;
+}
+
+.filter_category::-webkit-scrollbar {
+  width: 0;
+
+}
+
+.filter_category {
+  width: 80% !important;
+
+  line-height: 0px;
+  display: flex;
+  overflow-x: auto;
+}
+
+.categorybtn {
+  white-space: nowrap;
+  height: auto;
+  border: none;
+  border-radius: 25px;
+
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.quack{
+    width: 200px !important;
+    height: auto;
+    object-fit: cover;
+}
