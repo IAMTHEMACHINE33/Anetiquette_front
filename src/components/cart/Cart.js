@@ -17,6 +17,24 @@ const Cart = () => {
       Authorization:"Bearer "+localStorage.getItem("token")
     }
   }
+
+  const removeItem = (pid) =>{
+   
+    const data={
+      remove_product:pid
+    }
+    axios.put("http://localhost:4000/cart/remove",data,config)
+    .then((response)=>{
+      console.log(response)
+      setTimeout(function () {
+        window.location.reload(1);
+      }, 1000);
+    })
+    .catch((e)=>{
+      console.log(e)
+    })
+    
+  }
   useEffect(()=>{
     axios.get("http://localhost:4000/cart/show",config)
     .then((response)=>{
@@ -69,7 +87,7 @@ const Cart = () => {
                       <p>Rs. {option.added_product.price}</p>
                     </div>
                     <div class="col-md-1 mb-2">
-                    <button class="btn-close"></button>
+                    <button class="btn-close" onClick={()=>{removeItem(option.added_product._id)}}></button>
                     </div>
                   </div>
                 );
