@@ -39,3 +39,29 @@ html {
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
+
+
+.khalti-container {
+  width: 100;
+}
+
+
+.khalti-container .khalti {
+  width: 80px;
+  margin-left: 20px;
+  margin-top: 5px;
+
+}
+
+.Cash-container {
+  width: 100;
+}
+
+.Cash-container .Cash {
+  width: 60px;
+  margin-left: 20px;
+  margin-top: 5px;
+
+
+
+}
