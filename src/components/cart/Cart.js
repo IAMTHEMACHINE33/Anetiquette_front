@@ -94,57 +94,7 @@ const Cart = () => {
                 );
               })}
               
-              <hr class="my-2"></hr>
-              <div class="row">
-                <div id="ml" class="col-md-3 mb-2">
-                  <img
-                    src="https://bridportantiques.co.uk/wp-content/uploads/2021/08/Slide2.jpg"
-                    class="w-100"
-                    alt="picture"
-                  ></img>
-                </div>
-                <div class="col-md-6 mb-2">
-                  <p>
-                    <strong>Name</strong>
-                  </p>
-                  <p>
-                    This is product name where name and description are given
-                  </p>
-                  <p>Category: </p>
-                  {/* <button
-                    type="button"
-                    class="btn btn-primary btn-sm me-1 mb-2"
-                    data-mdb-toggle="tooltip"
-                    title="Remove item"
-                  >
-                    <i class="fas fa-trash"></i>
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-danger btn-sm mb-2"
-                    data-mdb-toggle="tooltip"
-                    title="Move to the wish list"
-                  >
-                    <i class="fas fa-heart"></i>
-                  </button> */}
-                 
-                </div>
-                <div id="mll" class="col-md-2 mb-2 ">
-                  <p>
-                    <strong>Price</strong>
-                  </p>
-                  <p>Rs.18</p>
-                </div>
-
-                <div class="col-md-1 mb-2">
-                <button class="btn-close"></button>
-                </div>
-
-                  
-
-               
-                
-              </div>
+              
             </div>
             <div class="card py-3 col-md-11 mt-3">
               <div class="card-body">
