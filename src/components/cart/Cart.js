@@ -47,8 +47,7 @@ const Cart = () => {
     })
   },[])
   var total = 0;
-  var totalwo = 0;
-  var percentage = 0;
+  var per = 0;
 
   return (
     <>
@@ -139,9 +138,9 @@ const Cart = () => {
                     <span>Rs.53.98</span>
                   </li> */}
                   {details.map((option)=>{
-                      totalwo = option.added_product.price + total; 
-                      percentage = total*0.13;
-                      total = totalwo + percentage;
+                      per= (option.added_product.price)*0.13
+                      total=total+(option.added_product.price)+per;
+                      per =0;
 
                     return(
                       <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
