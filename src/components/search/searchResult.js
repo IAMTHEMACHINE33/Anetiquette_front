@@ -78,9 +78,6 @@ const SearchResult = () => {
       });
   }, []);
 
-  
-
-  
   useEffect(() => {
     axios
       .get("http://localhost:4000/category/show")
@@ -147,8 +144,6 @@ const SearchResult = () => {
     }
   };
 
-  
-
   {
     /* ============================================================ Filter End ============================================================ */
   }
@@ -187,7 +182,6 @@ const SearchResult = () => {
         <>
           <div className="container-fluid">
             <div className="row  row-col-sm-1  row-col-md-2 row-col-lg-2 my-3">
-              
               <div className="col filter_sort">
                 <DropdownButton
                   align="end"
@@ -195,15 +189,15 @@ const SearchResult = () => {
                   id="dropdown-menu-align-end"
                 >
                   <Dropdown.Item onClick={() => sorting("product_name")}>
-                    A-Z
+                    Alphabetically
                   </Dropdown.Item>
                   <Dropdown.Divider />
 
                   <Dropdown.Item onClick={() => moneyHigh("price")}>
-                    Higher to Lower
+                   Price <i class="fas fa-chevron-up"></i>
                   </Dropdown.Item>
                   <Dropdown.Item onClick={() => moneyLow("price")}>
-                    Lower to Higher
+                  Price <i class="fas fa-chevron-down"></i>
                   </Dropdown.Item>
                 </DropdownButton>
               </div>
@@ -212,10 +206,9 @@ const SearchResult = () => {
                   className="categorybtn "
                   value=""
                   onClick={handleCategoryChange}
-                >All
-                  
+                >
+                  All
                 </button>
-               
 
                 {category.map((option) => {
                   return (
@@ -228,121 +221,8 @@ const SearchResult = () => {
                     </button>
                   );
                 })}
-                 <button
-                  className="categorybtn "
-                  value=""
-                  onClick={handleCategoryChange}
-                >
-                  All
-                </button>
-                <button
-                  className="categorybtn "
-                  value=""
-                  onClick={handleCategoryChange}
-                >
-                  All
-                </button>
-                <button
-                  className="categorybtn "
-                  value=""
-                  onClick={handleCategoryChange}
-                >
-                  All
-                </button>
-                <button
-                  className="categorybtn "
-                  value=""
-                  onClick={handleCategoryChange}
-                >
-                  All
-                </button>
-                <button
-                  className="categorybtn "
-                  value=""
-                  onClick={handleCategoryChange}
-                >
-                  All
-                </button>
-                <button
-                  className="categorybtn "
-                  value=""
-                  onClick={handleCategoryChange}
-                >
-                  All
-                </button>
-                <button
-                  className="categorybtn "
-                  value=""
-                  onClick={handleCategoryChange}
-                >
-                  All
-                </button>
-                <button
-                  className="categorybtn "
-                  value=""
-                  onClick={handleCategoryChange}
-                >
-                  All
-                </button>
-                <button
-                  className="categorybtn "
-                  value=""
-                  onClick={handleCategoryChange}
-                >
-                  All
-                </button>
-                <button
-                  className="categorybtn "
-                  value=""
-                  onClick={handleCategoryChange}
-                >
-                  All
-                </button>
-                <button
-                  className="categorybtn "
-                  value=""
-                  onClick={handleCategoryChange}
-                >
-                  All
-                </button>
-                <button
-                  className="categorybtn "
-                  value=""
-                  onClick={handleCategoryChange}
-                >
-                  All
-                </button>
-                <button
-                  className="categorybtn "
-                  value=""
-                  onClick={handleCategoryChange}
-                >
-                  All
-                </button>
-                <button
-                  className="categorybtn "
-                  value=""
-                  onClick={handleCategoryChange}
-                >
-                  All
-                </button>
-                <button
-                  className="categorybtn "
-                  value=""
-                  onClick={handleCategoryChange}
-                >
-                  All
-                </button>
-                <button
-                  className="categorybtn "
-                  value=""
-                  onClick={handleCategoryChange}
-                >
-                  All
-                </button>
               </div>
             </div>
-           
           </div>
         </>
 
@@ -381,22 +261,80 @@ const SearchResult = () => {
               })}
           </Masonry>
         </ResponsiveMasonry>
-        <hr></hr>
-        <div className="container p-3 results">
-          <div className="row">
-            <div className="col d-flex justify-content-end">
-            <img className="quack" src={errorimg}/>
-            
-            </div>
-           <div className="col text-center d-flex align-items-center">
-           <h6><span className="font-weight-bold">Oops!</span>  No more results were found</h6>
-           </div>
-       
+        
+        {filteredList
+          .filter((option) => {
+            return search.toLowerCase() === ""
+              ? option
+              : option.product_name.toLowerCase().includes(search);
+          })
+          .map((option) => {
+            {search !== option.product_name ? ( 
               
+                <ResponsiveMasonry
+                  columnsCountBreakPoints={{ 350: 2, 750: 3, 900: 4 }}
+                >
+                  <Masonry>
+                    <a href="/product" className="text-black">
+                      <Link to={"/product/" + option._id}>
+                        <div className="card m-2">
+                          <img
+                            src={"http://localhost:4000/" + option.image}
+                            className="card-img-top"
+                            alt="hot-sale.jpg"
+                          />
+                          <div className="card-body">
+                            <h6 className="card-title">{option.product_name}</h6>
+                            <p className="card-text">${option.price}</p>
+                          </div>
+                        </div>
+                      </Link>
+                    </a>
+                  </Masonry>
+                </ResponsiveMasonry>
+              ):(
+<>
+                <hr></hr>
+                <div className="container p-3 results">
+                  <div className="row">
+                    <div className="col d-flex justify-content-end">
+                      <img className="quack" src={errorimg} />
+                    </div>
+                    <div className="col text-center d-flex align-items-center">
+                      <h5>
+                        <span className="font-weight-bold">Oops!</span> No
+                        more results were found
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <hr></hr>
+              </>
+              )
+              
+            }
+           
+           
+          })}
+          
+
+        <>
+          {/* <hr></hr>
+          <div className="container p-3 results">
+            <div className="row">
+              <div className="col d-flex justify-content-end">
+                <img className="quack" src={errorimg} />
+              </div>
+              <div className="col text-center d-flex align-items-center">
+                <h5>
+                  <span className="font-weight-bold">Oops!</span> No more
+                  results were found
+                </h5>
+              </div>
+            </div>
           </div>
-             
-        </div>
-        <hr></hr>
+          <hr></hr> */}
+        </>
       </div>
       <Footer />
     </>

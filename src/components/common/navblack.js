@@ -16,33 +16,49 @@ const NavigateBlack = () => {
     navbar = (
       <>
         <div className="dropdown-profile">
+          <div className="hex">
           <img
             src="https://st4.depositphotos.com/15934180/22428/v/450/depositphotos_224288844-stock-illustration-man-with-cowboy-hat-silhouette.jpg"
             alt="profile.jpg"
           ></img>
-        </div>
+          </div>
+          
+        
         <h3>Username</h3>
-        <ul>
+        </div>
+        <hr></hr>
+        <ul className="dropdown_ul">
           <li>
             <a href="/profile">
+              <div>
               <i class="far fa-user-circle"></i>
               <span>Profile</span>
+              </div>
+             
             </a>
           </li>
           <li>
             <a href="/Add_products">
-              <span>Add product</span>
+              <div>
+              <i class="fas fa-plus"></i>
+              <span> Product </span>
+
+              </div>
             </a>
           </li>
           <li>
             <a href="/Order_form">
+              <div>
               <span>Checkout</span>
+              </div>
             </a>
           </li>
           <li>
             <a onClick={Logout}>
+            <div>
               <i class="fas fa-power-off"></i>
               <span>Logout</span>
+              </div>
             </a>
           </li>
         </ul>
@@ -59,12 +75,15 @@ const NavigateBlack = () => {
           ></img>
         </div>
         <h3>Sign Up</h3>
-        <ul>
+        <ul className="dropdown_ul text-center">
           <li>
             <a href="/login">
+            <div>
               <i class="far fa-user-circle"></i>
               <span>Login</span>
+              </div>
             </a>
+            
           </li>
           
         </ul>
