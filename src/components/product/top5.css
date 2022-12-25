@@ -1,0 +1,11 @@
+tr,th{
+    border-top: 1.5rem solid transparent !important;
+    
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    tr,th{
+        border: none;
+        
+    }
+}

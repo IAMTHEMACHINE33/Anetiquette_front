@@ -1,0 +1,72 @@
+.highestPic1,.highestPic2,.highestPic3,.highestPic{
+    
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.highestPic1{
+    width: 7em;
+    height: 7em;
+    border: 5px solid gold;
+}
+
+.highestPic2{
+    width: 6em;
+    height: 6em;
+    border: 5px solid cyan;
+}
+.highestPic3{
+    width: 5em;
+    height: 5em;
+    border: 3px solid greenyellow;
+}
+.highestPic{
+    width: 3em;
+    height: 3em;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .highestPic1{
+        width: 5em;
+        height: 5em;
+        border: 5px solid goldenrod;
+    }
+    
+    .highestPic2{
+        width: 4em;
+        height: 4em;
+        border: 5px solid cyan;
+    }
+    .highestPic3{
+        width: 3em;
+        height: 3em;
+        border: 5px solid greenyellow;
+    }
+    .highestPic{
+        width: 2em;
+        height: 2em;
+    }
+}
+
+
+.card-text{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+
+}
+
+.highprice{
+    color: green;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.topbidders{
+    border-bottom-left-radius: 50px !important;
+    border-bottom-right-radius: 50px !important;
+    
+}
