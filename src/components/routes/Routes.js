@@ -17,6 +17,7 @@ import Cart from "../cart/Cart";
 import Search from "../common/search";
 import SearchResult from "../search/searchResult";
 import Faq from "../FAQ/faq";
+import UsersManage from "../admin/Users/users";
 import Final from "../search/testing";
 
 const Url = () => {
@@ -41,8 +42,8 @@ const Url = () => {
         <Route path="/Add_products" element={<PrivateRoute><Add_products /></PrivateRoute>}></Route>
         <Route path="/login_admin" element={<Login_admin />}></Route>
         <Route path="/admin/dashboard" element={<Dash_admin />}></Route>
-       
         <Route path="/about" element={<Video />}></Route>
+        <Route path="/users" element={<UsersManage />}></Route>
         <Route path="/Order_form" element={<PrivateRoute><Order_form /></PrivateRoute>}></Route>
         <Route path="/OrderDetails" element={<PrivateRoute><OrderDetails/></PrivateRoute>}></Route>
       </Routes>

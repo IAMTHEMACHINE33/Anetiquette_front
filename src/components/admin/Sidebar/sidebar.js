@@ -1,45 +1,74 @@
-import React, {useState} from "react";
-import Logo from "../../../photo/logo.png";
+import React from "react";
 import "./sidebar.css";
-import { SidebarData } from "../Data/Data";
-import { UilSignOutAlt } from "@iconscout/react-unicons";
-import Logout from "../../Logout";
+import { MDBIcon } from 'mdb-react-ui-kit';
+
 
 const Sidebar = () => {
-  const [selected, setSelected] = useState(0);
 
-  const [expanded, setExpaned] = useState(true);
-
-  const sidebarVariants = {
-    true: {
-      left: "0",
-    },
-    false: {
-      left: "-60%",
-    },
-  };
-  console.log(window.innerWidth)
   return (
+    <div>
+    <input type="checkbox" id="nav-toggle"/>
     <div className="sidebar">
-      <div className="logo">
-        <img src={Logo} alt="" />
-      </div>
-      <div className="menu">
-        {SidebarData.map((item, index) => {
-          return (
-            <div className={selected === index ? "menuItem active" : "menuItem"}
-            key={index}
-            onClick={() => setSelected(index)}>
-              <item.icon />
-              <span>{item.heading}</span>
-            </div>
-          );
-        })}
-        <div className="menuItem" onClick={Logout}>
-          <UilSignOutAlt/>
-          <span>Logout</span>
+      <div className="sidebar-brand">
+        <h2>
+          <span className="lab la-accusoft">
+          </span>
+          <MDBIcon fas icon="user-graduate" />
+          <hr/>
+          <span>
+            AntiQuette </span>
+            
+        </h2>
         </div>
-      </div>
+        <div className="sidebar-menu">
+          <ul>
+            <li>
+              <a href="/admin/dashboard" className="active">
+              <MDBIcon fas icon="tachometer-alt" />
+                <span>
+                  Dashboard
+                  
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="/users">
+              <MDBIcon fas icon="users" />
+                <span>
+                  Customers</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+              <MDBIcon fas icon="warehouse" />
+                <span>
+                Products</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+              <MDBIcon fas icon="truck" />
+                <span>
+                Orders</span>
+              </a>
+            </li>
+            <li>
+              <a href="/Add_products">
+              <MDBIcon fas icon="plus" />
+                <span>
+                Add Product</span>
+              </a>
+            </li>
+            <li>
+              <a href="/login_admin">
+              <MDBIcon fas icon="sign-out-alt" />
+                <span>
+               Log Out</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
     </div>
   );
 };
