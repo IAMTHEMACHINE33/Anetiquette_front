@@ -199,18 +199,37 @@ textarea::-webkit-scrollbar-thumb {
 .bidtxt{
   width: 50%;
   height: 50px !important;
+  border: none;
+  border-bottom: 1px solid orange !important;
+  outline: none;
 }
+
+.bidtxt:focus{
+  
+  border: 3px solid orange !important;
+  place-content: "$";
+}
+
+
+
+
+
   .bidbtn{
     background-color: rgb(255, 132, 0);
     font-weight: bold;
     color: white;
-    padding: 10px;
-    width: 7em;
-    margin-top: 10px;
+    width: 6em;
+    text-align: center;
     border: none;
     border-radius: 15px;
+    height: 40px;
+    justify-content: center;
   }
 
-  .bidbtn i{
-    margin-left: 10px !important;
+  @media screen and (min-width: 320px) and (max-width: 768px) {
+    .bidder{
+      margin-top:30px !important;
+      
+      
+    }
   }
