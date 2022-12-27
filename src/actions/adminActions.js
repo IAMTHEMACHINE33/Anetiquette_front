@@ -29,7 +29,17 @@ export const login_admin = (email, password) => async (dispatch) => {
       `/api/v1/login_admin`,
       { email, password },
       config
-    );
+    ).then((response)=>{
+      console.log(response.data.token)
+      if(response.data.token){
+        
+        localStorage.setItem("admin_token",response.data.token);
+        window.location.replace('/admin/dashboard')
+      }
+    })
+    .catch((e)=>{
+      console.log(e)
+    });
 
     dispatch({ type: LOGIN_SUCCESS, payload: data.user });
   } catch (error) {
