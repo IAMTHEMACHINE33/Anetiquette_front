@@ -145,6 +145,7 @@ const Navigate = () => {
               </Nav.Link>
               <Nav.Link
                 href="/about"
+                name="about"
                 className={
                   activeLink === "about" ? "active navbar-link" : "navbar-link"
                 }
@@ -154,6 +155,7 @@ const Navigate = () => {
               </Nav.Link>
               <Nav.Link
                 href="/help"
+                name="help"
                 className={
                   activeLink === "help" ? "active navbar-link" : "navbar-link"
                 }
@@ -175,7 +177,7 @@ const Navigate = () => {
             </Nav>
             <span className="navbar-text">
               <div className="navbar-icon">
-                <a className="text-light" href="/search">
+                <a className="text-light" name="search" href="/search">
                   <i class="fas fa-search"></i>
                 </a>
                 <a className="text-light" href="/cart">

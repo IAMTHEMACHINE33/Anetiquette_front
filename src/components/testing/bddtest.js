@@ -4,6 +4,8 @@ const puppeteer = require('puppeteer');
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
 
+  await page.setViewport({ width: 1366, height: 768});
+
 // ----------------- SIGN UP TEST --------------------
   await page.goto('http://localhost:3000/login');
 
@@ -70,7 +72,7 @@ const puppeteer = require('puppeteer');
 
   await page.goto('http://localhost:3000/profile')
 
-  if("Edited Name")
+  if(await page.waitForXPath('//*[contains(text(), "Edited Name")]'))
     console.log("3: Update User Test Success")
     else
     throw new Error('3: Update User fail!');
@@ -88,7 +90,7 @@ const puppeteer = require('puppeteer');
 
   await page.goto('http://localhost:3000/cart')
 
-  if ('ssdfwda')
+  if (await page.waitForXPath('//*[contains(text(), "ssdfwda")]'))
     console.log("4: Add To Cart Test Success")
     else 
     throw new Error('4: Add To Cart Fail')
@@ -107,13 +109,62 @@ const puppeteer = require('puppeteer');
 
   await page.reload()
 
-  if ('Edited Name')
+  // if (await page.waitForXPath('//*[contains(text(), "Edited Name")]'))
+  if("Edited Name")
     console.log("5: Bid On Product Test Success")
     else
     throw new Error("5: Bid On Product Test Fail")
   
 
+
+  // ------------------- NAVIGATE FROM DASHBOARD ---------------------
+
+  // ABOUT US
+  await page.goto('http://localhost:3000')
+  
+  await page.waitForSelector('a[name="about"]')
+  await page.click('a[name="about"]')
+
+  if (page.url() !== 'http://localhost:3000/about')
+    throw new Error('6: About Us Navigate fail!');
+    else 
+    console.log("6: About Us Navigate Success")
+
+  //HELP
+  await page.goto('http://localhost:3000')
+  
+  await page.waitForSelector('a[name="help"]')
+  await page.click('a[name="help"]')
+
+  if (page.url() !== 'http://localhost:3000/help')
+    throw new Error('7: Help Navigate fail!');
+    else 
+    console.log("7: Help Navigate Success")
+
+  //SEARCH
+  await page.goto('http://localhost:3000')
+  
+  await page.waitForSelector('a[name="search"]')
+  await page.click('a[name="search"]')
+
+  if (page.url() !== 'http://localhost:3000/search')
+    throw new Error('8: Search Navigate fail!')
+    else 
+    console.log("8: Search Navigate Success")
+
+  
+  await page.waitForSelector('input[type="search"]')
+    await page.type('input[type="search"]', 'bo')
+
+  await page.waitForSelector('button[id="search-addon"]')
+    await page.click('button[id="search-addon"]')
+
+  if(await page.waitForXPath('//*[contains(text(), "Bowl")]'))
+    console.log("9: Search Product Test Success")
+    else
+    throw new Error("9: Search Product Test Fail")
   browser.close()
+
 
 
 })();
