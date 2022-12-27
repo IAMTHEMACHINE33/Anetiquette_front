@@ -78,7 +78,7 @@ const Edit_profile = () => {
               <div className="col-md-3 border-right mt-4">
                 <div className="d-flex flex-column align-items-center text-center p-3 py-5">
                   <img className="rounded-circle mt-5" src="https://i.imgur.com/O1RmJXT.jpg" width="90" /><span className="font-weight-bold">{name}</span><span className="text-black-50">{email}</span>
-                  <i class="fa fa-camera"></i>
+                  {/* <i class="fa fa-camera"></i> */}
                 </div>
               </div>
               <div className="col-md-5 border-right">
