@@ -1,7 +1,27 @@
 import "../product/top5.css";
 import Table from "react-bootstrap/Table";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 function Top5() {
+  const {pid}=useParams();
+  const [details,setDetails]=useState([]);
+  const config = {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
+  };
+  useEffect(()=>{
+    axios.get("http://localhost:4000/product/single/" + pid, config)
+    .then((response)=>{
+      setDetails(response.data.data.bid_info)
+      console.log(response.data.data.bid_info[0].bid_by.name)
+    })
+    .catch((e)=>{
+      console.log(e)
+    })
+  },[])
   return (
     <>
       <Table border hover size="sm">
@@ -15,8 +35,11 @@ function Top5() {
           </tr>
         </thead>
         <tbody className="text-center">
-          <tr className="align-middle">
-            <td style={{ fontWeight: "bold" }}>1</td>
+          {details.reverse().slice(0,5).map((option,index)=>{
+
+            return(
+              <tr className="align-middle">
+            <td style={{ fontWeight: "bold" }}>{index+1}</td>
             <td className="text-start">
               <span>
                 <img
@@ -29,89 +52,16 @@ function Top5() {
                   src="https://indianmemetemplates.com/wp-content/uploads/Doge-with-a-gun.jpg"
                 ></img>
               </span>
-              Mark
+              {option.bid_by.name}
             </td>
 
-            <td style={{ color: "green", fontWeight: "500" }}>$12</td>
+            <td style={{ color: "green", fontWeight: "500" }}>${option.bid_price}</td>
           </tr>
-          <tr className="align-middle">
-            <td style={{ fontWeight: "bold" }}>2</td>
-            <td className="text-start">
-              <span>
-                <img
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    borderRadius: "50px",
-                    marginRight: "20px",
-                  }}
-                  src="https://indianmemetemplates.com/wp-content/uploads/Doge-with-a-gun.jpg"
-                ></img>
-              </span>
-              Mark
-            </td>
-
-            <td style={{ color: "green", fontWeight: "500" }}>$12</td>
-          </tr>
-          <tr className="align-middle">
-            <td style={{ fontWeight: "bold" }}>3</td>
-            <td className="text-start">
-              <span>
-                <img
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    borderRadius: "50px",
-                    marginRight: "20px",
-                  }}
-                  src="https://indianmemetemplates.com/wp-content/uploads/Doge-with-a-gun.jpg"
-                ></img>
-              </span>
-              Mark
-            </td>
-
-            <td style={{ color: "green", fontWeight: "500" }}>$12</td>
-          </tr>
-          <tr className="align-middle">
-            <td style={{ fontWeight: "bold" }}>4</td>
-            <td className="text-start">
-              <span>
-                <img
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    borderRadius: "50px",
-                    marginRight: "20px",
-                  }}
-                  src="https://indianmemetemplates.com/wp-content/uploads/Doge-with-a-gun.jpg"
-                ></img>
-              </span>
-              Mark
-            </td>
-
-            <td style={{ color: "green", fontWeight: "500" }}>$12</td>
-          </tr>
-          <tr className="align-middle">
-            <td style={{ fontWeight: "bold" }}>5</td>
-            <td className="text-start">
-              <span>
-                <img
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    borderRadius: "50px",
-                    marginRight: "20px",
-                  }}
-                  src="https://indianmemetemplates.com/wp-content/uploads/Doge-with-a-gun.jpg"
-                ></img>
-              </span>
-              Mark bahadur rai gharti  
-            </td>
-
-            <td style={{ color: "green", fontWeight: "500" }}>
-              $121232132
-            </td>
-          </tr>
+            );
+          })}
+          
+          
+          
         </tbody>
       </Table>
     </>
