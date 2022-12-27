@@ -10,6 +10,9 @@ import toast, { Toaster } from 'react-hot-toast';
 
 import NavigateBlack from "../common/navblack";
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
 const AddProduts = () => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -26,7 +29,20 @@ const AddProduts = () => {
     },
   };
 
+  $("input").on("input", function () {
+    var names = $(this).prop('files');
+    for (var i = 0; i < names.length; i++) {
+      console.log(names[i].name)
+    }
+
+  });
+
   const productAdd = (e) => {
+
+
+
+
+
     e.preventDefault();
 
     // const data ={
@@ -135,7 +151,7 @@ const AddProduts = () => {
             <div class="form-group  mt-1 p-2 ">
               <label for="FormControlFile1  text-secondary">Select file</label>
               <input
-                multiple
+                multiple="multiple"
                 type="file"
                 class="form-control-file mt-2 mb-2 d-flex justify-content-center"
                 id="FormControlFile1"
