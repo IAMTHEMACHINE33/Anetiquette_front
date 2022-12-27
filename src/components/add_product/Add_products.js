@@ -6,7 +6,7 @@ import Footer from "../common/Footer";
 import $ from 'jquery';
 
 import "../add_product/add_product.css";
-import toast, {Toaster} from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 import NavigateBlack from "../common/navblack";
 
@@ -41,8 +41,8 @@ const AddProduts = () => {
     data.append("price", price);
     data.append("description", description);
     data.append("category", category);
-    data.append("type",type);
-    data.append("last_time",time);
+    data.append("type", type);
+    data.append("last_time", time);
     data.append("product_img", image);
     axios
       .post("http://localhost:4000/product/add", data, config)
@@ -50,7 +50,7 @@ const AddProduts = () => {
         console.log(response);
         console.log(config);
         toast.success("Product added");
-        setTimeout(function(){window.location.href("/");},2000);
+        setTimeout(function () { window.location.href("/"); }, 2000);
       })
       .catch((e) => {
         toast.error("Failed to add product");
@@ -115,9 +115,9 @@ const AddProduts = () => {
                 })}
               </select>
             </div>
-            
 
-            
+
+
 
             <div class="form-group mt-2  p-2">
               <label for="FormControlTextarea1 ">Description</label>
@@ -135,6 +135,7 @@ const AddProduts = () => {
             <div class="form-group  mt-1 p-2 ">
               <label for="FormControlFile1  text-secondary">Select file</label>
               <input
+                multiple
                 type="file"
                 class="form-control-file mt-2 mb-2 d-flex justify-content-center"
                 id="FormControlFile1"
@@ -146,17 +147,17 @@ const AddProduts = () => {
 
             <div class="form-group mt-2  p-2">
               <label for="FormControlSelect1">Type</label>
-              
+
               <select
                 class="form-control"
                 id="FormControlSelect1"
                 onChange={(e) => {
                   setType(e.target.value);
-                  if(e.target.value=='Auction'){
-                    document.myform['Auction'].style.visibility='visible'
+                  if (e.target.value == 'Auction') {
+                    document.myform['Auction'].style.visibility = 'visible'
                   }
-                  else{
-                    document.myform['Auction'].style.visibility='hidden'
+                  else {
+                    document.myform['Auction'].style.visibility = 'hidden'
                   }
                 }}
               >
@@ -167,7 +168,7 @@ const AddProduts = () => {
               <input
                 type="datetime-local"
                 name="Auction"
-                style={{visibility:"hidden"}}
+                style={{ visibility: "hidden" }}
                 class="form-control"
                 onChange={(e) => {
                   setTime(e.target.value);
@@ -176,8 +177,8 @@ const AddProduts = () => {
               ></input>
             </div>
           </form>
-          
-                
+
+
           <button
             className="btn btn-primary profile-button mt-2 mb-3"
             onClick={productAdd}
@@ -185,7 +186,7 @@ const AddProduts = () => {
             Submit
           </button>
         </div>
-        <Toaster/>
+        <Toaster />
         <Footer />
       </div>
     </>

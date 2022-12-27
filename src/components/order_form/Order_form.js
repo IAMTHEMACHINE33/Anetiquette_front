@@ -197,10 +197,12 @@ const OrderForm = () => {
 
                   </div>
                   <div class="col-md-1 mb-2 Cash-container">
+                    {/* <button type="image"> */}
                     {/* for cash */}
                   <a href="https://www.youtube.com/results?search_query=dream+on" >
-                    <img src="https://icons.veryicon.com/png/o/business/business-style-icon/wallet-62.png" className="Cash" alt="khalti"/>
+                    <img src="https://icons.veryicon.com/png/o/business/business-style-icon/wallet-62.png" className="Cash"/>
                   </a>
+                  {/* </button> */}
                   </div>
                 </div>
                 <hr class="mb-4" />

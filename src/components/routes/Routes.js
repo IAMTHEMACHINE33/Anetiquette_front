@@ -19,14 +19,14 @@ import SearchResult from "../search/searchResult";
 import Faq from "../FAQ/faq";
 import UsersManage from "../admin/Users/users";
 import Final from "../search/testing";
-
+import Feedback from "../admin/Feedback/Feedback"
 const Url = () => {
   return (
     <>
       <Routes>
-      <Route path="/cat" element={<Final/>}></Route>
-        <Route path="/searchres" element={<Search/>}></Route>
-        <Route path="/search" element={<SearchResult/>}></Route>
+        <Route path="/cat" element={<Final />}></Route>
+        <Route path="/searchres" element={<Search />}></Route>
+        <Route path="/search" element={<SearchResult />}></Route>
         <Route path="/login" element={<Login />}></Route>
 
         <Route path="/" element={<Home />}></Route>
@@ -35,7 +35,7 @@ const Url = () => {
 
         <Route path="/product/:pid" element={<Product />}></Route>
 
-        <Route path="/help" element={<Faq/>}></Route>
+        <Route path="/help" element={<Faq />}></Route>
 
         <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>}></Route>
         <Route path="/Edit_profile" element={<PrivateRoute><Edit_profile /></PrivateRoute>}></Route>
@@ -45,7 +45,9 @@ const Url = () => {
         <Route path="/about" element={<Video />}></Route>
         <Route path="/users" element={<UsersManage />}></Route>
         <Route path="/Order_form" element={<PrivateRoute><Order_form /></PrivateRoute>}></Route>
-        <Route path="/OrderDetails" element={<PrivateRoute><OrderDetails/></PrivateRoute>}></Route>
+        <Route path="/OrderDetails" element={<PrivateRoute><OrderDetails /></PrivateRoute>}></Route>
+        <Route path="/admin/Feedback" element={<PrivateRoute><Feedback /></PrivateRoute>}></Route>
+
       </Routes>
     </>
   );
