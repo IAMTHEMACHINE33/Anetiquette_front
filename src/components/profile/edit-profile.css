@@ -18,13 +18,13 @@
 
 
 .profile-button {
-    background: #e38800!important;
+    background: #e38800 !important;
     box-shadow: none;
-    border: none!important;
+    border: none !important;
 }
 
 .profile-button:hover {
-    background: #fa8100!important;
+    background: #fa8100 !important;
 }
 
 .profile-button:focus {
@@ -53,3 +53,34 @@
     border: solid 1px #BA68C8;
 }
 
+.upload img {
+    border-radius: 50%;
+}
+
+.upload .round {
+    background-color: orange;
+    text-align: center;
+
+    border-radius: 50%;
+    margin-left: 45px;
+    margin-top: 68px;
+}
+
+.round {
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    line-height: 20px;
+    overflow: hidden;
+    border-radius: 50%;
+    text-align: center;
+
+
+}
+
+.round input[type='file'] {
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+    bottom: 0;
+}

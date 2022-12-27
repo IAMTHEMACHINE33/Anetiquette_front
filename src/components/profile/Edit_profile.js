@@ -76,9 +76,13 @@ const Edit_profile = () => {
           <div className="container w-50 outbox rounded bg-white edit-profile">
             <div className="row justify-content-evenly mt-5">
               <div className="col-md-3 border-right mt-4">
-                <div className="d-flex flex-column align-items-center text-center p-3 py-5">
-                  <img className="rounded-circle mt-5" src="https://i.imgur.com/O1RmJXT.jpg" width="90" /><span className="font-weight-bold">{name}</span><span className="text-black-50">{email}</span>
-                  {/* <i class="fa fa-camera"></i> */}
+                <div className="upload d-flex flex-column align-items-center text-center p-3 py-5">
+                  <img src="https://i.imgur.com/O1RmJXT.jpg" width="90" />
+                  <div class="round">
+                    <input type="file"></input>
+                    <i class="fa fa-camera"></i>
+                  </div>
+                  <span className="font-weight-bold">{name}</span><span className="text-black-50">{email}</span>
                 </div>
               </div>
               <div className="col-md-5 border-right">
