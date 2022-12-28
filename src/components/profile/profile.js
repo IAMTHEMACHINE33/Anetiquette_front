@@ -23,6 +23,7 @@ export default function Profile() {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [image, setImage] = useState("");
 
   const config = {
     headers: {
@@ -36,6 +37,7 @@ export default function Profile() {
       .then((response) => {
         setName(response.data.data.name);
         setEmail(response.data.data.email);
+        setImage(response.data.data.image);
       })
       .catch((e) => {
         console.log(e);
@@ -61,7 +63,7 @@ export default function Profile() {
                     style={{ width: "200px" }}
                   >
                     <MDBCardImage
-                      src="https://sportshub.cbsistatic.com/i/2022/10/16/5b842454-5953-4125-899f-c21753fdedec/chainsaw-man-makima-anime.jpg"
+                      src={"http://localhost:4000/" + image}
                       alt="Generic placeholder image"
                       className="mt-4 mb-2 img-thumbnail"
                       fluid
