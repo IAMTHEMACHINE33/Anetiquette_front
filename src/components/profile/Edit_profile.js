@@ -13,12 +13,13 @@ const Edit_profile = () => {
 
   const redirect =
     location.search ? location.search.split("=")[1] : "/profile"
-
+  
 
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [image, setImage]=useState("");
 
   const config = {
     headers: {
@@ -30,6 +31,8 @@ const Edit_profile = () => {
     axios
       .get("http://localhost:4000/api/v1/show", config)
       .then((response) => {
+        console.log(response.data.data.image)
+        setImage(response.data.data.image)
         setName(response.data.data.name);
         setEmail(response.data.data.email);
       })
@@ -58,15 +61,28 @@ const Edit_profile = () => {
       });
   };
 
-  const [file, setFile] = useState(
-    "/static/media/monika.d77b200f5c69a1986742.png"
-  );
+  
 
   const changePic = (e) => {
     console.log("clicked!");
     // e.preventDefault();
-    setFile(e.target.files[0].name);
-    console.log(file);
+    const f = e.target.files[0];
+    console.log(f)
+    const data = new FormData();
+    data.append("user_img", f);
+
+    
+    console.log(data);
+    axios.put("http://localhost:4000/api/v1/update_pic",data,config)
+    .then((response)=>{
+      console.log(response)
+      setTimeout(function () {
+        window.location.reload(1);
+      }, 1000);
+    })
+    .catch((e)=>{
+      console.log(e)
+    })
   };
   return (
     <>
@@ -77,9 +93,9 @@ const Edit_profile = () => {
             <div className="row justify-content-evenly mt-5">
               <div className="col-md-3 border-right mt-4">
                 <div className="upload d-flex flex-column align-items-center text-center p-3 py-5">
-                  <img src="https://i.imgur.com/O1RmJXT.jpg" width="90" />
+                  <img src={"http://localhost:4000/" + image} width="90" />
                   <div class="round">
-                    <input type="file"></input>
+                    <input type="file" onChange={changePic}></input>
                     <i class="fa fa-camera"></i>
                   </div>
                   <span className="font-weight-bold">{name}</span><span className="text-black-50">{email}</span>
