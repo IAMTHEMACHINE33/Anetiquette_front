@@ -20,6 +20,8 @@ import Faq from "../FAQ/faq";
 import UsersManage from "../admin/Users/users";
 import Final from "../search/testing";
 import Feedback from "../admin/Feedback/Feedback"
+import ProductManage from "../admin/Products/products";
+
 const Url = () => {
   return (
     <>
@@ -44,10 +46,10 @@ const Url = () => {
         <Route path="/admin/dashboard" element={<Dash_admin />}></Route>
         <Route path="/about" element={<Video />}></Route>
         <Route path="/users" element={<UsersManage />}></Route>
+        <Route path="/productManage" element={<ProductManage />}></Route>
         <Route path="/Order_form" element={<PrivateRoute><Order_form /></PrivateRoute>}></Route>
-        <Route path="/OrderDetails" element={<PrivateRoute><OrderDetails /></PrivateRoute>}></Route>
         <Route path="/admin/Feedback" element={<PrivateRoute><Feedback /></PrivateRoute>}></Route>
-
+        <Route path="/OrderDetails" element={<PrivateRoute><OrderDetails/></PrivateRoute>}></Route>
       </Routes>
     </>
   );

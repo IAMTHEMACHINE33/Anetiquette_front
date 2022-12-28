@@ -1,0 +1,24 @@
+.mat{
+    padding: 5%
+}
+@media only screen and (max-width: 1200px){
+    .mat{
+        padding: 10%;
+    }
+  }
+
+  @media only screen and (max-width:768px){
+    .mat{
+       padding: 10%;
+    }
+  }
+  @media only screen and (max-width:530px){
+    .mat{
+       padding: 20%;
+    }
+  }
+  @media only screen and (max-width:365px){
+    .mat{
+       padding: 25%;
+    }
+  }

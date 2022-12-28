@@ -2,53 +2,57 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../Sidebar/sidebar";
 import DataTable from "react-data-table-component";
 import axios from "axios";
-import './users.css'
+import './products.css'
 
-const UsersManage = () => {
+const ProductManage = () => {
   // const [search, setSearch] = useState("");
-  const [users, setUsers] = useState([]);
-  const [filteredUsers, setFilteredUsers] =useState([]);
-  const getUsers = async () => {
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] =useState([]);
+  const getProducts = async () => {
     try {
-      const response = await axios.get("https://hub.dummyapis.com/employee?noofRecords=10&idStarts=1001");
-      setUsers(response.data);
-      setFilteredUsers(response.data);
+      const response = await axios.get("https://fakestoreapi.com/products/");
+      setProducts(response.data);
+      setFilteredProducts(response.data);
     } catch (error) {
       console.log(error);
     }
   };
   const columns = [
     {
-      name: "First Name",
-      selector: (row) => row.firstName,
+      name: "Id",
+      selector: (row) => row.id,
       sortable: true,
+      width: "4rem" 
     },
     {
-      name: "Last Name",
-      selector: (row) => row.lastName,
+      name: "Name",
+      selector: (row) => row.title,
       sortable: true,
+      width: "20rem" 
     },
     {
-      name: "Email",
-      selector: (row) => row.email,
+      name: "Price",
+      selector: (row) => row.price,
       sortable: true,
+      width: "10rem" 
     },
     {
-      name: "Age",
-      selector: (row) => row.age,
-      sortable: true,
+      name: "Description",
+      selector: (row) => row.description,
+      width: "50rem" 
     },
     {
-      name: "Contact Number",
-      selector: (row) => row.contactNumber,
+      name: "Category",
+      selector: (row) => row.category,
       sortable: true,
+      width: "10rem" 
     },
     {
-      name: "dob",
-      selector: (row) => row.dob,
-      sortable: true,
+      name: "Image",
+      selector: (row) => row.image,
+      width: "34rem" 
     },
-    
+
     {
       name: "Edit",
       cell: (row) => (
@@ -73,7 +77,7 @@ const UsersManage = () => {
     },
   ];
   useEffect(() => {
-    getUsers();
+    getProducts();
   }, []);
   // useEffect(()=>{
   //   const result = users.filter(user=>{
@@ -82,25 +86,26 @@ const UsersManage = () => {
   //   setFilteredUsers(result);
   // },[search]);
   return (
-    <div className="mat">
+    <div className="rat">
       <Sidebar />
         <input 
         type="search" 
         placeholder="Search Here" 
-        className="w-25 form-control"
+        className="w-20 form-control"
         // value={search}
         // onChange={(e)=>setSearch(e.target.value)}
           />
       <DataTable
-        title="List of Users"
+        title="List of Products"
         columns={columns}
-        data={filteredUsers}
+        data={filteredProducts}
         pagination
         fixedHeader
-        fixedHeaderScrollHeight="400px"
+        fixedHeaderScrollHeight="500px"
         selectableRows
         selectableRowsHighlight
         highlightOnHover
+        
         actions={
         <button className="btn btn-sm btn-info">Export</button>}
 
@@ -109,4 +114,4 @@ const UsersManage = () => {
   );
 };
 
-export default UsersManage;
+export default ProductManage;
