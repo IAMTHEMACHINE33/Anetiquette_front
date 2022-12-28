@@ -8,11 +8,17 @@ const UsersManage = () => {
   // const [search, setSearch] = useState("");
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] =useState([]);
+  const config = {
+    headers:{
+      Authorization:"Bearer "+localStorage.getItem("admin_token")
+    }
+  }
   const getUsers = async () => {
     try {
-      const response = await axios.get("https://hub.dummyapis.com/employee?noofRecords=10&idStarts=1001");
-      setUsers(response.data);
-      setFilteredUsers(response.data);
+      const response = await axios.get("http://localhost:4000/api/v1/customers",config);
+      setUsers(response.data.data);
+      setFilteredUsers(response.data.data);
+      console.log(response.data.data)
     } catch (error) {
       console.log(error);
     }
@@ -20,7 +26,7 @@ const UsersManage = () => {
   const columns = [
     {
       name: "First Name",
-      selector: (row) => row.firstName,
+      selector: (row) => row.name,
       sortable: true,
     },
     {
