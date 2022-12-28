@@ -19,7 +19,7 @@ const AddProduts = () => {
   const [description, setDescription] = useState("");
   const [type, setType] = useState("");
   const [category, setCategory] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState([]);
   const [time, setTime] = useState("");
   const [details, setDetails] = useState([]);
 
@@ -29,13 +29,15 @@ const AddProduts = () => {
     },
   };
 
-  $("input").on("input", function () {
-    var names = $(this).prop('files');
-    for (var i = 0; i < names.length; i++) {
-      console.log(names[i].name)
-    }
+  // $("input").on("input", function () {
+  //   var names = $(this).prop('files');
+  //   for (var i = 0; i < names.length; i++) {
+  //     console.log(names[i].name)
+  //     console.log(i)
+  //   }
 
-  });
+  // });
+  
 
   const productAdd = (e) => {
 
@@ -51,7 +53,7 @@ const AddProduts = () => {
     //   description: description,
     //   category: category,
     // };
-
+    console.log(image)
     const data = new FormData();
     data.append("product_name", name);
     data.append("price", price);
@@ -59,7 +61,13 @@ const AddProduts = () => {
     data.append("category", category);
     data.append("type", type);
     data.append("last_time", time);
-    data.append("product_img", image);
+    for(let i =0;i<image.length;i++){
+      data.append("product_img", image[i]);
+    }
+    
+
+     
+  console.log("after")
     axios
       .post("http://localhost:4000/product/add", data, config)
       .then((response) => {
@@ -156,7 +164,7 @@ const AddProduts = () => {
                 class="form-control-file mt-2 mb-2 d-flex justify-content-center"
                 id="FormControlFile1"
                 onChange={(e) => {
-                  setImage(e.target.files[0]);
+                  setImage(e.target.files);
                 }}
               ></input>
             </div>
