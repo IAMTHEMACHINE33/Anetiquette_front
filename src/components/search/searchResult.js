@@ -246,7 +246,7 @@ const SearchResult = () => {
                     <Link to={"/product/" + option._id}>
                       <div className="card m-2">
                         <img
-                          src={"http://localhost:4000/" + option.image}
+                          src={"http://localhost:4000/" + option.images[0].name}
                           className="card-img-top"
                           alt="hot-sale.jpg"
                         />
