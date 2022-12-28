@@ -8,11 +8,17 @@ const ProductManage = () => {
   // const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] =useState([]);
+  const config={
+    headers:{
+      Authorization:"Bearer "+localStorage.getItem("admin_token")
+    }
+  }
   const getProducts = async () => {
     try {
-      const response = await axios.get("https://fakestoreapi.com/products/");
-      setProducts(response.data);
-      setFilteredProducts(response.data);
+      const response = await axios.get("http://localhost:4000/api/v1/products",config);
+      setProducts(response.data.data);
+      setFilteredProducts(response.data.data);
+      console.log(response.data.data)
     } catch (error) {
       console.log(error);
     }
@@ -26,7 +32,7 @@ const ProductManage = () => {
     },
     {
       name: "Name",
-      selector: (row) => row.title,
+      selector: (row) => row.product_name,
       sortable: true,
       width: "20rem" 
     },
@@ -43,13 +49,13 @@ const ProductManage = () => {
     },
     {
       name: "Category",
-      selector: (row) => row.category,
+      selector: (row) => row.category.name,
       sortable: true,
       width: "10rem" 
     },
     {
       name: "Image",
-      selector: (row) => row.image,
+      selector: (row) => row.images[0].name,
       width: "34rem" 
     },
 
