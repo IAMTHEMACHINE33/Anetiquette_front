@@ -64,7 +64,7 @@ function OrderSlide() {
       <Slider {...settings}>
       {details.map((option, idx) => (
           <div className={idx === imageIndex ? "slides activeSlide" : "slides"}>
-            <img src={'http://localhost:4000/' + option.image} alt={'http://localhost:4000/' + option.image} />
+            <img src={'http://localhost:4000/' + option.images[0].name} alt={'http://localhost:4000/' + option.image} />
           </div>
         ))}
         {/* {images.map((img, idx) => (
