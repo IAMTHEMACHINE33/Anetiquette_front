@@ -9,6 +9,7 @@ import {
 } from "../actions/userActions"
 import {useAlert} from "react-alert"
 import Navlog from './common/navlogin';
+import { toast, Toaster } from 'react-hot-toast';
 
 
 const Login=()=> {
@@ -57,6 +58,8 @@ const Login=()=> {
 
      useEffect(() => {
         if(error){
+            console.log("error")
+
             alert.error(error)
             dispatch(clearErrors())
         }
@@ -153,6 +156,7 @@ const Login=()=> {
               </style.OverlayContainer>
 
           </style.Container>
+          <Toaster/>
           </>
       )
     }

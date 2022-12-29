@@ -22,6 +22,7 @@ import{
 } from "../constants/userConstants"
 import { useState } from "react";
 import axios from "axios"
+import { toast } from "react-hot-toast";
 
 // Login
 export const login = (email, password) => async (dispatch) => {
@@ -38,12 +39,13 @@ export const login = (email, password) => async (dispatch) => {
     ).then((response)=>{
       console.log(response.data.token)
       if(response.data.token){
-        
+        toast.success("Sucessfully loging")
         localStorage.setItem("token",response.data.token);
         window.location.replace('/')
       }
     })
     .catch((e)=>{
+      toast.error("invalid username or password")
       console.log(e)
     });
 
