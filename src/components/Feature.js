@@ -32,7 +32,7 @@ const   Feature = () => {
                   <Link to={"/product/"+option._id}>
                   <div class="card m-2">
                     <img
-                      src={"http://localhost:4000/" + option.images[0].name}
+                      src={"http://localhost:4000/" + option.images[0]}
                       class="card-img-top"
                       alt="hot-sale.jpg"
                     />

@@ -164,7 +164,11 @@ const SearchResult = () => {
               onChange={(e) => {
                 setSearch(e.target.value);
               }}
-              onKeyPress={enterSearch}
+              onKeyPress={(e)=>{if (e.key === "Enter" || e.key === "Go") {
+                getInputValue();
+                searchRe();
+                alert(getInputValue);
+              } }}
             />
             <button
               className="input-group-text border-0"
@@ -246,7 +250,7 @@ const SearchResult = () => {
                     <Link to={"/product/" + option._id}>
                       <div className="card m-2">
                         <img
-                          src={"http://localhost:4000/" + option.images[0].name}
+                          src={"http://localhost:4000/" + option.images[0]}
                           className="card-img-top"
                           alt="hot-sale.jpg"
                         />
