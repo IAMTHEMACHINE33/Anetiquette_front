@@ -240,9 +240,9 @@ const SearchResult = () => {
           <Masonry>
             {filteredList
               .filter((option) => {
-                return search.toLowerCase() === ""
+                return search === ""
                   ? option
-                  : option.product_name.toLowerCase().includes(search);
+                  : option.product_name.toLowerCase().includes(search.toLowerCase());
               })
               .map((option) => {
                 return (
