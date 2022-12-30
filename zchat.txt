@@ -25,3 +25,15 @@ npm install react-responsive-masonry --save
 
 for pininterest design
 documentation: https://www.npmjs.com/package/react-responsive-masonry
+
+==============================================================================
+
+npm install --save react-dropzone
+
+for the file uploader 
+
+https://kovart.github.io/dashed-border-generator/
+
+border banaune box
+
+==============================================================================

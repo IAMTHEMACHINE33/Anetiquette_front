@@ -79,6 +79,11 @@ const Product = () => {
       .post("http://localhost:4000/cart/add", add, config)
       .then((response) => {
         console.log(response);
+        toast.success("Item added to cart");
+        setTimeout(function () {
+          window.location.href("www.google.com");
+        }, 3000);
+
       })
       .catch((e) => {
         console.log(e);
@@ -169,21 +174,6 @@ const Product = () => {
       });
   }, []);
   
-  // const data = [
-  //   "https://i0.wp.com/rachelfroud.com/wp-content/uploads/2020/06/Flamingo-Print-Mockup.jpg?fit=2305%2C2000&ssl=1",
-  //   "https://w0.peakpx.com/wallpaper/908/997/HD-wallpaper-one-piece-luffy-thumbnail.jpg",
-  //   img2,
-  //   img1,
-  //   "https://cdn.vox-cdn.com/thumbor/8wbWvZmEgMB1Ukx_A51_nfl-uCU=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/23929708/tekken_8.jpg",
-
-  //   "https://c4.wallpaperflare.com/wallpaper/966/456/890/tekken-tag-tournament-2-jin-kazama-2560x1600-video-games-tekken-hd-art-wallpaper-preview.jpg",
-  //   "https://i.pinimg.com/736x/56/13/e7/5613e70ac2f1b34ccfbe8145dd7ad43a--virtual-games-tekken-.jpg",
-  //   "https://w0.peakpx.com/wallpaper/638/623/HD-wallpaper-akuma-capcom-street-fighter-videogames-thumbnail.jpg",
-  //   "https://p4.wallpaperbetter.com/wallpaper/621/399/620/chun-li-street-fighter-wallpaper-preview.jpg",
-  //   "https://i.pinimg.com/564x/c7/67/c9/c767c9ece36943979490b1a0d0db1126--ryu-street-fighter-nerd-art.jpg",
-  //   "https://i.pinimg.com/originals/f3/f6/e3/f3f6e357b08a50671dcee9adfbd7f04e.png",
-  //   "https://upload.wikimedia.org/wikipedia/en/2/2d/SSU_Kirby_artwork.png",
-  // ];
   const settings = {
     customPaging: (i) => {
       return (

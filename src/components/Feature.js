@@ -37,8 +37,8 @@ const   Feature = () => {
                       alt="hot-sale.jpg"
                     />
                     <div class="card-body">
-                      <h5 class="card-title">{option.product_name}</h5>
-                      <p class="card-text">${option.price}</p>
+                      <h5 class="card-title" style={{color:"black"}}>{option.product_name}</h5>
+                      <p class="card-text d-flex flex-start" style={{color:"black"}}>${option.price}</p>
                     </div>
                   </div>
                   </Link>

@@ -7,6 +7,7 @@ import Footer from "../common/Footer";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+import { toast, Toaster } from "react-hot-toast";
 
 const Cart = () => {
 
@@ -27,6 +28,7 @@ const Cart = () => {
     .then((response)=>{
       console.log(response)
       setTimeout(function () {
+        toast.error("Item removed from cart")
         window.location.reload(1);
       }, 1000);
       //asdasd
@@ -174,6 +176,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      <Toaster/>
       <Footer />
 
       </div>

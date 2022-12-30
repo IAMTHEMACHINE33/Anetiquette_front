@@ -1,12 +1,60 @@
-.categorybtn{
-    background: orange;
-    border-radius: 25px;
-    color: white;
-    font-weight: bold;
+.categorybtn {
+  background: orange;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+}
+
+button {
+  display: flex;
+  border: 1px solid black;
+}
+
+.dropArea{
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='42' ry='42' stroke='%230A0A0AFF' stroke-width='1' stroke-dasharray='20%2c20' stroke-dashoffset='38' stroke-linecap='square'/%3e%3c/svg%3e");
+
+}
+
+.add-button{
+    background:orange !important;
+    color:white !important;
+    border-radius: 10px !important;
+    border: none;
+    align-items: center;
+    justify-content: center !important;
+    display: flex !important;
     
 }
 
-button{
-    display: flex;
-    border: 1px solid black;
+@media screen and (min-width: 480px) and (max-width: 768px) {
+.dragimg{
+    width: 4rem !important;
+    height: 4rem !important;
 }
+
+}
+
+
+@media screen and  (max-width: 480px) {
+    .dragimg{
+        width: 3rem !important;
+        height: 3rem !important;
+        border-radius: 10px !important;
+    }
+
+    .add-button{
+        background:orange !important;
+        color:white !important;
+        border-radius: 10px !important;
+        border: none;
+        align-items: center;
+        justify-content: center !important;
+        display: flex !important;
+        margin-top: 3em;
+    }
+    .addproductbtn{
+        margin-top: 3em;
+        display: flex;
+        justify-content:center;
+    }
+    }

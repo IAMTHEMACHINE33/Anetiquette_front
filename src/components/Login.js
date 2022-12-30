@@ -124,7 +124,7 @@ const Login=()=> {
                             value={loginPassword} 
                             onChange={(e)=>setLoginPassword(e.target.value)}
                         />
-                       <style.Anchor >Forgot your password?</style.Anchor>                
+                       <style.Anchor href="/login_admin" >Forgot your password?</style.Anchor>                
                        <style.Anchor ><style.Input type="submit" name="loginsubmit" value="Sign In"/></style.Anchor>
                    </style.Form>
               </style.SignInContainer>
