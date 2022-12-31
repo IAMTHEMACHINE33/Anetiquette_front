@@ -1,5 +1,7 @@
 import React from "react";
 import { Navbar, Container } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { useState, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import logo from "../../photo/logo.png";
@@ -10,7 +12,27 @@ const Navigate = () => {
   const { activeLink, setActiveLink } = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const [image, setImage] = useState("");
+  const [name, setName] = useState("");
 
+  const config = {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
+  };
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/api/v1/show", config)
+      .then((response) => {
+        setName(response.data.data.name);
+        setImage(response.data.data.image);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  });
   var navbar;
   if (localStorage.getItem("token")) {
     navbar = (
@@ -18,13 +40,13 @@ const Navigate = () => {
         <div className="dropdown-profile">
           <div className="hex">
           <img
-            src="https://st4.depositphotos.com/15934180/22428/v/450/depositphotos_224288844-stock-illustration-man-with-cowboy-hat-silhouette.jpg"
+            src={"http://localhost:4000/" + image}
             alt="profile.jpg"
           ></img>
           </div>
           
         
-        <h3>Username</h3>
+        <h3>{name}</h3>
         </div>
         <hr></hr>
         <ul className="dropdown_ul">

@@ -19,6 +19,7 @@ import OrderSlide from "./sliders/orderslider";
 import Footer from "../common/Footer";
 import Typical from "react-typical";
 
+
 export default function Profile() {
   const navigate = useNavigate();
   const [name, setName] = useState("");
@@ -49,7 +50,7 @@ export default function Profile() {
   return (
     <>
       <NavigateBlack />
-      <div className="gradient-custom-2" style={{ backgroundColor: "#9de2ff" }}>
+      <div className="huss gradient-custom-2" style={{ backgroundColor: "#9de2ff" }}>
         <MDBContainer className="py-5 h-100">
           <MDBRow className="justify-content-center align-items-center h-100">
             <MDBCol lg="50" xl="10">
@@ -69,28 +70,35 @@ export default function Profile() {
                       fluid
                       style={{ width: "150px", zIndex: "1" }}
                     />
-                    <MDBBtn
-                      color="light"
-                      className="mt-2"
-                      style={{ height: "50px", overflow: "visible" }}
-                      onClick={Edit_Profile}
-                    >
-                      Edit profile
-                    </MDBBtn>
+
                   </div>
                   <div className="ms-5" style={{ marginTop: "150px" }}>
+                    
                     <MDBTypography tag="h5">
                       {name} <i class="fas fa-check"></i>{" "}
                     </MDBTypography>
 
                     <MDBCardText>{email}</MDBCardText>
                   </div>
+                 
                 </div>
                 <div
                   className="p-4 text-black"
                   style={{ backgroundColor: "#f8f9fa" }}
                 >
                   <div className="d-flex justify-content-end text-center py-1">
+                  <MDBBtn
+                      color="dark"
+                      className="trial mt-1"
+                      style={{ height: "50px", overflow: "visible", position: "absolute",
+                      top:"23%",
+                      right: "84%"
+                      ,
+                       }}
+                      onClick={Edit_Profile}
+                    >
+                      Edit profile
+                    </MDBBtn>
                     <div>
                       <MDBCardText className="mb-1 h5">253</MDBCardText>
                       <MDBCardText className="small text-muted mb-0">
@@ -116,13 +124,13 @@ export default function Profile() {
                         loop={Infinity}
                         wrapper="b"
                         steps={[
-                          "😳",
+                          "Welcome 😳",
                           1000,
-                          "😱",
+                          "To 😱",
                           1000,
-                          "😖 ",
+                          "AntiQuette😖 ",
                           1000,
-                          "Quack Quack😡",
+                          "Bid and Buy Freely😳",
                           1000,
                         ]}
                       />

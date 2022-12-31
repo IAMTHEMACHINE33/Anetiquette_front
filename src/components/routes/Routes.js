@@ -21,6 +21,8 @@ import UsersManage from "../admin/Users/users";
 import Final from "../search/testing";
 import Feedback from "../admin/Feedback/Feedback"
 import ProductManage from "../admin/Products/products";
+import OrderManage from "../admin/Orders/orders";
+import AddCat from "../admin/AddCategory/addcat";
 
 const Url = () => {
   return (
@@ -50,6 +52,8 @@ const Url = () => {
         <Route path="/Order_form" element={<PrivateRoute><Order_form /></PrivateRoute>}></Route>
         <Route path="/admin/Feedback" element={<PrivateRoute><Feedback /></PrivateRoute>}></Route>
         <Route path="/OrderDetails" element={<PrivateRoute><OrderDetails/></PrivateRoute>}></Route>
+        <Route path="/manageOrder" element={<OrderManage />}></Route>
+        <Route path="/addCategory" element={<AddCat />}></Route>
       </Routes>
     </>
   );

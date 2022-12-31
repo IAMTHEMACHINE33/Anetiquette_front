@@ -61,14 +61,17 @@ const Video = () => {
           <hr /> <hr />
           What is Antiquete?
           <hr />
-          <div className="p-4">
-            <MDBCardText
+          <div className="dump p-4" style={{
+                "font-family": "Bookman Old Style",
+                "font-size": "17px",
+              }}>
+            {/* <MDBCardText
               className="font-italic mb-1"
               style={{
                 "font-family": "Bookman Old Style",
                 "font-size": "17px",
               }}
-            >
+            > */}
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               ornare lectus sit amet est. Duis at consectetur lorem donec massa
@@ -102,7 +105,7 @@ const Video = () => {
               scelerisque mauris. Tellus molestie nunc non blandit massa enim
               nec dui nunc. Odio pellentesque diam volutpat commodo sed egestas
               egestas. Volutpat est velit egestas dui id.
-            </MDBCardText>
+            {/* </MDBCardText> */}
             <hr />
           </div>
         </p>

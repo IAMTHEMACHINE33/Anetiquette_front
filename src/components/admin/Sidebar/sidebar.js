@@ -26,44 +26,49 @@ const Sidebar = () => {
             <li>
               <a href="/admin/dashboard">
                 <MDBIcon fas icon="tachometer-alt" />
+                &ensp;
                 <span>Dashboard</span>
               </a>
             </li>
             <li>
               <a href="/users">
                 <MDBIcon fas icon="users" />
+                &ensp;
                 <span>Customers</span>
               </a>
             </li>
             <li>
               <a href="/productManage">
                 <MDBIcon fas icon="warehouse" />
+                &ensp;
                 <span>Products</span>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="/manageOrder">
                 <MDBIcon fas icon="truck" />
+                &ensp;
                 <span>Orders</span>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="/addCategory">
                 <MDBIcon fas icon="plus" />
-
+                &ensp;
                 <span>Add Category</span>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="/admin/Feedback">
                 <MDBIcon fas icon="far fa-comments" />
-
+                &ensp;
                 <span>Review Complains</span>
               </a>
             </li>
             <li>
               <a href="/login">
                 <MDBIcon fas icon="sign-out-alt" />
+                &ensp;
                 <span>Log Out</span>
               </a>
               

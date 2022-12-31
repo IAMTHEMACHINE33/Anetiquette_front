@@ -42,38 +42,42 @@ const Dash_admin = () => {
               <li>
                 <a href="" className="active">
                   <MDBIcon fas icon="tachometer-alt" />
+                  &ensp;
                   <span>Dashboard</span>
                 </a>
               </li>
               <li>
                 <a href="/users">
                   <MDBIcon fas icon="users" />
+                  &ensp;
                   <span>Customers</span>
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="/productManage">
                   <MDBIcon fas icon="warehouse" />
+                  &ensp;
                   <span>Products</span>
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="/manageOrder">
                   <MDBIcon fas icon="truck" />
+                  &ensp;
                   <span>Orders</span>
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="/addCategory">
                   <MDBIcon fas icon="plus" />
-
+                  &ensp;
                   <span>Add Category</span>
                 </a>
               </li>
               <li>
-            <a href="">
+            <a href="/admin/Feedback">
               <MDBIcon fas icon="far fa-comments" />
-
+              &ensp;
               <span>Review Complains</span>
             </a>
           </li>
@@ -81,6 +85,7 @@ const Dash_admin = () => {
               <li>
                 <a href="/login">
                   <MDBIcon fas icon="sign-out-alt" />
+                  &ensp;
                   <span>Log Out</span>
                 </a>
               </li>
@@ -232,8 +237,9 @@ const Dash_admin = () => {
                 <div className="card">
                   <div className="card-header">
                     <h3>Recent Products</h3>
-                    <button>
-                      See all
+                    <button> 
+                      See all &ensp;
+                     
                       <i class="fas fa-chevron-circle-right"></i>
                       <span className="las la-arrow-right"></span>
                     </button>
@@ -344,7 +350,7 @@ const Dash_admin = () => {
                   <div className="card-header">
                     <h3>New Users</h3>
                     <button>
-                      See all
+                      See all &ensp;
                       <i class="fas fa-chevron-circle-right"></i>
                       <span className="las la-arrow-right">
 
@@ -364,95 +370,92 @@ const Dash_admin = () => {
                     
                     );
                     })}
-                    <div className="contact">
-                    <i class="fas fa-user-check"></i>
-                    <i class="fas fa-comment"></i>
-                    <i class="fas fa-phone"></i>
-                    </div>
-                    <div className="customer">
+              
+              {users.map((us)=>{
+                      return(
+                      <div className="customer">
                       <div className="info">
                         <img src="https://preview.redd.it/ogvjtjvtfve71.png?auto=webp&s=390df20aca50d638da9bfeeedf4a16efd6ab297e" width="40px" height="40px" alt="" />
                       </div>
-                      <h4>Ram Thapa</h4>
-                      <small>Addresss</small>
+                      <h4>Name-Here</h4>
+                      <small>Email-Here</small>
                     </div>
-                    <div className="contact">
-                      <i class="fas fa-user-check"></i>
-                      <i class="fas fa-comment"></i>
-                      <i class="fas fa-phone"></i>
-                    </div>
-                    <div className="customer">
+                    
+                    );
+                    })}
+              
+              {users.map((us)=>{
+                      return(
+                      <div className="customer">
                       <div className="info">
                         <img src="https://preview.redd.it/ogvjtjvtfve71.png?auto=webp&s=390df20aca50d638da9bfeeedf4a16efd6ab297e" width="40px" height="40px" alt="" />
                       </div>
-                      <h4>Ram Thapa</h4>
-                      <small>Addresss</small>
+                      <h4>Name-Here</h4>
+                      <small>Email-Here</small>
                     </div>
-                    <div className="contact">
-                      <i class="fas fa-user-check"></i>
-                      <i class="fas fa-comment"></i>
-                      <i class="fas fa-phone"></i>
-                    </div>
-                    <div className="customer">
+                    
+                    );
+                    })}
+                    {users.map((us)=>{
+                      return(
+                      <div className="customer">
                       <div className="info">
                         <img src="https://preview.redd.it/ogvjtjvtfve71.png?auto=webp&s=390df20aca50d638da9bfeeedf4a16efd6ab297e" width="40px" height="40px" alt="" />
                       </div>
-                      <h4>Ram Thapa</h4>
-                      <small>Addresss</small>
+                      <h4>Name-Here</h4>
+                      <small>Email-Here</small>
                     </div>
-                    <div className="contact">
-                      <i class="fas fa-user-check"></i>
-                      <i class="fas fa-comment"></i>
-                      <i class="fas fa-phone"></i>
-                    </div>
-                    <div className="customer">
+                    
+                    );
+                    })}
+                   {users.map((us)=>{
+                      return(
+                      <div className="customer">
                       <div className="info">
                         <img src="https://preview.redd.it/ogvjtjvtfve71.png?auto=webp&s=390df20aca50d638da9bfeeedf4a16efd6ab297e" width="40px" height="40px" alt="" />
                       </div>
-                      <h4>Ram Thapa</h4>
-                      <small>Addresss</small>
+                      <h4>Name-Here</h4>
+                      <small>Email-Here</small>
                     </div>
-                    <div className="contact">
-                      <i class="fas fa-user-check"></i>
-                      <i class="fas fa-comment"></i>
-                      <i class="fas fa-phone"></i>
-                    </div>
-                    <div className="customer">
+                    
+                    );
+                    })}
+                    {users.map((us)=>{
+                      return(
+                      <div className="customer">
                       <div className="info">
                         <img src="https://preview.redd.it/ogvjtjvtfve71.png?auto=webp&s=390df20aca50d638da9bfeeedf4a16efd6ab297e" width="40px" height="40px" alt="" />
                       </div>
-                      <h4>Ram Thapa</h4>
-                      <small>Addresss</small>
+                      <h4>Name-Here</h4>
+                      <small>Email-Here</small>
                     </div>
-                    <div className="contact">
-                      <i class="fas fa-user-check"></i>
-                      <i class="fas fa-comment"></i>
-                      <i class="fas fa-phone"></i>
-                    </div>
-                    <div className="customer">
+                    
+                    );
+                    })}
+                    {users.map((us)=>{
+                      return(
+                      <div className="customer">
                       <div className="info">
                         <img src="https://preview.redd.it/ogvjtjvtfve71.png?auto=webp&s=390df20aca50d638da9bfeeedf4a16efd6ab297e" width="40px" height="40px" alt="" />
                       </div>
-                      <h4>Ram Thapa</h4>
-                      <small>Addresss</small>
+                      <h4>Name-Here</h4>
+                      <small>Email-Here</small>
                     </div>
-                    <div className="contact">
-                      <i class="fas fa-user-check"></i>
-                      <i class="fas fa-comment"></i>
-                      <i class="fas fa-phone"></i>
-                    </div>
-                    <div className="customer">
+                    
+                    );
+                    })}
+                    {users.map((us)=>{
+                      return(
+                      <div className="customer">
                       <div className="info">
                         <img src="https://preview.redd.it/ogvjtjvtfve71.png?auto=webp&s=390df20aca50d638da9bfeeedf4a16efd6ab297e" width="40px" height="40px" alt="" />
                       </div>
-                      <h4>Ram Thapa</h4>
-                      <small>Addresss</small>
+                      <h4>Name-Here</h4>
+                      <small>Email-Here</small>
                     </div>
-                    <div className="contact">
-                      <i class="fas fa-user-check"></i>
-                      <i class="fas fa-comment"></i>
-                      <i class="fas fa-phone"></i>
-                    </div>
+                    
+                    );
+                    })}
                   </div>
                 </div>
               </div>

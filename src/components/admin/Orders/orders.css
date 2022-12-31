@@ -1,0 +1,24 @@
+.cat{
+    padding: 5%
+}
+@media only screen and (max-width: 1200px){
+    .cat{
+        padding: 10%;
+    }
+  }
+
+  @media only screen and (max-width:768px){
+    .cat{
+       padding: 10%;
+    }
+  }
+  @media only screen and (max-width:530px){
+    .cat{
+       padding: 20%;
+    }
+  }
+  @media only screen and (max-width:365px){
+    .cat{
+       padding: 25%;
+    }
+  }

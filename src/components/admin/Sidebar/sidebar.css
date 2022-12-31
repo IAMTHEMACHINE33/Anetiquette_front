@@ -65,12 +65,12 @@
    }
    .widebar:hover .widebar-brand,
     .widebar:hover li {
-     padding-left: 2rem;
+     padding-left:-2rem;
      text-align: left;
     }
     .widebar:hover li a{
 
-     padding-left: 1rem;
+     padding-left: -3rem;
     }
     .widebar:hover .widebar-brand h2 span:last-child,
     .widebar:hover li a span:last-child{
