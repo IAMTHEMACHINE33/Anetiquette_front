@@ -1,8 +1,16 @@
+const { SlowMotionVideo } = require('@mui/icons-material');
 const puppeteer = require('puppeteer');
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ 
+    headless: false, 
+    slowMo: 30,
+    defaultViewport :{width: 1920, height: 1080},
+  });
   const page = await browser.newPage();
+
+  // ------------------- LOGIN ADMIN -------------------------
+
   await page.goto('http://localhost:3000/login_admin');
 
   await page.waitForSelector('input[name="loginemail"]');
@@ -16,10 +24,11 @@ const puppeteer = require('puppeteer');
 
   await page.waitForNavigation({ waitUntil: 'networkidle0' });
   if (page.url() !== 'http://localhost:3000/admin/dashboard')
-    throw new Error('Login fail!');
+    throw new Error('1: Admin Login Test Fail!');
     else 
-    console.log("Test Success")
-  await browser.close();
+    console.log("1: Admin Login Test Success")
 
-  await browser.close();
+
+  browser.close();
+  
 })();
