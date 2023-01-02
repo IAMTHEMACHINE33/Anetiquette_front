@@ -1,8 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../Sidebar/sidebar";
 import "./addcat.css";
+import axios from "axios";
 
 const AddCat = () => {
+  const [name,setName]=useState('');
+  const [image,setImage]=useState('');
+
+  const config={
+    headers:{
+      Authorization:"Bearer "+localStorage.getItem("admin_token")
+    }
+  }
+
+
+  const addCategory = ()=>{
+    const data = new FormData();
+    data.append("name",name);
+    data.append("category_img",image);
+
+    axios.post("http://localhost:4000/category/add",data,config)
+    .then((response)=>{
+      console.log(response)
+    })
+    .catch((e)=>{
+      console.log(e)
+    })
+  }
+
   return (
     <div>
       <Sidebar />
@@ -29,6 +54,7 @@ const AddCat = () => {
                               placeholder="Please enter Category Name"
                               required="required"
                               data-error="Category Name Field is required."
+                              onChange={(e)=>{setName(e.target.value)}}
                             />
                           </div>
                           <label class="form-label" for="customFile">
@@ -39,12 +65,14 @@ const AddCat = () => {
                             type="file"
                             class="form-control"
                             id="customFile"
+                            onChange={(e)=>{setImage(e.target.files[0])}}
                           />
                           <br />
                           <button
                             type="button"
                             class="btn btn-primary"
                             style={{ width: "150px" }}
+                            onClick={addCategory}
                           >
                             Submit
                           </button>
