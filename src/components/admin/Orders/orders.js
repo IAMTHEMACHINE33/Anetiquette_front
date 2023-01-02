@@ -3,16 +3,17 @@ import Sidebar from "../Sidebar/sidebar";
 import DataTable from "react-data-table-component";
 import axios from "axios";
 import './orders.css'
+import AlertStatusDropdown from "./dropdown";
 
 const OrderManage = () => {
-  // const [search, setSearch] = useState("");
-  const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] =useState([]);
-  const getProducts = async () => {
+  const [search, setSearch] = useState("");
+  const [orders, setOrders] = useState([]);
+  const [filteredOrders, setFilteredOrders] =useState([]);
+  const getOrders = async () => {
     try {
       const response = await axios.get("https://fakestoreapi.com/products/");
-      setProducts(response.data);
-      setFilteredProducts(response.data);
+      setOrders(response.data);
+      setFilteredOrders(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -54,15 +55,11 @@ const OrderManage = () => {
     },
 
     {
-      name: "Edit",
-      cell: (row) => (
-        <button
-          className="btn btn-success btn-sm rounded-0"
-          onClick={() => alert(row.id)}
-        >
-          <i class="fa fa-edit"></i>
-        </button>
-      ),
+      name: "Status",
+      cell: () => {
+        return <AlertStatusDropdown />;
+      }
+      
     },
     {
       name: "Delete",
@@ -77,28 +74,28 @@ const OrderManage = () => {
     },
   ];
   useEffect(() => {
-    getProducts();
+    getOrders();
   }, []);
-  // useEffect(()=>{
-  //   const result = users.filter(user=>{
-  //     return user.firstName.toLowerCase().match(search.toLowerCase());
-  //   });
-  //   setFilteredUsers(result);
-  // },[search]);
+  useEffect(()=>{
+    const result = orders.filter(order=>{
+      return order.title.toLowerCase().match(search.toLowerCase());
+    });
+    setFilteredOrders(result);
+  },[search]);
   return (
     <div className="rat">
       <Sidebar />
         <input 
         type="search" 
         placeholder="Search Here" 
-        className="w-20 form-control"
-        // value={search}
-        // onChange={(e)=>setSearch(e.target.value)}
+        className="w-25 form-control"
+        value={search}
+        onChange={(e)=>setSearch(e.target.value)}
           />
       <DataTable
         title="List of Orders"
         columns={columns}
-        data={filteredProducts}
+        data={filteredOrders}
         pagination
         fixedHeader
         fixedHeaderScrollHeight="500px"
@@ -106,8 +103,8 @@ const OrderManage = () => {
         selectableRowsHighlight
         highlightOnHover
         
-        actions={
-        <button className="btn btn-sm btn-info">Export</button>}
+        // actions={
+        // <button className="btn btn-sm btn-info">Export</button>}
 
       />
     </div>

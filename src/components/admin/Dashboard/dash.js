@@ -114,7 +114,7 @@ const Dash_admin = () => {
               </label>
               Dashboard
             </h3>
-            <div className="search-wrapper">
+            {/* <div className="search-wrapper">
               <span className="bi bi-search">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +128,7 @@ const Dash_admin = () => {
                 </svg>
               </span>
               <input type="search" placeholder="Search here" />
-            </div>
+            </div> */}
             <div className="user-wrapper">
               <img
                 src="https://preview.redd.it/ogvjtjvtfve71.png?auto=webp&s=390df20aca50d638da9bfeeedf4a16efd6ab297e"
@@ -147,7 +147,7 @@ const Dash_admin = () => {
               <div class="card-single">
                 <div>
                   <h1>{details.total_user}</h1>
-                  <span>Customers</span>
+                  <span>Users</span>
                 </div>
                 <div>
                   <span class="las la-users">

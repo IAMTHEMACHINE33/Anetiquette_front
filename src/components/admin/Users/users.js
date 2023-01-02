@@ -3,9 +3,11 @@ import Sidebar from "../Sidebar/sidebar";
 import DataTable from "react-data-table-component";
 import axios from "axios";
 import './users.css'
+import { right } from "styled-system";
+import { end } from "@popperjs/core";
 
 const UsersManage = () => {
-  // const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("");
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] =useState([]);
   const config = {
@@ -55,17 +57,7 @@ const UsersManage = () => {
       sortable: true,
     },
     
-    {
-      name: "Edit",
-      cell: (row) => (
-        <button
-          className="btn btn-success btn-sm rounded-0"
-          onClick={() => alert(row.id)}
-        >
-          <i class="fa fa-edit"></i>
-        </button>
-      ),
-    },
+
     {
       name: "Delete",
       cell: (row) => (
@@ -81,12 +73,12 @@ const UsersManage = () => {
   useEffect(() => {
     getUsers();
   }, []);
-  // useEffect(()=>{
-  //   const result = users.filter(user=>{
-  //     return user.firstName.toLowerCase().match(search.toLowerCase());
-  //   });
-  //   setFilteredUsers(result);
-  // },[search]);
+  useEffect(()=>{
+    const result = users.filter(user=>{
+      return user.name.toLowerCase().match(search.toLowerCase());
+    });
+    setFilteredUsers(result);
+  },[search]);
   return (
     <div className="mat">
       <Sidebar />
@@ -94,8 +86,8 @@ const UsersManage = () => {
         type="search" 
         placeholder="Search Here" 
         className="w-25 form-control"
-        // value={search}
-        // onChange={(e)=>setSearch(e.target.value)}
+        value={search}
+        onChange={(e)=>setSearch(e.target.value)}
           />
       <DataTable
         title="List of Users"
@@ -107,8 +99,8 @@ const UsersManage = () => {
         selectableRows
         selectableRowsHighlight
         highlightOnHover
-        actions={
-        <button className="btn btn-sm btn-info">Export</button>}
+        // actions={
+        // <button className="btn btn-sm btn-info">Export</button>}
 
       />
     </div>

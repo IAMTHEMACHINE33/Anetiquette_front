@@ -34,7 +34,7 @@ const Sidebar = () => {
               <a href="/users">
                 <MDBIcon fas icon="users" />
                 &ensp;
-                <span>Customers</span>
+                <span>Users</span>
               </a>
             </li>
             <li>

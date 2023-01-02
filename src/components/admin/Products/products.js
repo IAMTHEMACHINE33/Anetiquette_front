@@ -5,7 +5,7 @@ import axios from "axios";
 import './products.css'
 
 const ProductManage = () => {
-  // const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] =useState([]);
   const config={
@@ -58,18 +58,6 @@ const ProductManage = () => {
       selector: (row) => row.images[0].name,
       width: "34rem" 
     },
-
-    {
-      name: "Edit",
-      cell: (row) => (
-        <button
-          className="btn btn-success btn-sm rounded-0"
-          onClick={() => alert(row.id)}
-        >
-          <i class="fa fa-edit"></i>
-        </button>
-      ),
-    },
     {
       name: "Delete",
       cell: (row) => (
@@ -85,21 +73,21 @@ const ProductManage = () => {
   useEffect(() => {
     getProducts();
   }, []);
-  // useEffect(()=>{
-  //   const result = users.filter(user=>{
-  //     return user.firstName.toLowerCase().match(search.toLowerCase());
-  //   });
-  //   setFilteredUsers(result);
-  // },[search]);
+  useEffect(()=>{
+    const result = products.filter(product=>{
+      return product.product_name.toLowerCase().match(search.toLowerCase());
+    });
+    setFilteredProducts(result);
+  },[search]);
   return (
     <div className="rat">
       <Sidebar />
         <input 
         type="search" 
         placeholder="Search Here" 
-        className="w-20 form-control"
-        // value={search}
-        // onChange={(e)=>setSearch(e.target.value)}
+        className="w-25 form-control"
+        value={search}
+        onChange={(e)=>setSearch(e.target.value)}
           />
       <DataTable
         title="List of Products"
@@ -111,9 +99,8 @@ const ProductManage = () => {
         selectableRows
         selectableRowsHighlight
         highlightOnHover
-        
-        actions={
-        <button className="btn btn-sm btn-info">Export</button>}
+                // actions={
+        // <button className="btn btn-sm btn-info">Export</button>}
 
       />
     </div>
