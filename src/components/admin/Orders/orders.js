@@ -3,17 +3,39 @@ import Sidebar from "../Sidebar/sidebar";
 import DataTable from "react-data-table-component";
 import axios from "axios";
 import './orders.css'
-import AlertStatusDropdown from "./dropdown";
 
 const OrderManage = () => {
   const [search, setSearch] = useState("");
   const [orders, setOrders] = useState([]);
   const [filteredOrders, setFilteredOrders] =useState([]);
-  const getOrders = async () => {
+  const config={
+    headers:{
+      Authorization:"Bearer "+localStorage.getItem("admin_token")
+    }
+  }
+  const deleteOrder = (oid)=>{
+    const data ={
+      remove_order:oid
+    }
+    console.log(data)
+    axios.put("http://localhost:4000/api/v1/orders/delete",data,config)
+    .then((response)=>{
+      console.log(response)
+      setTimeout(function () {
+        window.location.reload(1);
+      }, 1000);
+  
+    })
+    .catch((e)=>{
+      console.log(e)
+    })
+  }
+  const getOrders= async () => {
     try {
-      const response = await axios.get("https://fakestoreapi.com/products/");
-      setOrders(response.data);
-      setFilteredOrders(response.data);
+      const response = await axios.get("http://localhost:4000/api/v1/orders",config);
+      console.log(response.data.data)
+      setOrders(response.data.data);
+      setFilteredOrders(response.data.data);
     } catch (error) {
       console.log(error);
     }
@@ -26,47 +48,51 @@ const OrderManage = () => {
       width: "4rem" 
     },
     {
-      name: "Name",
-      selector: (row) => row.title,
+      name: "Email",
+      selector: (row) => row.email,
       sortable: true,
       width: "20rem" 
     },
     {
       name: "Price",
-      selector: (row) => row.price,
+      selector: (row) => row.total,
       sortable: true,
       width: "10rem" 
     },
     {
-      name: "Description",
-      selector: (row) => row.description,
+      name: "Address",
+      selector: (row) => row.address,
       width: "50rem" 
     },
     {
-      name: "Category",
-      selector: (row) => row.category,
+      name: "Phone",
+      selector: (row) => row.phone,
       sortable: true,
       width: "10rem" 
     },
     {
-      name: "Image",
-      selector: (row) => row.image,
+      name: "Payment",
+      selector: (row) => row.payment,
       width: "34rem" 
     },
 
     {
-      name: "Status",
-      cell: () => {
-        return <AlertStatusDropdown />;
-      }
-      
+      name: "Edit",
+      cell: (row) => (
+        <button
+          className="btn btn-success btn-sm rounded-0"
+          onClick={() => alert(row.id)}
+        >
+          <i class="fa fa-edit"></i>
+        </button>
+      ),
     },
     {
       name: "Delete",
       cell: (row) => (
         <button
           className="btn btn-danger btn-sm rounded-0"
-          onClick={() => alert(row.id)}
+          onClick={() => deleteOrder(row._id)}
         >
           <i class="fa fa-trash"></i>
         </button>
@@ -78,7 +104,7 @@ const OrderManage = () => {
   }, []);
   useEffect(()=>{
     const result = orders.filter(order=>{
-      return order.title.toLowerCase().match(search.toLowerCase());
+      return order.email.toLowerCase().match(search.toLowerCase());
     });
     setFilteredOrders(result);
   },[search]);
@@ -88,7 +114,7 @@ const OrderManage = () => {
         <input 
         type="search" 
         placeholder="Search Here" 
-        className="w-25 form-control"
+        className="w-20 form-control"
         value={search}
         onChange={(e)=>setSearch(e.target.value)}
           />
@@ -103,8 +129,8 @@ const OrderManage = () => {
         selectableRowsHighlight
         highlightOnHover
         
-        // actions={
-        // <button className="btn btn-sm btn-info">Export</button>}
+        actions={
+        <button className="btn btn-sm btn-info">Export</button>}
 
       />
     </div>
