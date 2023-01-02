@@ -26,7 +26,7 @@ const   Feature = () => {
 
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 3, 900: 4 }}>
           <Masonry>
-            {details.map((option) => {
+            {details.slice(0,8).map((option) => {
               return (
                 <a href="/product" className="text-black">
                   <Link to={"/product/"+option._id}>
