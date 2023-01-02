@@ -13,6 +13,23 @@ const ProductManage = () => {
       Authorization:"Bearer "+localStorage.getItem("admin_token")
     }
   }
+  const deleteProduct = (pid)=>{
+    const data ={
+      remove_product:pid
+    }
+    console.log(data)
+    axios.put("http://localhost:4000/api/v1/products/delete",data,config)
+    .then((response)=>{
+      console.log(response)
+      setTimeout(function () {
+        window.location.reload(1);
+      }, 1000);
+  
+    })
+    .catch((e)=>{
+      console.log(e)
+    })
+  }
   const getProducts = async () => {
     try {
       const response = await axios.get("http://localhost:4000/api/v1/products",config);
@@ -75,7 +92,7 @@ const ProductManage = () => {
       cell: (row) => (
         <button
           className="btn btn-danger btn-sm rounded-0"
-          onClick={() => alert(row.id)}
+          onClick={() => deleteProduct(row._id)}
         >
           <i class="fa fa-trash"></i>
         </button>

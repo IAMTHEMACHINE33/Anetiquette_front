@@ -13,6 +13,23 @@ const UsersManage = () => {
       Authorization:"Bearer "+localStorage.getItem("admin_token")
     }
   }
+  const deleteCustomer = (cid)=>{
+    const data ={
+      remove_customer:cid
+    }
+    console.log(data)
+    axios.put("http://localhost:4000/api/v1/customers/delete",data,config)
+    .then((response)=>{
+      console.log(response)
+      setTimeout(function () {
+        window.location.reload(1);
+      }, 1000);
+  
+    })
+    .catch((e)=>{
+      console.log(e)
+    })
+  }
   const getUsers = async () => {
     try {
       const response = await axios.get("http://localhost:4000/api/v1/customers",config);
@@ -71,7 +88,7 @@ const UsersManage = () => {
       cell: (row) => (
         <button
           className="btn btn-danger btn-sm rounded-0"
-          onClick={() => alert(row.id)}
+          onClick={() => deleteCustomer(row._id)}
         >
           <i class="fa fa-trash"></i>
         </button>
