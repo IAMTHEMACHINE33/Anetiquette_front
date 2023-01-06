@@ -1,0 +1,53 @@
+.main {
+    min-width: 100px;
+    padding: 0 20px;
+    margin: 0 auto;
+    height: 260px;
+  }
+  
+  .transitionsItem {
+    overflow: hidden;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 4em;
+    font-weight: 800;
+    text-transform: uppercase;
+    will-change: transform, opacity, height;
+    white-space: nowrap;
+    cursor: pointer;
+    line-height: 80px;
+  }
+  
+  .container {
+    
+    height: 100%;
+    justify-content: center;
+  }
+  
+
+  @media screen and (min-width: 320px) and (max-width: 500px) {
+    .categorydecor{
+        height: fit-content !important;
+    }
+
+    .cathead_img img{
+        width: auto !important;
+        height: 17rem !important;
+        text-align: center;
+        object-fit: cover;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .cathead_text_contain{
+        padding: 0px !important;
+    }
+
+    .cathead_text{
+        font-size: 30px !important;
+      
+    }
+  }

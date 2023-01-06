@@ -30,8 +30,7 @@ const AddProduts = () => {
   const [time, setTime] = useState("");
   const [details, setDetails] = useState([]);
 
-  // const resolveAfter3Sec = new Promise(resolve => setTimeout(resolve, 3000));
-
+  
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     accept: "image/*",
     onDrop: (acceptedFiles) => {
@@ -98,21 +97,23 @@ const AddProduts = () => {
     for (let i = 0; i < image.length; i++) {
       data.append("product_img", image[i]);
     }
-
     console.log("after");
     axios
       .post("http://localhost:4000/product/add", data, config)
       .then((response) => {
         console.log(response);
         console.log(config);
-        toast.success("product added");
+        toast.success("Product added !")
         setTimeout(function () {
           navigate(redirect);
         }, 3000);
       })
       .catch((e) => {
-        toast.error("Failed to add product");
+        
+        toast.error("Failed to add");
+
         console.log(e);
+        
       });
   };
 
@@ -128,7 +129,7 @@ const AddProduts = () => {
       <NavigateBlack />
       <div className="container-fluid mt-5 py-3">
         <div className="container-fluid mt-5 p-3">
-          <form name="myform">
+          <form name="myform" novalidate>
             <div className="row row-cols-sm-1 row-cols-md-2 row-cols-lg-2">
               <div className="col p-3">
                 <h1>
@@ -151,7 +152,7 @@ const AddProduts = () => {
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="Apple"
+                      placeholder="Enter product name"
                       onChange={(e) => {
                         setName(e.target.value);
                       }}
@@ -162,6 +163,7 @@ const AddProduts = () => {
                     <input
                       type="number"
                       class="form-control"
+                      placeholder="Add price"
                       onChange={(e) => {
                         setPrice(e.target.value);
                       }}
@@ -171,6 +173,7 @@ const AddProduts = () => {
                 <div class="form-group mt-2">
                   <label for="FormControlTextarea1 ">Description</label>
                   <textarea
+                  style={{resize:"none"}}
                     class="form-control"
                     placeholder="Write the product information"
                     id="FormControlTextarea1"

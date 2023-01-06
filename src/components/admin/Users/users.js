@@ -3,7 +3,7 @@ import Sidebar from "../Sidebar/sidebar";
 import DataTable from "react-data-table-component";
 import axios from "axios";
 import './users.css'
-import { right } from "styled-system";
+// import { right } from "styled-system";
 import { end } from "@popperjs/core";
 
 const UsersManage = () => {

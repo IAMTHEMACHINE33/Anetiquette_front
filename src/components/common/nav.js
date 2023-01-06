@@ -155,7 +155,7 @@ const Navigate = () => {
                 Home
               </Nav.Link>
               <Nav.Link
-                href="#category"
+                href="/category"
                 className={
                   activeLink === "category"
                     ? "active navbar-link"

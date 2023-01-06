@@ -5,99 +5,106 @@ import img2 from "../photo/redlips.jpg";
 import Slider from "react-slick";
 import img3 from "../photo/logo.png";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 const Category = () => {
-    const [details, setDetails] = useState([]);
+  const [details, setDetails] = useState([]);
 
-    useEffect(()=>{
-      axios.get("http://localhost:4000/category/show")
-      .then(result=>{
-        console.log(result.data.data)
-        setDetails(result.data.data)
-      }).catch(e=>{
-        console.log(e)
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/category/show")
+      .then((result) => {
+        console.log(result.data.data);
+        setDetails(result.data.data);
       })
-    },[])  
-    const settings = {
-      
-      dots: true,
-      infinite: true,
-      slidesToShow: 6,
-      swipeToSlide: true,
-      autoplay: true,
-      speed: 500,
-      autoplaySpeed: 3000,
-      cssEase: "linear",
-      afterChange: function(index) {
-        console.log(
-          `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-        );
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 6,
+    swipeToSlide: true,
+    autoplay: true,
+    speed: 500,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
+    afterChange: function (index) {
+      console.log(
+        `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
+      );
+    },
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
       },
-      responsive: [
-       
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 5,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
-          }
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 2,
+          initialSlide: 2,
         },
-        {
-          breakpoint: 700,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 2,
-            initialSlide: 2
-          }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: false,
         },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            dots:false,
-          }
-        }
-      ]
-      
-    };
-    
-      return (
-        <>
-        <div className="container-fluid">
+      },
+    ],
+  };
+
+  return (
+    <>
+      <div className="container-fluid">
         <h2 className="text-center mt-4"> Category</h2>
-        
-        <Slider {...settings} >
-         
-              {details.map(option=>{
-                return(
-                  <div className="card border-0  categorycard">
-                <div className="categoryimage">
-                <img className="card-img-top img-responsive " src={"http://localhost:4000/"+option.image} alt="Card image cap" />
-                </div> 
+
+        <Slider {...settings}>
+          {details.map((option) => {
+            return (
+              <Link to={"/search"}>
+              <div className="card border-0  categorycard">
                 
+                  <div className="categoryimage">
+                    <img
+                      className="card-img-top img-responsive "
+                      src={"http://localhost:4000/" + option.image}
+                      alt="Card image cap"
+                    />
+                  </div>
+                  
                   <p className="card-text text-center">{option.name}</p>
-               
+                  
               </div>
-                )
-              })}
-              
-  
-              <div className="card border-0  categorycard">
-                <div className="categoryimage">
-                <img className="card-img-top img-responsive " src="https://media.gq.com/photos/5bbe499d7205c71b4dcc0bc7/master/w_2000,h_1333,c_limit/2018-10_GQ_Cartoon-Face-Watches-timex_3x2.jpg" />
-                </div>
-                
-                
-                  <p className="card-text text-center">Category name</p>
-                
-              </div>
-  
-              <div className="card border-0  categorycard">
-                <div className="categoryimage">
-                <img className="card-img-top img-responsive " 
+              </Link>
+            );
+          })}
+
+          <div className="card border-0  categorycard">
+            <div className="categoryimage">
+              <img
+                className="card-img-top img-responsive "
+                src="https://media.gq.com/photos/5bbe499d7205c71b4dcc0bc7/master/w_2000,h_1333,c_limit/2018-10_GQ_Cartoon-Face-Watches-timex_3x2.jpg"
+              />
+            </div>
+
+            <p className="card-text text-center">Category name</p>
+          </div>
+
+          <div className="card border-0  categorycard">
+            <div className="categoryimage">
+              <img
+                className="card-img-top img-responsive "
                 src="data:image/jpeg;base64,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
                 +kY0F3l5BorvLyEmXNfZ+D1E1TZn2hjXNZaNylIb1s2X9cbf2a/pHdFd5eQaK7y8h3+hTa96UmqdI5z1M1ds91/H
                 5HONv7Nf0j+iu8vINHXyEi6F1s91/H5X1j56Ftu3HzU1T5HONv7Nf0j+HEvIMDu9CuBuV7gmqfVHQrg8IuPx+pzDbezXizg4cS8gwJ
@@ -126,88 +133,89 @@ const Category = () => {
                 9tUOmAOU3Ju3ptQoiJvJFo8x8fevbuAw/ilDmOwAOK7JK2Lt2+Ev7JQ5jC7Im0rt26Ev7LS5iQACMvyAs6/m6J2qDU7xhfm3sq7dvj/qte3vKSwAQ5+a+xrtwKada+u3vONWpmhsS9JqnE2
                 RITyydgCv3Zm7HweomqTX5zE/MvZF/wqyapNTxligCtHZkbMvCk1SE8bT46B1n6qZ3dn1CzgBWPQOs/VzE1SGfUPegnbPYyLg3VIp/ZlmgCr3ZlYfsZ1xb8PTXyDE7MxT9jc7gmt7V5i1Q
                 ZkZqjqZmHexvExOubpeWhgqZlpPsb1I/WpP+1LiAygzlTKZlZW7eq3cav2pkbmRqr668yO1Rd9qXEBlBnKoWZjmezukp2/osa3vuU26
-                GY6B/iy51RN1PNKTEX5KlqA0aFot1KJHpRqDdCjQY2nTbt4NTfXdXdVTfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//Z" 
-                alt="Card image cap" />
-                </div> 
-               
-                  <p className="card-text text-center">Category name</p>
-               
-              </div>
-  
-              
-        
-              <div className="card border-0  categorycard">
-                <div className="categoryimage">
-                <img className="card-img-top img-responsive " src="https://img.freepik.com/premium-vector/musical-instruments-cartoon-doodle-music-guitar-drums-piano-synthesizer-harp-jazz-band-musical-instruments-illustration-set-gramophone-xylophone-tuba-trombone-banjo-flute_229548-587.jpg?w=2000" alt="Card image cap" />
-                
-                </div> 
-              
-                <p className="text-center">Category name</p>
-               
-              </div>
-  
-              <div className="card border-0  categorycard">
-                <div className="categoryimage">
-                <img className="card-img-top img-responsive " src={img2} alt="Card image cap" />
-                </div>
-                
-              
-                  <p className="card-text text-center">Category name</p>
-                
-              </div>
-  
-              <div className="card border-0  categorycard">
-                <div className="categoryimage">
-                <img className="card-img-top img-responsive " src={img3} alt="Card image cap" />
-                </div> 
-               
-                  <p className="card-text text-center">Category name</p>
-              
-              </div>
-              
-        
-              <div className="card border-0  categorycard">
-                <div className="categoryimage">
-                <img className="card-img-top img-responsive " src={img1} alt="Card image cap" />
-                </div> 
-             
-                  <p className="card-text text-center">Category name</p>
-              
-              </div>
-  
-              <div className="card border-0  categorycard">
-                <div className="categoryimage">
-                <img className="card-img-top img-responsive " src={img2} alt="Card image cap" />
-                </div>
-                
-                
-                  <p className="card-text text-center">Category name</p>
-               
-              </div>
-  
-              <div className="card border-0  categorycard">
-                <div className="categoryimage">
-                <img className="card-img-top img-responsive " src={img3} alt="Card image cap" />
-                </div> 
-               
-                  <p className="card-text text-center">Category name</p>
-                
-              </div>
-  
-              
-             
-              </Slider>
-        </div>
-        
-           
-          
-        </>
-          
-        
-      );
-    
-    
-  }
+                GY6B/iy51RN1PNKTEX5KlqA0aFot1KJHpRqDdCjQY2nTbt4NTfXdXdVTfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//Z"
+                alt="Card image cap"
+              />
+            </div>
+
+            <p className="card-text text-center">Category name</p>
+          </div>
+
+          <div className="card border-0  categorycard">
+            <div className="categoryimage">
+              <img
+                className="card-img-top img-responsive "
+                src="https://img.freepik.com/premium-vector/musical-instruments-cartoon-doodle-music-guitar-drums-piano-synthesizer-harp-jazz-band-musical-instruments-illustration-set-gramophone-xylophone-tuba-trombone-banjo-flute_229548-587.jpg?w=2000"
+                alt="Card image cap"
+              />
+            </div>
+
+            <p className="text-center">Category name</p>
+          </div>
+
+          <div className="card border-0  categorycard">
+            <div className="categoryimage">
+              <img
+                className="card-img-top img-responsive "
+                src={img2}
+                alt="Card image cap"
+              />
+            </div>
+
+            <p className="card-text text-center">Category name</p>
+          </div>
+
+          <div className="card border-0  categorycard">
+            <div className="categoryimage">
+              <img
+                className="card-img-top img-responsive "
+                src={img3}
+                alt="Card image cap"
+              />
+            </div>
+
+            <p className="card-text text-center">Category name</p>
+          </div>
+
+          <div className="card border-0  categorycard">
+            <div className="categoryimage">
+              <img
+                className="card-img-top img-responsive "
+                src={img1}
+                alt="Card image cap"
+              />
+            </div>
+
+            <p className="card-text text-center">Category name</p>
+          </div>
+
+          <div className="card border-0  categorycard">
+            <div className="categoryimage">
+              <img
+                className="card-img-top img-responsive "
+                src={img2}
+                alt="Card image cap"
+              />
+            </div>
+
+            <p className="card-text text-center">Category name</p>
+          </div>
+
+          <div className="card border-0  categorycard">
+            <div className="categoryimage">
+              <img
+                className="card-img-top img-responsive "
+                src={img3}
+                alt="Card image cap"
+              />
+            </div>
+
+            <p className="card-text text-center">Category name</p>
+          </div>
+        </Slider>
+      </div>
+    </>
+  );
+};
 
 export default Category;
-

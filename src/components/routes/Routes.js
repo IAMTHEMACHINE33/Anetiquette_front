@@ -23,24 +23,22 @@ import Feedback from "../admin/Feedback/Feedback"
 import ProductManage from "../admin/Products/products";
 import OrderManage from "../admin/Orders/orders";
 import AddCat from "../admin/AddCategory/addcat";
+import Category from "../categorize/categorize";
 
 const Url = () => {
   return (
     <>
       <Routes>
+        <Route path="/category" element={<Category/>}></Route>
         <Route path="/cat" element={<Final />}></Route>
         <Route path="/searchres" element={<Search />}></Route>
         <Route path="/search" element={<SearchResult />}></Route>
         <Route path="/login" element={<Login />}></Route>
-
         <Route path="/" element={<Home />}></Route>
         <Route path="/cart" element={<PrivateRoute><Cart /></PrivateRoute>}></Route>
         <Route path="/nav" element={<Navbar />}></Route>
-
         <Route path="/product/:pid" element={<Product />}></Route>
-
         <Route path="/help" element={<Faq />}></Route>
-
         <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>}></Route>
         <Route path="/Edit_profile" element={<PrivateRoute><Edit_profile /></PrivateRoute>}></Route>
         <Route path="/Add_products" element={<PrivateRoute><Add_products /></PrivateRoute>}></Route>

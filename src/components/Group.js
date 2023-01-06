@@ -84,6 +84,7 @@ const Category = () => {
         <Slider {...settings} className="w-100">
           {details.map((option) => {
             return (
+              <a href="/category" style={{color:"black !important",pointer:"cursor"}}>
               <div className="card border-0  categorycard">
                 <div className="categoryimage">
                   <img
@@ -93,8 +94,9 @@ const Category = () => {
                   />
                 </div>
 
-                <p className="card-text text-center">{option.name}</p>
+                <p className="card-text text-center" style={{color:"black"}}>{option.name}</p>
               </div>
+              </a>
             );
           })}
 

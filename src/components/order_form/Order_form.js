@@ -6,6 +6,7 @@ import NavigateBlack from "../common/navblack";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "../common/Footer";
 import axios from "axios";
+import {toast, Toaster} from "react-hot-toast";
 
 const OrderForm = () => {
 
@@ -38,9 +39,11 @@ const OrderForm = () => {
     }
     axios.post("http://localhost:4000/order/add",data,config)
     .then((response)=>{
-      console.log(response)
+      console.log(response);
+      toast.success("Order complete");
     })
     .catch((e)=>{
+      toast.error("Failed to checkout");
       console.log(e)
     })
   }
@@ -218,6 +221,7 @@ const OrderForm = () => {
             </div>
           </div>
         </div>
+        <Toaster/>
         <Footer />
       </div>
     </>

@@ -37,3 +37,9 @@ https://kovart.github.io/dashed-border-generator/
 border banaune box
 
 ==============================================================================
+
+npm i react-spring
+
+godlike animations and coding skill required
+
+==============================================================================

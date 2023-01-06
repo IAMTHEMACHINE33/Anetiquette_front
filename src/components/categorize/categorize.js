@@ -1,19 +1,24 @@
-import React, { useEffect, useState } from "react";
-import "./searchResult.css";
+import "../group.css";
+import Category from "../Category";
+import React, { useState, useEffect, useRef } from "react";
+import img1 from "../../photo/neon.jpg";
+import img2 from "../../photo/redlips.jpg";
+import Slider from "react-slick";
+import img3 from "../../photo/logo.png";
+import axios from "axios";
+import { Link } from "react-router-dom";
 import NavigateBlack from "../common/navblack";
 import Footer from "../common/Footer";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import axios from "axios";
-import { Link } from "react-router-dom";
+import { useMemo } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
-import { useMemo } from "react";
 import errorimg from "../../photo/errorduck.jpg";
+import CatHead from "../categorize/cat_head";
 
-import styled from "styled-components";
-import { toast } from "react-hot-toast";
 
-const SearchResult = () => {
+
+const Categorize = () => {
   const [details, setDetails] = useState([]);
   const [category, setCategory] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState();
@@ -21,22 +26,14 @@ const SearchResult = () => {
   const [order, setOrder] = useState("asc");
   const [moneyhigh, setMoneyHigh] = useState("high");
   const [moneylow, setMoneyLow] = useState("low");
-  function getInputValue() {
-    // Selecting the input element and get its value
-    var inputVal = document.getElementById("myInput").value;
 
-    // Displaying the value
-    document.getElementById("myOutput").innerHTML = inputVal;
-  }
 
-  function enterSearch(e) {
-    if (e.key === "Enter" || e.key === "Go") {
-      searchRe();
-      alert(getInputValue);
-    }
+    //======================================================= Script to click btn before loading========================================================
 
-    return false;
-  }
+  window.onload=function(){
+    document.getElementById("first").click();
+  };
+
 
   const config = {
     headers: {
@@ -56,7 +53,6 @@ const SearchResult = () => {
         console.log(response.data.data);
       })
       .catch((e) => {
-        
         console.log(e);
       });
   };
@@ -83,6 +79,7 @@ const SearchResult = () => {
     axios
       .get("http://localhost:4000/category/show")
       .then((result) => {
+        // setDetails(result.data.data);
         setCategory(result.data.data);
         console.log(result.data.data);
         for (let c = 0; c < category.length; c++) {
@@ -94,23 +91,26 @@ const SearchResult = () => {
         console.log(e);
       });
   }, []);
+
   //======================================================= Category sorting========================================================
+  const divRef = useRef();
+  
   function handleCategoryChange(event) {
+    console.log("clicking");
+    window.scrollBy(0, 400);
+    // const li = document.querySelector("li");
+    // const value = li.dataset.value;
+    //event.target.value = document.getElementById("category_value").getAttribute("data-value");
     console.log(event.target.value);
     setSelectedCategory(event.target.value);
   }
 
   function getFilteredList() {
-    if (!selectedCategory) {
-      return details;
-    }
     return details.filter((option) => option.category._id === selectedCategory);
   }
 
   var filteredList = useMemo(getFilteredList, [selectedCategory, details]);
 
-
- 
   //=======================================================  sorting========================================================
 
   const sorting = (col) => {
@@ -148,6 +148,50 @@ const SearchResult = () => {
     }
   };
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 6,
+    autoplay: true,
+    swipeToSlide: true,
+    autoplay: false,
+    speed: 500,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
+    afterChange: function (index) {
+      console.log(
+        `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
+      );
+    },
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: false,
+        },
+      },
+    ],
+  };
+
   {
     /* ============================================================ Filter End ============================================================ */
   }
@@ -155,44 +199,89 @@ const SearchResult = () => {
   return (
     <>
       <NavigateBlack />
-      <div className="container-fluid p-5 mt-3">
-        <div className="container-fluid mt-5 p-2 ">
-          <div className="input-group rounded">
-            <input
-              type="search"
-              className="form-control rounded"
-              placeholder="Enter to search..."
-              aria-label="Search"
-              id="myInput"
-              aria-describedby="search-addon"
-              onChange={(e) => {
-                setSearch(e.target.value);
-              }}
-              onKeyPress={(e) => {
-                if (e.key === "Enter" || e.key === "Go") {
-                  getInputValue();
-                  searchRe();
-                  alert(getInputValue);
-                }
-              }}
-            />
-            <button
-              className="input-group-text border-0"
-              id="search-addon"
-              onClick={() => {
-                getInputValue();
-                searchRe();
-              }}
-            >
-              <i className="fas fa-search" id="search"></i>
-            </button>
-          </div>
+      <button id="first"  onClick={handleCategoryChange} value={category._id}></button>
+      <CatHead/>
+      <div className="container ">
+        <div className="container-fluid p-5">
+          
+          <Slider {...settings}>
+            {category.map((option) => {
+              return (
+                <>
+                <div className="card border-0  mb-3 p=5 categorycard d-flex justify-content-end  " >
+                  <button
+                    value={option._id}
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      width: "100%",
+                      height: "100%",
+                      border: "none",
+
+                      background: "none",
+                    }}
+                    onClick={handleCategoryChange}
+                  ></button>
+                  <div
+                    className="tryhard_category"
+                    ref={divRef}
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      flexDirection: "column",
+                      marginTop: "3rem",
+                    }}
+                  >
+                    <img
+                      style={{
+                        width: "5rem",
+                        height: "5rem",
+                        objectFit: "cover",
+                        borderRadius: "50%",
+                        display: "flex !important",
+                        justifyContent: "center !important",
+                      }}
+                      className="card-img-top"
+                      src={"http://localhost:4000/" + option.image}
+                      alt="Card image cap"
+                    />
+
+                    <p className="text-center mt-4">{option.name}</p>
+                  </div>
+                </div>
+               
+                </>
+              );
+            })}
+          </Slider>
         </div>
         {/* ============================================================ Filter ============================================================ */}
         <>
-          <div className="container-fluid">
-            <div className="row  row-col-sm-1  row-col-md-2 row-col-lg-2 my-3">
-              <div className="col filter_sort">
+          <div className="container-fluid my-5">
+            <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 d-flex justify-content-evenly ">
+              <div className="col serching_box">
+                <div class="search-box">
+                  <button class="btn-search">
+                    <i class="fas fa-search"></i>
+                  </button>
+                  <input
+                    type="text"
+                    class="input-search"
+                    placeholder="Type to Search..."
+                    onChange={(e) => {
+                      setSearch(e.target.value);
+                    }}
+                    onKeyPress={(e) => {
+                      if (e.key === "Enter" || e.key === "Go") {
+                        searchRe();
+                      }
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="col d-flex flex-row-reverse filter_sort mt-3">
                 <DropdownButton
                   align="end"
                   title="Sort By"
@@ -211,36 +300,12 @@ const SearchResult = () => {
                   </Dropdown.Item>
                 </DropdownButton>
               </div>
-              <div className="col filter_category">
-                <button
-                  className="categorybtn "
-                  value=""
-                  onClick={handleCategoryChange}
-                >
-                  All
-                </button>
-
-                {category.map((option) => {
-                  return (
-                    <button
-                      className="categorybtn "
-                      value={option._id}
-                      onClick={handleCategoryChange}
-                    >
-                      {option.name}
-                    </button>
-                  );
-                })}
-              </div>
+              
             </div>
           </div>
         </>
 
         {/* ============================================================ Filter End ============================================================ */}
-
-        <h4 className="mt-2 mb-3 p-2">
-          Search results for " <span id="myOutput"></span> "
-        </h4>
 
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 3, 900: 4 }}>
           <Masonry>
@@ -273,31 +338,11 @@ const SearchResult = () => {
               })}
           </Masonry>
         </ResponsiveMasonry>
-
-        <></>
+        
       </div>
-      
       <Footer />
     </>
   );
 };
 
-export default SearchResult;
-
-{
-  /* <hr></hr>
-          <div className="container p-3 results">
-            <div className="row">
-              <div className="col d-flex justify-content-end">
-                <img className="quack" src={errorimg} />
-              </div>
-              <div className="col text-center d-flex align-items-center">
-                <h5>
-                  <span className="font-weight-bold">Oops!</span> No more
-                  results were found
-                </h5>
-              </div>
-            </div>
-          </div>
-          <hr></hr> */
-}
+export default Categorize;
