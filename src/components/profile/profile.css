@@ -11,14 +11,14 @@
 
     @media only screen and (max-width: 1200px){
       .huss .trial{
-    left: 10% !important;
+    left: -10% !important;
       width: 150px;
       }
       }
 
       @media only screen and (max-width:768px){
         .huss .trial{
-            left: 10% !important;
+            left: -10% !important;
               width: 100px;
               }
       }

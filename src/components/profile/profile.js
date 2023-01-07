@@ -90,9 +90,9 @@ export default function Profile() {
                   <MDBBtn
                       color="dark"
                       className="trial mt-1"
-                      style={{ height: "50px", overflow: "visible", position: "absolute",
+                      style={{ height: "50px", position: "relative",
                       top:"23%",
-                      right: "84%"
+                      right: "30%"
                       ,
                        }}
                       onClick={Edit_Profile}
