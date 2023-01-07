@@ -13,13 +13,13 @@ const Edit_profile = () => {
 
   const redirect =
     location.search ? location.search.split("=")[1] : "/profile"
-  
+
 
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [image, setImage]=useState("");
+  const [image, setImage] = useState("");
 
   const config = {
     headers: {
@@ -61,7 +61,7 @@ const Edit_profile = () => {
       });
   };
 
-  
+
 
   const changePic = (e) => {
     console.log("clicked!");
@@ -71,29 +71,29 @@ const Edit_profile = () => {
     const data = new FormData();
     data.append("user_img", f);
 
-    
+
     console.log(data);
-    axios.put("http://localhost:4000/api/v1/update_pic",data,config)
-    .then((response)=>{
-      console.log(response)
-      setTimeout(function () {
-        window.location.reload(1);
-      }, 1000);
-    })
-    .catch((e)=>{
-      console.log(e)
-    })
+    axios.put("http://localhost:4000/api/v1/update_pic", data, config)
+      .then((response) => {
+        console.log(response)
+        setTimeout(function () {
+          window.location.reload(1);
+        }, 1000);
+      })
+      .catch((e) => {
+        console.log(e)
+      })
   };
   return (
     <>
       <NavigateBlack />
-      <div className="main">
+      <div className="edit-main">
         <div className="container-fluid p-3">
           <div className="container w-50 outbox rounded bg-white edit-profile">
             <div className="row justify-content-evenly mt-5">
               <div className="col-md-3 border-right mt-4">
                 <div className="upload d-flex flex-column align-items-center text-center p-3 py-5">
-                  <img src={"http://localhost:4000/" + image} width="90" />
+                  <img src={"http://localhost:4000/" + image} />
                   <div class="round">
                     <input type="file" onChange={changePic}></input>
                     <i class="fa fa-camera"></i>

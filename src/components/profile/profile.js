@@ -73,28 +73,29 @@ export default function Profile() {
 
                   </div>
                   <div className="ms-5" style={{ marginTop: "150px" }}>
-                    
+
                     <MDBTypography tag="h5">
                       {name} <i class="fas fa-check"></i>{" "}
                     </MDBTypography>
 
                     <MDBCardText>{email}</MDBCardText>
                   </div>
-                 
+
                 </div>
                 <div
                   className="p-4 text-black"
                   style={{ backgroundColor: "#f8f9fa" }}
                 >
                   <div className="d-flex justify-content-end text-center py-1">
-                  <MDBBtn
+                    <MDBBtn
                       color="dark"
                       className="trial mt-1"
-                      style={{ height: "50px", position: "relative",
-                      top:"23%",
-                      right: "30%"
-                      ,
-                       }}
+                      style={{
+                        height: "50px", position: "relative",
+                        top: "23%",
+                        right: "30%"
+                        ,
+                      }}
                       onClick={Edit_Profile}
                     >
                       Edit profile

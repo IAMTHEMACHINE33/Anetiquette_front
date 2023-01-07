@@ -1,15 +1,19 @@
 import React from "react";
 import './Feedback.css';
+import Sidebar from "../Sidebar/sidebar";
+
+// review and reply complaints//
+
 const feedback = () => {
 
     return <>
-        {/* <NavigateBlack /> */}
 
-        <div class="container mt-5">
-            <div className="feedback-heading mb-3">
+        <Sidebar />
+        <div class="container mt-5 mb-3 ">
+            <div id="feedbacktitle" className="feedback-heading mb-3">
                 <h3>Complaints and Reviews</h3>
             </div>
-            <div className="card p-4">
+            <div id="feedcard" className="feedback card col-md-9 p-3">
                 <div className="card-title">
                     <div className="card__image">
                         <img className="rounded-circle w-100" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp" />
@@ -25,7 +29,10 @@ const feedback = () => {
                     </div>
 
                 </div>
-                <div className="card-comment "> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.  </div>
+                <div className="card-comment "> It is a long established fact that a reader will be distracted by the readable
+                    content of a page when looking at its layout.e distracted by the readable content of a page when looking at
+                    its layout.It is a long established fact that a reader will be distracted by the readable content of a page
+                    when looking at its layout.  </div>
                 <div class="d-flex flex-start mt-4">
                     <a class="me-3" href="#">
                         <img class="rounded-circle shadow-1-strong"
@@ -47,12 +54,39 @@ const feedback = () => {
                     </div>
                 </div>
                 <div className="forward d-flex justify-content-end">
-                    <img className="" style={{ width: "25px", height: "25px", marginInline: '30px' }} src="https://cdn-icons-png.flaticon.com/512/3925/3925149.png" />
-                    <img className="rounded-circle" style={{ width: "25px", height: "25px" }} src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" />
+
+                    <button type="button" class="btn btn-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3925/3925149.png" width={"30px"}></img>
+                    </button>
+
+
+                    <button type="button" class="btn btn-white">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" width={"30px"}></img>
+                    </button>
+
 
                 </div>
             </div>
 
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Message</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Enter your message here.
+                            <textarea id="textareaID" class="form-control"></textarea>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </>
