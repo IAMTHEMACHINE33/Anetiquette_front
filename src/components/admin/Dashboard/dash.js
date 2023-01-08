@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import "../Dashboard/dash.css";
 import { MDBIcon } from 'mdb-react-ui-kit';
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 const Dash_admin = () => {
   const [details, setDetails] = useState('');
@@ -24,6 +26,7 @@ const Dash_admin = () => {
         setUsers(response.data.user)
       })
   }, [])
+  const navigate = useNavigate();
   return (
     <>
       <div className="whole">
@@ -50,7 +53,7 @@ const Dash_admin = () => {
                 <a href="/users">
                   <MDBIcon fas icon="users" />
                   &ensp;
-                  <span>Customers</span>
+                  <span>Users</span>
                 </a>
               </li>
               <li>
@@ -237,10 +240,11 @@ const Dash_admin = () => {
                 <div className="card">
                   <div className="card-header">
                     <h3>Recent Products</h3>
-                    <button> 
+                    <button onClick={() => navigate("/productManage")}> 
                       See all &ensp;
                      
                       <i class="fas fa-chevron-circle-right"></i>
+                     
                       <span className="las la-arrow-right"></span>
                     </button>
                   </div>
@@ -307,38 +311,7 @@ const Dash_admin = () => {
                               In Progress
                             </td>
                           </tr>
-                          <tr>
-                            <td>Antique6</td>
-                            <td>Auction</td>
-                            <td>
-                              <span className="status orange"> </span>
-                              Pending
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Antique7</td>
-                            <td>Auction</td>
-                            <td>
-                              <span className="status purple"> </span>
-                              Review
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Antique8</td>
-                            <td>Direct Purchase</td>
-                            <td>
-                              <span className="status pink"> </span>
-                              In Progress
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Antique9</td>
-                            <td>Auction</td>
-                            <td>
-                              <span className="status orange"> </span>
-                              Pending
-                            </td>
-                          </tr>
+                        
                         </tbody>
                       </table>
                     </div>
@@ -349,7 +322,7 @@ const Dash_admin = () => {
                 <div className="card">
                   <div className="card-header">
                     <h3>New Users</h3>
-                    <button>
+                    <button  onClick={() => navigate("/users")}>
                       See all &ensp;
                       <i class="fas fa-chevron-circle-right"></i>
                       <span className="las la-arrow-right">
@@ -385,54 +358,6 @@ const Dash_admin = () => {
                     })}
               
               {users.map((us)=>{
-                      return(
-                      <div className="customer">
-                      <div className="info">
-                        <img src="https://preview.redd.it/ogvjtjvtfve71.png?auto=webp&s=390df20aca50d638da9bfeeedf4a16efd6ab297e" width="40px" height="40px" alt="" />
-                      </div>
-                      <h4>Name-Here</h4>
-                      <small>Email-Here</small>
-                    </div>
-                    
-                    );
-                    })}
-                    {users.map((us)=>{
-                      return(
-                      <div className="customer">
-                      <div className="info">
-                        <img src="https://preview.redd.it/ogvjtjvtfve71.png?auto=webp&s=390df20aca50d638da9bfeeedf4a16efd6ab297e" width="40px" height="40px" alt="" />
-                      </div>
-                      <h4>Name-Here</h4>
-                      <small>Email-Here</small>
-                    </div>
-                    
-                    );
-                    })}
-                   {users.map((us)=>{
-                      return(
-                      <div className="customer">
-                      <div className="info">
-                        <img src="https://preview.redd.it/ogvjtjvtfve71.png?auto=webp&s=390df20aca50d638da9bfeeedf4a16efd6ab297e" width="40px" height="40px" alt="" />
-                      </div>
-                      <h4>Name-Here</h4>
-                      <small>Email-Here</small>
-                    </div>
-                    
-                    );
-                    })}
-                    {users.map((us)=>{
-                      return(
-                      <div className="customer">
-                      <div className="info">
-                        <img src="https://preview.redd.it/ogvjtjvtfve71.png?auto=webp&s=390df20aca50d638da9bfeeedf4a16efd6ab297e" width="40px" height="40px" alt="" />
-                      </div>
-                      <h4>Name-Here</h4>
-                      <small>Email-Here</small>
-                    </div>
-                    
-                    );
-                    })}
-                    {users.map((us)=>{
                       return(
                       <div className="customer">
                       <div className="info">

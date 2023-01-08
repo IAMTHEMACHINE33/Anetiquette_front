@@ -75,18 +75,6 @@ const OrderManage = () => {
       selector: (row) => row.payment,
       width: "34rem" 
     },
-
-    {
-      name: "Edit",
-      cell: (row) => (
-        <button
-          className="btn btn-success btn-sm rounded-0"
-          onClick={() => alert(row.id)}
-        >
-          <i class="fa fa-edit"></i>
-        </button>
-      ),
-    },
     {
       name: "Delete",
       cell: (row) => (
