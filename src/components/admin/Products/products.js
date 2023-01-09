@@ -72,8 +72,14 @@ const ProductManage = () => {
     },
     {
       name: "Image",
-      selector: (row) => row.images[0].name,
-      width: "34rem" 
+      selector: (row) => 
+      <img
+      src={'http://localhost:4000/' + row.images[0].name}
+      class="w-100"
+      alt={row.images[0].name}
+      style={{ objectFit:"cover"}}
+    ></img>,
+    width:"20rem", height:"10rem",
     },
     {
       name: "Delete",

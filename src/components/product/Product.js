@@ -22,8 +22,7 @@ const Product = () => {
 
   const [apnaTime, setApnaTime] = useState();
 
-// ============================================ Timer  =============================
-
+  // ============================================ Timer  =============================
 
   function DayCounter({ targetDate }) {
     const [days, setDays] = useState(null);
@@ -47,11 +46,7 @@ const Product = () => {
         setMinutes(minutes);
         setSeconds(seconds);
 
-        if (
-           days === 0 && hours === 0 && minutes === 0 && 
-          seconds === 0) {
-
-          
+        if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
           toast(
             "Time's up !",
             {
@@ -61,15 +56,12 @@ const Product = () => {
               duration: 20000,
             }
           );
-          
+
           setTimeout(function () {
             window.location.href = "/";
           }, 3000);
         }
-
       }, 1000);
-
-    
 
       return () => clearInterval(intervalId);
     }, [targetDate]);
@@ -112,8 +104,6 @@ const Product = () => {
   // }
 
   // const [seconds, setSeconds] = useState(86400);
-
- 
 
   const config = {
     headers: {
@@ -244,13 +234,13 @@ const Product = () => {
   const settings = {
     customPaging: (i) => {
       return (
+      
         <div>
           <img src={doto[i]} alt="product.jpg" className="productsmall" />
         </div>
       );
     },
 
-    autoplaySpeed: 2000,
     dots: true,
     dotsClass: "slick-dots smallimg",
     initialSlide: 1,
@@ -264,7 +254,7 @@ const Product = () => {
       <NavigateBlack />
 
       <div className="container-fluid product_container">
-        <div className="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2  my-2 p-3">
+        <div className="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2  my-2 p-2">
           <div className="col container-fluid slider_container  p-2">
             <Slider {...settings}>
               {doto.map((item) => (

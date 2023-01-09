@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Sidebar from "../Sidebar/sidebar";
 import "./addcat.css";
 import axios from "axios";
-
+import {toast,Toaster} from "react-hot-toast";
 const AddCat = () => {
   const [name,setName]=useState('');
   const [image,setImage]=useState('');
@@ -22,9 +22,11 @@ const AddCat = () => {
     axios.post("http://localhost:4000/category/add",data,config)
     .then((response)=>{
       console.log(response)
+      toast.success("Category added")
     })
     .catch((e)=>{
       console.log(e)
+      toast.error("Fail to add category")
     })
   }
 
@@ -86,6 +88,7 @@ const AddCat = () => {
           </div>
         </div>
       </div>
+      <Toaster/>
     </div>
   );
 };

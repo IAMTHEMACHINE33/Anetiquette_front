@@ -16,8 +16,6 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import errorimg from "../../photo/errorduck.jpg";
 import CatHead from "../categorize/cat_head";
 
-
-
 const Categorize = () => {
   const [details, setDetails] = useState([]);
   const [category, setCategory] = useState([]);
@@ -27,13 +25,11 @@ const Categorize = () => {
   const [moneyhigh, setMoneyHigh] = useState("high");
   const [moneylow, setMoneyLow] = useState("low");
 
+  //======================================================= Script to click btn before loading========================================================
 
-    //======================================================= Script to click btn before loading========================================================
-
-  window.onload=function(){
+  window.onload = function () {
     document.getElementById("first").click();
   };
-
 
   const config = {
     headers: {
@@ -94,7 +90,7 @@ const Categorize = () => {
 
   //======================================================= Category sorting========================================================
   const divRef = useRef();
-  
+
   function handleCategoryChange(event) {
     console.log("clicking");
     window.scrollBy(0, 400);
@@ -152,12 +148,14 @@ const Categorize = () => {
     dots: true,
     infinite: true,
     slidesToShow: 6,
+    slidesToScroll: 1,
     autoplay: true,
     swipeToSlide: true,
     autoplay: false,
-    speed: 500,
-    autoplaySpeed: 3000,
+    speed: 2000,
+    autoplaySpeed: 2000,
     cssEase: "linear",
+
     afterChange: function (index) {
       console.log(
         `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
@@ -199,59 +197,62 @@ const Categorize = () => {
   return (
     <>
       <NavigateBlack />
-      <button id="first"  onClick={handleCategoryChange} value={category._id}></button>
-      <CatHead/>
-      <div className="container ">
+      <button
+        id="first"
+        onClick={handleCategoryChange}
+        value={category._id}
+      ></button>
+
+      <div className="container-fluid ">
+        <CatHead />
         <div className="container-fluid p-5">
-          
           <Slider {...settings}>
             {category.map((option) => {
               return (
                 <>
-                <div className="card border-0  mb-3 p=5 categorycard d-flex justify-content-end  " >
-                  <button
-                    value={option._id}
-                    style={{
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                      width: "100%",
-                      height: "100%",
-                      border: "none",
-
-                      background: "none",
-                    }}
-                    onClick={handleCategoryChange}
-                  ></button>
-                  <div
-                    className="tryhard_category"
-                    ref={divRef}
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      flexDirection: "column",
-                      marginTop: "3rem",
-                    }}
-                  >
-                    <img
+                  <div className="card border-0  mb-3 p=5 categorycard d-flex justify-content-end  ">
+                    <button
+                      value={option._id}
                       style={{
-                        width: "5rem",
-                        height: "5rem",
-                        objectFit: "cover",
-                        borderRadius: "50%",
-                        display: "flex !important",
-                        justifyContent: "center !important",
-                      }}
-                      className="card-img-top"
-                      src={"http://localhost:4000/" + option.image}
-                      alt="Card image cap"
-                    />
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        width: "100%",
+                        height: "100%",
+                        border: "none",
 
-                    <p className="text-center mt-4">{option.name}</p>
+                        background: "none",
+                      }}
+                      onClick={handleCategoryChange}
+                    ></button>
+                    <div
+                      className="tryhard_category"
+                      ref={divRef}
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        flexDirection: "column",
+                        marginTop: "3rem",
+                      }}
+                    >
+                      <img
+                        style={{
+                          width: "5rem",
+                          height: "5rem",
+                          objectFit: "cover",
+                          borderRadius: "50%",
+                          display: "flex !important",
+                          justifyContent: "center !important",
+                        }}
+                        className="card-img-top"
+                        src={"http://localhost:4000/" + option.image}
+                        alt="Card image cap"
+                      />
+
+                      <p className="text-center mt-4">{option.name}</p>
+                    </div>
                   </div>
-                </div>
-               
                 </>
               );
             })}
@@ -300,7 +301,6 @@ const Categorize = () => {
                   </Dropdown.Item>
                 </DropdownButton>
               </div>
-              
             </div>
           </div>
         </>
@@ -338,7 +338,6 @@ const Categorize = () => {
               })}
           </Masonry>
         </ResponsiveMasonry>
-        
       </div>
       <Footer />
     </>
