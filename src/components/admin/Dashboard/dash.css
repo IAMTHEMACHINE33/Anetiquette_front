@@ -267,7 +267,7 @@ tr td:last-child{
   color: #222;
 }
 .info small{
-  font-weight: 600;
+  font-weight: 200;
   color: var(--text-gray)
 }
 

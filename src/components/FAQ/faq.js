@@ -8,37 +8,39 @@ import axios from "axios";
 import { useState } from "react";
 
 const Faq = () => {
-  const [feed, setFeed]=useState('');
+  const [feed, setFeed] = useState("");
 
   const config = {
-    headers:{
-      Authorization:"Bearer "+ localStorage.getItem("token")
-    }
-  }
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
+  };
 
-  const addFeed =(e)=>{
+  const addFeed = (e) => {
     e.preventDefault();
-    const data ={
-      feed:feed
+    const data = {
+      feed: feed,
     };
-    axios.post("http://localhost:4000/feedback/add",data,config)
-    .then((response)=>{
-      console.log(response)
-    })
-    .catch((e)=>{
-      console.log(e)
-    })
-  }
+    axios
+      .post("http://localhost:4000/feedback/add", data, config)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
 
-  useEffect(()=>{
-    axios.get("http://localhost:4000/feedback/show",config)
-    .then((response)=>{
-      console.log(response.data.data)
-    })
-    .catch((e)=>{
-      console.log(e)
-    })
-  },[])
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/feedback/show", config)
+      .then((response) => {
+        console.log(response.data.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
 
   var complain;
   if (localStorage.getItem("token")) {
@@ -67,16 +69,12 @@ const Faq = () => {
                   <h5 className="modal-title" id="exampleModalLabel">
                     Contact Us
                   </h5>
-                  <button
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                  >
+                  <button class="btn-close" data-bs-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div className="modal-body">
                   <form>
-
                     <div className="mb-3">
                       <label className="form-label required">
                         Type your message here
@@ -85,7 +83,7 @@ const Faq = () => {
                         className="form-control"
                         name="message"
                         required
-                        onChange={(e)=>{
+                        onChange={(e) => {
                           setFeed(e.target.value);
                         }}
                       ></textarea>
@@ -93,7 +91,11 @@ const Faq = () => {
                   </form>
                 </div>
                 <div className="modal-footer">
-                  <button type="submit" className="btn btn-primary" onClick={addFeed}>
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
+                    onClick={addFeed}
+                  >
                     Submit
                   </button>
                   <button
@@ -115,7 +117,9 @@ const Faq = () => {
       <>
         <div className="container mt-5">
           <Link to="/login">
-            <button type="button" className="btn1 btn-primary">Login for feedback</button>
+            <button type="button" className="btn1 btn-primary">
+              Login for feedback
+            </button>
           </Link>
         </div>
       </>
@@ -170,7 +174,7 @@ const Faq = () => {
                         aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        Question1?
+                        Can I pay for items on AntiQuette with Khalti?
                         <span class="lni-chevron-up"></span>
                       </h6>
                     </div>
@@ -182,13 +186,13 @@ const Faq = () => {
                     >
                       <div class="card-body">
                         <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Architecto quidem facere deserunt sint animi
-                          sapiente vitae suscipit.
+                          Antiques can be bought on AntiQuette with Khalti
+                          provided the antique dealer has a registered Khalti
+                          account.
                         </p>
                         <p>
-                          Appland is completely creative, lightweight, clean
-                          &amp; super responsive app landing page.
+                          When buying item you will be taken to a payment method
+                          screen provided the dealer does use Khalti.
                         </p>
                       </div>
                     </div>
@@ -210,7 +214,7 @@ const Faq = () => {
                         aria-expanded="true"
                         aria-controls="collapseTwo"
                       >
-                        Question2?
+                        What does AntiQuette sell?
                         <span class="lni-chevron-up"></span>
                       </h6>
                     </div>
@@ -222,13 +226,14 @@ const Faq = () => {
                     >
                       <div class="card-body">
                         <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Architecto quidem facere deserunt sint animi
-                          sapiente vitae suscipit.
+                          AntiQuette is a marketplace which displays antiques on
+                          behalf of antique dealers. When a customer buys an
+                          antique through AntiQuette, the transaction takes
+                          place between the customer and the dealer.
                         </p>
                         <p>
-                          Appland is completely creative, lightweight, clean
-                          &amp; super responsive app landing page.
+                          All dealers are verified before they can upload their
+                          stock to AntiQuette.
                         </p>
                       </div>
                     </div>
@@ -250,7 +255,7 @@ const Faq = () => {
                         aria-expanded="true"
                         aria-controls="collapseThree"
                       >
-                        How do i Bid?
+                        I Have A Question About An Item On The Website
                         <span class="lni-chevron-up"></span>
                       </h6>
                     </div>
@@ -262,14 +267,11 @@ const Faq = () => {
                     >
                       <div class="card-body">
                         <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Architecto quidem facere deserunt sint animi
-                          sapiente vitae suscipit.
+                          If you have a question or require further information
+                          about one of the items listed on the website please
+                          either telephone the dealer directly or press the Any Problems? button on the Help page. 
                         </p>
-                        <p>
-                          Appland is completely creative, lightweight, clean
-                          &amp; super responsive app landing page.
-                        </p>
+                        
                       </div>
                     </div>
                   </div>

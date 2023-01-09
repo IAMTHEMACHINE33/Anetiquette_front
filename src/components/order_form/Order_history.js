@@ -62,9 +62,7 @@ export default function OrderDetails() {
                       >
                         Orders
                       </p>
-                      <p className="small text-muted mb-0">
-                        Product Code: "Random Generated Numbers #9i891283921"
-                      </p>
+
                     </div>
   
                     {details.map((option)=>{
@@ -91,12 +89,12 @@ export default function OrderDetails() {
                           >
                             <p className="text-muted mb-0 small">{option.category.name}</p>
                           </MDBCol>
-                          <MDBCol
+                          {/* <MDBCol
                             md="2"
                             className="text-center d-flex justify-content-center align-items-center"
                           >
                             <p className="text-muted mb-0 small">Qty: 1</p>
-                          </MDBCol>
+                          </MDBCol> */}
                           <MDBCol
                             md="2"
                             className="text-center d-flex justify-content-center align-items-center"
@@ -108,7 +106,7 @@ export default function OrderDetails() {
                           className="mb-4"
                           style={{ backgroundColor: "#e0e0e0", opacity: 1 }}
                         />
-                        <MDBRow className="align-items-center">
+                        {/* <MDBRow className="align-items-center">
                           <MDBCol md="2">
                             <p className="text-muted mb-0 small">Status</p>
                           </MDBCol>
@@ -135,45 +133,13 @@ export default function OrderDetails() {
                               </p>
                             </div>
                           </MDBCol>
-                        </MDBRow>
+                        </MDBRow> */}
                       </MDBCardBody>
                     </MDBCard>
                       );
                     })}
-  
-{/*   
-                    <div className="d-flex justify-content-between pt-2">
-                      <p className="fw-bold mb-0">Order Details</p>
-                      <p className="text-muted mb-0">
-                        <span className="fw-bold me-4">Total</span> $0
-                      </p>
-                    </div>
-  
-                    <div className="d-flex justify-content-between pt-2">
-                      <p className="text-muted mb-0">Bill Number : 42069</p>
-                      <p className="text-muted mb-0">
-                        <span className="fw-bold me-4">Discount</span> $00
-                      </p>
-                    </div>
-  
-                    <div className="d-flex justify-content-between">
-                      <p className="text-muted mb-0">
-                        Invoice Date : 04 Feb,2069
-                      </p>
-
-                    </div>
-  
-                    <div className="d-flex justify-content-between mb-5">
-                      <p className="text-muted mb-0">
-                         Voucher : "Not Used"
-                      </p>
-                      <p className="text-muted mb-0">
-                        <span className="fw-bold me-4">Delivery Charges</span>{" "}
-                        Free
-                      </p>
-                    </div> */}
                   </MDBCardBody>
-                  <MDBCardFooter
+                  {/* <MDBCardFooter
                     className="border-0 px-4 py-5"
                     style={{
                       backgroundColor: "#a8729a",
@@ -185,9 +151,9 @@ export default function OrderDetails() {
                       tag="h5"
                       className="d-flex align-items-center justify-content-end text-white text-uppercase mb-0"
                     >
-                      Total paid: <span className="h2 mb-0 ms-2">$000</span>
+                      Total paid: <span className="h2 mb-0 ms-2">$${option.price}</span>
                     </MDBTypography>
-                  </MDBCardFooter>
+                  </MDBCardFooter> */}
                 </MDBCard>
               </MDBCol>
             </MDBRow>

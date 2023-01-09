@@ -42,10 +42,10 @@ const OrderManage = () => {
   };
   const columns = [
     {
-      name: "Id",
-      selector: (row) => row.id,
+      name: "Name",
+      selector: (row) => row.firstname,
       sortable: true,
-      width: "4rem" 
+      width: "10rem" 
     },
     {
       name: "Email",
@@ -62,7 +62,7 @@ const OrderManage = () => {
     {
       name: "Address",
       selector: (row) => row.address,
-      width: "50rem" 
+      width: "20rem" 
     },
     {
       name: "Phone",
@@ -73,7 +73,7 @@ const OrderManage = () => {
     {
       name: "Payment",
       selector: (row) => row.payment,
-      width: "34rem" 
+      width: "25rem" 
     },
     {
       name: "Delete",

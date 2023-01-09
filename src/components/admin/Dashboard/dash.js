@@ -271,7 +271,7 @@ const Dash_admin = () => {
                               </tr>
                             );
                           })}
-                          <tr>
+                          {/* <tr>
                             <td>Antique1</td>
                             <td>Auction</td>
                             <td>
@@ -310,7 +310,7 @@ const Dash_admin = () => {
                               <span className="status pink"> </span>
                               In Progress
                             </td>
-                          </tr>
+                          </tr> */}
                         
                         </tbody>
                       </table>
@@ -338,13 +338,13 @@ const Dash_admin = () => {
                         <img src="https://preview.redd.it/ogvjtjvtfve71.png?auto=webp&s=390df20aca50d638da9bfeeedf4a16efd6ab297e" width="40px" height="40px" alt="" />
                       </div>
                       <h4>{us.name}</h4>
-                      <small>Addresss</small>
+                      {/* <small>{us.email}</small> */}
                     </div>
                     
                     );
                     })}
               
-              {users.map((us)=>{
+              {/* {users.map((us)=>{
                       return(
                       <div className="customer">
                       <div className="info">
@@ -380,7 +380,7 @@ const Dash_admin = () => {
                     </div>
                     
                     );
-                    })}
+                    })} */}
                   </div>
                 </div>
               </div>
