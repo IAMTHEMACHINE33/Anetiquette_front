@@ -4,6 +4,7 @@ import Navigate from "../common/nav";
 import Footer from "../common/Footer";
 import Group from "../Group";
 import Feature from "../Feature";
+import { Numbers } from "./numbers";
 
 export const Home = () => {
   return (
@@ -41,6 +42,7 @@ export const Home = () => {
             </div>
           </div>
         </div>
+        <Numbers/>
         <Footer />
       </div>
     </>
