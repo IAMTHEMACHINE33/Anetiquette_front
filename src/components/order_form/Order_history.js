@@ -8,12 +8,15 @@ import Footer from "../common/Footer";
 export default function OrderDetails() {
 
   const [name, setName] = useState("");
+  const [details, setDetails]=useState([]);
+
 
   const config = {
     headers: {
       Authorization: "Bearer " + localStorage.getItem("token"),
     },
   };
+
   useEffect(() => {
     axios
       .get("http://localhost:4000/api/v1/show", config)
@@ -23,7 +26,15 @@ export default function OrderDetails() {
       .catch((e) => {
         console.log(e);
       });
-  });
+    axios.get("http://localhost:4000/product/purchase_history",config)
+    .then(response=>{
+      console.log(response.data.data)
+      setDetails(response.data.data)
+      console.log(details.length)
+      const a = details.length
+     
+    })
+  },[]);
     return (
       <>
       <NavigateBlack />
@@ -56,12 +67,14 @@ export default function OrderDetails() {
                       </p>
                     </div>
   
-                    <MDBCard className="shadow-0 border mb-4">
+                    {details.map((option)=>{
+                      return(
+                        <MDBCard className="shadow-0 border mb-4">
                       <MDBCardBody>
                         <MDBRow>
                           <MDBCol md="2">
                             <MDBCardImage
-                              src="https://media.gq-magazine.co.uk/photos/5d1399752881cc7da90a84c6/master/w_1600%2Cc_limit/nokia3310.jpg"
+                              src={'http://localhost:4000/' + option.images[0].name}
                               fluid
                               alt="Antique1"
                             />
@@ -70,13 +83,13 @@ export default function OrderDetails() {
                             md="2"
                             className="text-center d-flex justify-content-center align-items-center"
                           >
-                            <p className="text-muted mb-0">Product Name</p>
+                            <p className="text-muted mb-0">{option.product_name}</p>
                           </MDBCol>
                           <MDBCol
                             md="2"
                             className="text-center d-flex justify-content-center align-items-center"
                           >
-                            <p className="text-muted mb-0 small">Category</p>
+                            <p className="text-muted mb-0 small">{option.category.name}</p>
                           </MDBCol>
                           <MDBCol
                             md="2"
@@ -88,7 +101,7 @@ export default function OrderDetails() {
                             md="2"
                             className="text-center d-flex justify-content-center align-items-center"
                           >
-                            <p className="text-muted mb-0 small">$0</p>
+                            <p className="text-muted mb-0 small">${option.price}</p>
                           </MDBCol>
                         </MDBRow>
                         <hr
@@ -125,76 +138,9 @@ export default function OrderDetails() {
                         </MDBRow>
                       </MDBCardBody>
                     </MDBCard>
+                      );
+                    })}
   
-                    <MDBCard className="shadow-0 border mb-4">
-                      <MDBCardBody>
-                        <MDBRow>
-                          <MDBCol md="2">
-                            <MDBCardImage
-                              src="https://static-01.daraz.com.np/p/e614ad4629d7a33ddf72611ff56fd002.jpg"
-                              fluid
-                              alt="Phone"
-                            />
-                          </MDBCol>
-                          <MDBCol
-                            md="2"
-                            className="text-center d-flex justify-content-center align-items-center"
-                          >
-                            <p className="text-muted mb-0">Product Name</p>
-                          </MDBCol>
-                          <MDBCol
-                            md="2"
-                            className="text-center d-flex justify-content-center align-items-center"
-                          >
-                            <p className="text-muted mb-0 small">Category</p>
-                          </MDBCol>
-                          <MDBCol
-                            md="2"
-                            className="text-center d-flex justify-content-center align-items-center"
-                          >
-                            <p className="text-muted mb-0 small">Qty: 1</p>
-                          </MDBCol>
-                          <MDBCol
-                            md="2"
-                            className="text-center d-flex justify-content-center align-items-center"
-                          >
-                            <p className="text-muted mb-0 small">$500</p>
-                          </MDBCol>
-                        </MDBRow>
-                        <hr
-                          className="mb-4"
-                          style={{ backgroundColor: "#e0e0e0", opacity: 1 }}
-                        />
-                        <MDBRow className="align-items-center">
-                          <MDBCol md="2">
-                            <p className="text-muted mb-0 small">Status</p>
-                          </MDBCol>
-                          <MDBCol md="10">
-                            <MDBProgress
-                              style={{ height: "6px", borderRadius: "16px" }}
-                            >
-                              <MDBProgressBar
-                                style={{
-                                  borderRadius: "16px",
-                                  backgroundColor: "#a8729a",
-                                }}
-                                width={20}
-                                valuemin={0}
-                                valuemax={100}
-                              />
-                            </MDBProgress>
-                            <div className="d-flex justify-content-around mb-1">
-                              <p className="text-muted mt-1 mb-0 small ms-xl-5">
-                                Shipping
-                              </p>
-                              <p className="text-muted mt-1 mb-0 small ms-xl-5">
-                                Delivered
-                              </p>
-                            </div>
-                          </MDBCol>
-                        </MDBRow>
-                      </MDBCardBody>
-                    </MDBCard>
 {/*   
                     <div className="d-flex justify-content-between pt-2">
                       <p className="fw-bold mb-0">Order Details</p>

@@ -70,6 +70,21 @@ const Product = () => {
       Authorization: "Bearer " + localStorage.getItem("token"),
     },
   };
+  const purchasetoCart = (e) => {
+    const add = {
+      added_product: pid,
+    };
+    axios
+      .post("http://localhost:4000/cart/add", add, config)
+      .then((response) => {
+        console.log(response);
+        toast.success("Item added to cart");
+        window.location.replace('/cart')
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
 
   const addToCart = (e) => {
     const add = {
@@ -304,7 +319,7 @@ const Product = () => {
                   type="button"
                   name="purchase"
                   class="btn btn-outline-success m-3"
-                  onClick={bought}
+                  onClick={purchasetoCart}
                 >
                   Purchase
                 </button>
