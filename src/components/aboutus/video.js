@@ -61,10 +61,13 @@ const Video = () => {
           <hr /> <hr />
           What is Antiquete?
           <hr />
-          <div className="dump p-4" style={{
-                "font-family": "Bookman Old Style",
-                "font-size": "17px",
-              }}>
+          <div
+            className="dump p-4"
+            style={{
+              "font-family": "Bookman Old Style",
+              "font-size": "17px",
+            }}
+          >
             {/* <MDBCardText
               className="font-italic mb-1"
               style={{
@@ -72,39 +75,38 @@ const Video = () => {
                 "font-size": "17px",
               }}
             > */}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              ornare lectus sit amet est. Duis at consectetur lorem donec massa
-              sapien faucibus et molestie. Placerat in egestas erat imperdiet.
-              Consectetur lorem donec massa sapien faucibus et molestie ac. Mi
-              quis hendrerit dolor magna eget est. Sollicitudin tempor id eu
-              nisl nunc mi ipsum. Dictum non consectetur a erat nam at lectus
-              urna duis. Facilisis mauris sit amet massa. Aliquam sem et tortor
-              consequat id porta nibh venenatis. Facilisis magna etiam tempor
-              orcieu lobortis elementum nibh. Magna fermentum iaculis eu non
-              diam phasellus vestibulum lorem sed. Quam nulla porttitor massa id
-              neque aliquam vestibulum.
-              <br />
-              <br />
-              Pulvinar proin gravida hendrerit lectus. Sagittis aliquam
-              malesuada bibendum arcu vitae elementum curabitur vitae nunc.
-              Augue neque gravida in fermentum et sollicitudin ac orci. Sagittis
-              orci a scelerisque purus semper. Facilisis leo vel fringilla est
-              ullamcorper eget. Viverra accumsan in nisl nisi scelerisque eu
-              ultrices vitae auctor. Arcu cursus euismod quis viverra. Massa id
-              neque aliquam vestibulum morbi blandit cursus risus at. Morbi non
-              arcu risus quis varius. Tristique risus nec feugiat in. In metus
-              vulputate eu scelerisque felis. Amet venenatis urna cursus eget
-              nunc scelerisque. Habitant morbi tristique senectus et netus et
-              malesuada. Mauris pharetra et ultrices neque ornare aenean
-              euismod. Feugiat in ante metus dictum at. Sed blandit libero
-              volutpat sed cras. Venenatis cras sed felis eget velit aliquet
-              sagittis. Quis auctor elit sed vulputate mi sit amet mauris.
-              Tincidunt lobortis feugiat vivamus at augue eget arcu dictum.
-              Lectus arcu bibendum at varius vel pharetra vel. Aenean vel elit
-              scelerisque mauris. Tellus molestie nunc non blandit massa enim
-              nec dui nunc. Odio pellentesque diam volutpat commodo sed egestas
-              egestas. Volutpat est velit egestas dui id.
+            AntiQuette is an online platform that allows people
+            to buy and sell antique and vintage items through an auction format.
+            The website typically features a wide variety of antiques,
+            including furniture, jewelry, art, collectibles, and other rare or
+            unique items. To use the website, users must first
+            create an account and provide basic personal information, such as
+            their name and email address. They can then browse through the
+            available items and place bids on items that they are interested in
+            purchasing. Bids are typically placed in increments, with the
+            current high bidder winning the auction if no one outbids them
+            before the auction ends. Some antique bidding websites also offer a
+            "buy it now" option, which allows users to purchase an item at a
+            fixed price rather than participating in an auction. This can be a
+            convenient option for users who don't want to wait for an auction to
+            end or who are willing to pay a premium for an item that they really
+            want. 
+            <br />
+            <br />
+            AntiQuette often has strict rules in place to
+            ensure that transactions are fair and that buyers receive the items
+            that they purchase. For example, many websites have detailed
+            descriptions and photographs of each item, as well as policies in
+            place to protect against fraud or misrepresentation. In addition to
+            providing a marketplace for antiques, AntiQuette
+            also offer resources for collectors, such as articles, forums, and
+            expert advice. These resources can be helpful for collectors who are
+            looking to learn more about a particular type of antique or who want
+            to connect with other collectors. Overall, antique bidding websites
+            are a convenient and efficient way for people to buy and sell
+            antique and vintage items. We offer a wide selection of items, as
+            well as resources and support for collectors, making them a popular
+            choice for people interested in antiques.
             {/* </MDBCardText> */}
             <hr />
           </div>

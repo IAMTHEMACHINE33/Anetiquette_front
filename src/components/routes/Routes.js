@@ -12,6 +12,7 @@ import Video from "../aboutus/video";
 import Order_form from "../order_form/Order_form";
 import OrderDetails from "../order_form/Order_history";
 import PrivateRoute from "./protectRoutes";
+import AdminPrivateRoute from "./adminRoute";
 import Add_products from "../add_product/Add_products";
 import Cart from "../cart/Cart";
 import Search from "../common/search";
@@ -48,10 +49,10 @@ const Url = () => {
         <Route path="/users" element={<UsersManage />}></Route>
         <Route path="/productManage" element={<ProductManage />}></Route>
         <Route path="/Order_form" element={<PrivateRoute><Order_form /></PrivateRoute>}></Route>
-        <Route path="/admin/Feedback" element={<PrivateRoute><Feedback /></PrivateRoute>}></Route>
+        <Route path="/admin/Feedback" element={<AdminPrivateRoute><Feedback /></AdminPrivateRoute>}></Route>
         <Route path="/OrderDetails" element={<PrivateRoute><OrderDetails/></PrivateRoute>}></Route>
-        <Route path="/manageOrder" element={<OrderManage />}></Route>
-        <Route path="/addCategory" element={<AddCat />}></Route>
+        <Route path="/manageOrder" element={<AdminPrivateRoute><OrderManage /></AdminPrivateRoute>}></Route>
+        <Route path="/addCategory" element={<AdminPrivateRoute><AddCat /></AdminPrivateRoute>}></Route>
       </Routes>
     </>
   );

@@ -1,9 +1,29 @@
 import {MDBCard, MDBCardBody,MDBCardFooter,MDBCardHeader,MDBCardImage,MDBCol, MDBContainer, MDBProgress,MDBProgressBar,MDBRow,MDBTypography,} from "mdb-react-ui-kit";
 import React from "react";
+import { useState, useEffect } from "react";  
+import axios from "axios";
 import NavigateBlack from "../common/navblack";
 import Footer from "../common/Footer";
 
 export default function OrderDetails() {
+
+  const [name, setName] = useState("");
+
+  const config = {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
+  };
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/api/v1/show", config)
+      .then((response) => {
+        setName(response.data.data.name);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  });
     return (
       <>
       <NavigateBlack />
@@ -20,7 +40,7 @@ export default function OrderDetails() {
                   <MDBCardHeader className="px-4 py-5">
                     <MDBTypography tag="h5" className="text-muted mb-0">
                       Detailed Order Status of{" "}
-                      <span style={{ color: "#a8729a" }}>"UserName Here"</span>!
+                      <span style={{ color: "#a8729a" }}>{name}</span>!
                     </MDBTypography>
                   </MDBCardHeader>
                   <MDBCardBody className="p-4">
@@ -50,21 +70,13 @@ export default function OrderDetails() {
                             md="2"
                             className="text-center d-flex justify-content-center align-items-center"
                           >
-                            <p className="text-muted mb-0">Nuclear Bomb</p>
+                            <p className="text-muted mb-0">Product Name</p>
                           </MDBCol>
                           <MDBCol
                             md="2"
                             className="text-center d-flex justify-content-center align-items-center"
                           >
-                            <p className="text-muted mb-0 small">Dark</p>
-                          </MDBCol>
-                          <MDBCol
-                            md="2"
-                            className="text-center d-flex justify-content-center align-items-center"
-                          >
-                            <p className="text-muted mb-0 small">
-                              Area: "Need Practical Area"
-                            </p>
+                            <p className="text-muted mb-0 small">Category</p>
                           </MDBCol>
                           <MDBCol
                             md="2"
@@ -128,21 +140,13 @@ export default function OrderDetails() {
                             md="2"
                             className="text-center d-flex justify-content-center align-items-center"
                           >
-                            <p className="text-muted mb-0">Karuwa</p>
+                            <p className="text-muted mb-0">Product Name</p>
                           </MDBCol>
                           <MDBCol
                             md="2"
                             className="text-center d-flex justify-content-center align-items-center"
                           >
-                            <p className="text-muted mb-0 small">Gold</p>
-                          </MDBCol>
-                          <MDBCol
-                            md="2"
-                            className="text-center d-flex justify-content-center align-items-center"
-                          >
-                            <p className="text-muted mb-0 small">
-                              Capacity: Unknown
-                            </p>
+                            <p className="text-muted mb-0 small">Category</p>
                           </MDBCol>
                           <MDBCol
                             md="2"
@@ -191,7 +195,7 @@ export default function OrderDetails() {
                         </MDBRow>
                       </MDBCardBody>
                     </MDBCard>
-  
+{/*   
                     <div className="d-flex justify-content-between pt-2">
                       <p className="fw-bold mb-0">Order Details</p>
                       <p className="text-muted mb-0">
@@ -221,7 +225,7 @@ export default function OrderDetails() {
                         <span className="fw-bold me-4">Delivery Charges</span>{" "}
                         Free
                       </p>
-                    </div>
+                    </div> */}
                   </MDBCardBody>
                   <MDBCardFooter
                     className="border-0 px-4 py-5"
