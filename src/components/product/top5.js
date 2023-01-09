@@ -35,7 +35,7 @@ function Top5() {
           </tr>
         </thead>
         <tbody className="text-center">
-          {details.reverse().slice(0,5).map((option,index)=>{
+          {details.slice(0,5).reverse().map((option,index)=>{
 
             return(
               <tr className="align-middle">
@@ -49,7 +49,8 @@ function Top5() {
                     borderRadius: "50px",
                     marginRight: "20px",
                   }}
-                  src="https://indianmemetemplates.com/wp-content/uploads/Doge-with-a-gun.jpg"
+                  src={"http://localhost:4000/" + option.bid_by.image}
+                  alt="https://indianmemetemplates.com/wp-content/uploads/Doge-with-a-gun.jpg"
                 ></img>
               </span>
               {option.bid_by.name}
