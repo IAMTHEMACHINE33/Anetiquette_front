@@ -3,7 +3,7 @@ import Sidebar from "../Sidebar/sidebar";
 import DataTable from "react-data-table-component";
 import axios from "axios";
 import './orders.css'
-
+import {toast,Toaster} from "react-hot-toast";
 const OrderManage = () => {
   const [search, setSearch] = useState("");
   const [orders, setOrders] = useState([]);
@@ -21,12 +21,15 @@ const OrderManage = () => {
     axios.put("http://localhost:4000/api/v1/orders/delete",data,config)
     .then((response)=>{
       console.log(response)
+      toast.success("deleted order")
       setTimeout(function () {
+        
         window.location.reload(1);
       }, 1000);
   
     })
     .catch((e)=>{
+      toast.error("cannot delete order")
       console.log(e)
     })
   }
@@ -121,6 +124,7 @@ const OrderManage = () => {
         <button className="btn btn-sm btn-info">Export</button>}
 
       />
+      <Toaster/>
     </div>
   );
 };

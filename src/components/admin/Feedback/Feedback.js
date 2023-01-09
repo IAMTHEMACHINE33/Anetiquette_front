@@ -1,10 +1,15 @@
 import React from "react";
 import './Feedback.css';
 import Sidebar from "../Sidebar/sidebar";
-
+import {toast,Toaster} from "react-hot-toast";
 // review and reply complaints//
 
 const feedback = () => {
+
+    function formSubmit(){
+toast.success("form submitted");
+window.location.replace("/admin/dashboard");
+    }
 
     return <>
 
@@ -82,12 +87,13 @@ const feedback = () => {
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-success">Submit</button>
+                            <button type="button" class="btn btn-success" onClick={formSubmit}>Submit</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <Toaster/>
 
     </>
 

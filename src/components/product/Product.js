@@ -46,7 +46,8 @@ const Product = () => {
         setMinutes(minutes);
         setSeconds(seconds);
 
-        if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
+        if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
+          window.location.replace("/");
           toast(
             "Time's up !",
             {

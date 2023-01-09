@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../Sidebar/sidebar";
 import DataTable from "react-data-table-component";
 import axios from "axios";
-import './products.css'
+import './products.css';
+import {toast,Toaster} from "react-hot-toast";
 
 const ProductManage = () => {
   const [search, setSearch] = useState("");
@@ -20,13 +21,15 @@ const ProductManage = () => {
     console.log(data)
     axios.put("http://localhost:4000/api/v1/products/delete",data,config)
     .then((response)=>{
-      console.log(response)
+      console.log(response);
+      toast.success("Product deleted");
       setTimeout(function () {
         window.location.reload(1);
       }, 1000);
   
     })
     .catch((e)=>{
+      toast.error("Fail to delete product");
       console.log(e)
     })
   }
@@ -126,6 +129,7 @@ const ProductManage = () => {
         // <button className="btn btn-sm btn-info">Export</button>}
 
       />
+      <Toaster/>
     </div>
   );
 };

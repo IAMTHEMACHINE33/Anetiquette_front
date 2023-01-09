@@ -5,6 +5,7 @@ import axios from "axios";
 import './users.css'
 // import { right } from "styled-system";
 import { end } from "@popperjs/core";
+import {toast,Toaster} from "react-hot-toast";
 
 const UsersManage = () => {
   const [search, setSearch] = useState("");
@@ -23,12 +24,14 @@ const UsersManage = () => {
     axios.put("http://localhost:4000/api/v1/customers/delete",data,config)
     .then((response)=>{
       console.log(response)
+      toast.success("User deleted")
       setTimeout(function () {
         window.location.reload(1);
       }, 1000);
   
     })
     .catch((e)=>{
+      toast.error("Cannot delete user")
       console.log(e)
     })
   }
@@ -120,6 +123,7 @@ const UsersManage = () => {
         // <button className="btn btn-sm btn-info">Export</button>}
 
       />
+      <Toaster/>
     </div>
   );
 };
