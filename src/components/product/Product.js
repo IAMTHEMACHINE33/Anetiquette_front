@@ -49,7 +49,7 @@ const Product = () => {
         if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
           window.location.replace("/");
           toast(
-            "Time's up !",
+            "Cannot bid after event",
             {
               icon: "🕑",
             },
@@ -234,12 +234,14 @@ const Product = () => {
 
   const settings = {
     customPaging: (i) => {
-      return (
       
-        <div>
-          <img src={doto[i]} alt="product.jpg" className="productsmall" />
-        </div>
-      );
+        return (
+          <div>
+            <img src={doto[i]} alt="product.jpg" className="productsmall" />
+          </div>
+        );
+     
+      
     },
 
     dots: true,

@@ -203,7 +203,7 @@ const Categorize = () => {
         value={category._id}
       ></button>
 
-      <div className="container-fluid ">
+      <div className="container ">
         <CatHead />
         <div className="container-fluid p-5">
           <Slider {...settings}>

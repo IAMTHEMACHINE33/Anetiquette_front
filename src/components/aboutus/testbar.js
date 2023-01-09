@@ -59,7 +59,8 @@ const TestBar = () => {
         <div className="dropdown-profile">
           <img
             src={"http://localhost:4000/" + image}
-            alt="profile.jpg"
+            alt="...............................................................................
+            _ ( ͡° ͜ʖ ͡°)"
           ></img>
         </div>
         <h3>{name}</h3>

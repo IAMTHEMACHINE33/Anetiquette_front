@@ -39,9 +39,11 @@ const Navigate = () => {
       <>
         <div className="dropdown-profile">
           <div className="hex">
+            
           <img
             src={"http://localhost:4000/" + image}
-            alt="profile.jpg"
+            alt="...............................................................................
+                _ ( ͡° ͜ʖ ͡°)"
           ></img>
           </div>
           
