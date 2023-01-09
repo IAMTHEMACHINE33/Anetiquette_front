@@ -18,40 +18,101 @@ const Product = () => {
   const [bid, setBid] = useState();
   const [highest, setHighest] = useState();
   const [hname, setHname] = useState();
-  const [doto,setDoto]=useState([]);
+  const [doto, setDoto] = useState([]);
 
+  const [apnaTime, setApnaTime] = useState();
 
-  const [elapsedTime, setElapsedTime] = useState(100000);
+  //   // ============================================ Converting date to sec=============================
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setElapsedTime(elapsedTime => elapsedTime - 1000);
-      
-      
-    }, 1000);
-   
+  //   function dateToSeconds(date) {
+  //     return Math.floor(date.getTime() / 1000);
+  //   }
+  //   console.log(apnaTime);
+  //   const date = new Date(apnaTime);
+  //   const second = dateToSeconds(date);
+  //   console.log(second);
 
-    return () => clearInterval(interval);
-  }, []);
+  // const [elapsedTime, setElapsedTime] = useState(1676101620);
 
-  const days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((elapsedTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setElapsedTime(elapsedTime => elapsedTime -1000);
 
-  if (days === 0 && hours ===0 && minutes === 0 && seconds === 0){
-    console.log("time")
-    toast("Time's up ! \n\nMake your choice, \n\nlive or die", {
-      icon: '🕑',
-    }, {
-      duration: 20000,
-    });
-    setTimeout(function () {
-      window.location.href = '/'
-    }, 3000);
-    
+  //   }, 1000);
+
+  //   return () => clearInterval(interval);
+  // }, []);
+
+  // const days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
+  // const hours = Math.floor((elapsedTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  // const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+  // const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+
+  // if (days === 0 && hours ===0 && minutes === 0 && seconds === 0){
+  //   console.log("time")
+  //   toast("Time's up ! \n\nMake your choice, \n\nlive or die", {
+  //     icon: '🕑',
+  //   }, {
+  //     duration: 20000,
+  //   });
+  //   setTimeout(function () {
+  //     window.location.href = '/'
+  //   }, 3000);
+
+  // }
+
+  function DayCounter({ targetDate }) {
+    const [days, setDays] = useState(null);
+    const [hours, setHours] = useState(null);
+    const [minutes, setMinutes] = useState(null);
+    const [seconds, setSeconds] = useState(null);
+    useEffect(() => {
+      const intervalId = setInterval(() => {
+        const currentDate = new Date();
+        const timeDifference = targetDate - currentDate;
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+        setDays(days);
+        setHours(hours);
+        setMinutes(minutes);
+        setSeconds(seconds);
+      }, 1000);
+
+      return () => clearInterval(intervalId);
+    }, [targetDate]);
+
+    return (
+      <>
+      <div className="row row-cols-4">
+                        
+              <div className="col text-center">
+          <h6>Days</h6>
+          <h2>{days}</h2>
+        </div>
+
+        <div className="col text-center">
+          <h6>Hrs</h6>
+          <h2>{hours}</h2>
+        </div>
+        <div className="col text-center">
+          <h6>Min</h6>
+          <h2>{minutes}</h2>
+        </div>
+        <div className="col text-center">
+          <h6>Sec</h6>
+          <h2>{seconds}</h2>
+        </div>
+        </div>
+        
+      </>
+    );
   }
-
 
   // const biggest = (e)=>{
   //   var m = 0;
@@ -64,6 +125,34 @@ const Product = () => {
   //   }
   //   console.log(m)
   // }
+
+  // const [seconds, setSeconds] = useState(86400);
+
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     if (seconds > 0) {
+  //       setSeconds(seconds => seconds - 1);
+  //     } else {
+  //       clearInterval(intervalId);
+  //     }
+  //   }, 1000);
+  // }, [seconds]);
+
+  // function getTimeRemaining() {
+  //   const days = Math.floor(seconds / (60 * 60 * 24));
+  //   const hours = Math.floor((seconds % (60 * 60 * 24)) / (60 * 60));
+  //   const minutes = Math.floor((seconds % (60 * 60)) / 60);
+  //   const remainingSeconds = seconds % 60;
+
+  //   return {
+  //     days,
+  //     hours,
+  //     minutes,
+  //     remainingSeconds,
+  //   };
+  // }
+
+  // const timeRemaining = getTimeRemaining();
 
   const config = {
     headers: {
@@ -79,7 +168,7 @@ const Product = () => {
       .then((response) => {
         console.log(response);
         toast.success("Item added to cart");
-        window.location.replace('/cart')
+        window.location.replace("/cart");
       })
       .catch((e) => {
         console.log(e);
@@ -98,7 +187,6 @@ const Product = () => {
         setTimeout(function () {
           window.location.href("www.google.com");
         }, 3000);
-
       })
       .catch((e) => {
         console.log(e);
@@ -166,6 +254,9 @@ const Product = () => {
         setDetails(response.data.data);
         // console.log(response.data.data.type);
         setType(response.data.data.type);
+        var t = response.data.data.last_time;
+        console.log(t);
+        setApnaTime(t);
         var m = 0;
         var n;
         // console.log(response.data.data.bid_info.length);
@@ -177,18 +268,18 @@ const Product = () => {
             setHname(n);
           }
         }
-        console.log(response.data.data.images[0].name)
-        for(let o=0;o<response.data.data.images.length;o++){
-          doto.push("http://localhost:4000/" + response.data.data.images[o].name);
+        console.log(response.data.data.images[0].name);
+        for (let o = 0; o < response.data.data.images.length; o++) {
+          doto.push(
+            "http://localhost:4000/" + response.data.data.images[o].name
+          );
           // console.log(doto)
           // console.log("http://localhost:4000/" + response.data.data.images[o].name)
           // console.log("e")
         }
-        
-
       });
   }, []);
-  
+
   const settings = {
     customPaging: (i) => {
       return (
@@ -202,7 +293,7 @@ const Product = () => {
     dots: true,
     dotsClass: "slick-dots smallimg",
     initialSlide: 1,
-    infinite: true,
+    infinite: false,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
@@ -250,17 +341,14 @@ const Product = () => {
                 <div className="col ">
                   <div className="row timemoney mt-3">
                     <div className="col time">
-                      <div className="row row-cols-4">
-                        <div className="col text-center"><h6>Day</h6><h2>{days}</h2></div>
-                        <div className="col text-center"><h6>Hrs</h6><h2>{hours}</h2></div>
-                        <div className="col text-center"><h6>Min</h6><h2>{minutes}</h2></div>
-                        <div className="col text-center"><h6>Sec</h6><h2>{seconds}</h2></div>
+                      
+                          
+                          <h2>
+                            <DayCounter targetDate={new Date(apnaTime)} />
+                          </h2>
                         
-                        {/* <p className="col">Days Hours Minutes Seconds</p>
-                      <h3 className="col time text-center">{days} : {hours} : {minutes} : {seconds}</h3> */}
-                      </div>
                     </div>
-                    
+
                     <p className="col money text-center ">
                       <h5>Starting Bid</h5>
                       <span>
