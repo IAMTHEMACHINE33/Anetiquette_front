@@ -60,7 +60,7 @@ const NavigateBlack = () => {
             </a>
           </li>
           <li>
-            <a href="/Add_products">
+            <a href="/add">
               <div>
               <i class="fas fa-plus"></i>
               <span> Product </span>
@@ -173,17 +173,7 @@ const NavigateBlack = () => {
               >
                 Help
               </Nav.Link>
-              <Nav.Link
-                href="/cat"
-                className={
-                  activeLink === "contact"
-                    ? "active navbar-link"
-                    : "navbar-link"
-                }
-                onClick={() => onUpdateActiveLink("contact")}
-              >
-                Contact
-              </Nav.Link>
+              
             </Nav>
             <span className="navbar-text">
               <div className="navbar-icon ">

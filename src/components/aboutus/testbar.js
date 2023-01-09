@@ -71,7 +71,7 @@ const TestBar = () => {
             </a>
           </li>
           <li>
-            <a href="/Add_products">
+            <a href="/add">
             <i class="fas fa-plus"></i>
               <span>Add product</span>
             </a>
@@ -175,17 +175,7 @@ const TestBar = () => {
               >
                 Help
               </Nav.Link>
-              <Nav.Link
-                href="/contact"
-                className={
-                  activeLink === "contact"
-                    ? "active navbar-link"
-                    : "navbar-link"
-                }
-                onClick={() => onUpdateActiveLink("contact")}
-              >
-                Contact
-              </Nav.Link>
+             
             </Nav>
             <span className="navbar-text">
               <div className="navbar-icon ">

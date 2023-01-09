@@ -48,19 +48,6 @@ const Product = () => {
   // const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
   // const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
 
-  // if (days === 0 && hours ===0 && minutes === 0 && seconds === 0){
-  //   console.log("time")
-  //   toast("Time's up ! \n\nMake your choice, \n\nlive or die", {
-  //     icon: '🕑',
-  //   }, {
-  //     duration: 20000,
-  //   });
-  //   setTimeout(function () {
-  //     window.location.href = '/'
-  //   }, 3000);
-
-  // }
-
   function DayCounter({ targetDate }) {
     const [days, setDays] = useState(null);
     const [hours, setHours] = useState(null);
@@ -84,32 +71,46 @@ const Product = () => {
         setSeconds(seconds);
       }, 1000);
 
+      if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
+        console.log("time");
+        toast(
+          "Time's up ! \n\nMake your choice, \n\nlive or die",
+          {
+            icon: "🕑",
+          },
+          {
+            duration: 20000,
+          }
+        );
+        setTimeout(function () {
+          window.location.href = "/";
+        }, 3000);
+      }
+
       return () => clearInterval(intervalId);
     }, [targetDate]);
 
     return (
       <>
-      <div className="row row-cols-4">
-                        
-              <div className="col text-center">
-          <h6>Days</h6>
-          <h2>{days}</h2>
-        </div>
+        <div className="row row-cols-4">
+          <div className="col text-center">
+            <h6>Days</h6>
+            <h2>{days}</h2>
+          </div>
 
-        <div className="col text-center">
-          <h6>Hrs</h6>
-          <h2>{hours}</h2>
+          <div className="col text-center">
+            <h6>Hrs</h6>
+            <h2>{hours}</h2>
+          </div>
+          <div className="col text-center">
+            <h6>Min</h6>
+            <h2>{minutes}</h2>
+          </div>
+          <div className="col text-center">
+            <h6>Sec</h6>
+            <h2>{seconds}</h2>
+          </div>
         </div>
-        <div className="col text-center">
-          <h6>Min</h6>
-          <h2>{minutes}</h2>
-        </div>
-        <div className="col text-center">
-          <h6>Sec</h6>
-          <h2>{seconds}</h2>
-        </div>
-        </div>
-        
       </>
     );
   }
@@ -341,12 +342,9 @@ const Product = () => {
                 <div className="col ">
                   <div className="row timemoney mt-3">
                     <div className="col time">
-                      
-                          
-                          <h2>
-                            <DayCounter targetDate={new Date(apnaTime)} />
-                          </h2>
-                        
+                      <h2>
+                        <DayCounter targetDate={new Date(apnaTime)} />
+                      </h2>
                     </div>
 
                     <p className="col money text-center ">
