@@ -22,31 +22,8 @@ const Product = () => {
 
   const [apnaTime, setApnaTime] = useState();
 
-  //   // ============================================ Converting date to sec=============================
+// ============================================ Timer  =============================
 
-  //   function dateToSeconds(date) {
-  //     return Math.floor(date.getTime() / 1000);
-  //   }
-  //   console.log(apnaTime);
-  //   const date = new Date(apnaTime);
-  //   const second = dateToSeconds(date);
-  //   console.log(second);
-
-  // const [elapsedTime, setElapsedTime] = useState(1676101620);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setElapsedTime(elapsedTime => elapsedTime -1000);
-
-  //   }, 1000);
-
-  //   return () => clearInterval(interval);
-  // }, []);
-
-  // const days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
-  // const hours = Math.floor((elapsedTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  // const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
-  // const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
 
   function DayCounter({ targetDate }) {
     const [days, setDays] = useState(null);
@@ -69,23 +46,30 @@ const Product = () => {
         setHours(hours);
         setMinutes(minutes);
         setSeconds(seconds);
+
+        if (
+           days === 0 && hours === 0 && minutes === 0 && 
+          seconds === 0) {
+
+          
+          toast(
+            "Time's up !",
+            {
+              icon: "🕑",
+            },
+            {
+              duration: 20000,
+            }
+          );
+          
+          setTimeout(function () {
+            window.location.href = "/";
+          }, 3000);
+        }
+
       }, 1000);
 
-      if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
-        console.log("time");
-        toast(
-          "Time's up ! \n\nMake your choice, \n\nlive or die",
-          {
-            icon: "🕑",
-          },
-          {
-            duration: 20000,
-          }
-        );
-        setTimeout(function () {
-          window.location.href = "/";
-        }, 3000);
-      }
+    
 
       return () => clearInterval(intervalId);
     }, [targetDate]);
@@ -129,31 +113,7 @@ const Product = () => {
 
   // const [seconds, setSeconds] = useState(86400);
 
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     if (seconds > 0) {
-  //       setSeconds(seconds => seconds - 1);
-  //     } else {
-  //       clearInterval(intervalId);
-  //     }
-  //   }, 1000);
-  // }, [seconds]);
-
-  // function getTimeRemaining() {
-  //   const days = Math.floor(seconds / (60 * 60 * 24));
-  //   const hours = Math.floor((seconds % (60 * 60 * 24)) / (60 * 60));
-  //   const minutes = Math.floor((seconds % (60 * 60)) / 60);
-  //   const remainingSeconds = seconds % 60;
-
-  //   return {
-  //     days,
-  //     hours,
-  //     minutes,
-  //     remainingSeconds,
-  //   };
-  // }
-
-  // const timeRemaining = getTimeRemaining();
+ 
 
   const config = {
     headers: {
