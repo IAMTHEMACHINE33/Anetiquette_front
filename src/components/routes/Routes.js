@@ -31,7 +31,7 @@ const Url = () => {
     <>
       <Routes>
         <Route path="/category" element={<Category/>}></Route>
-        <Route path="/cat" element={<Final />}></Route>
+        <Route path="/add" element={<Final />}></Route>
         <Route path="/searchres" element={<Search />}></Route>
         <Route path="/search" element={<SearchResult />}></Route>
         <Route path="/login" element={<Login />}></Route>

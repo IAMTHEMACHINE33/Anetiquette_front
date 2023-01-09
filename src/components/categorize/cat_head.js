@@ -44,10 +44,10 @@ export default function CatHead() {
   return (
     <div className="categorydecor mb-5" style={{ height: "50vh" }}>
       <div className="row row-cols-2">
-        <div className="col d-flex flex-row-reverse   my-5 cathead_img">
+        <div className="col-5 p-1 d-flex flex-row-reverse   my-5 cathead_img">
           <img   src={person} style={{ width: "30rem", height: "30rem" }}></img>
         </div>
-        <div className="col my-5 p-5 cathead_text_contain">
+        <div className="col-7 my-5 p-5 cathead_text_contain">
         <div className={styles.container}>
       <div className={styles.main}>
         {transitions(({ innerHeight, ...rest }, item) => (
