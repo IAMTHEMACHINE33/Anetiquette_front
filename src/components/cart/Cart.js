@@ -68,7 +68,7 @@ const Cart = () => {
                     <div class="row">
                       <div id="ml" class="col-md-3 mb-2">
                         <img
-                          src="https://bridportantiques.co.uk/wp-content/uploads/2021/08/Slide2.jpg"
+                          src={'http://localhost:4000/' + option.added_product.images[0].name}
                           class="w-100"
                           alt="picture"
                         ></img>
@@ -80,7 +80,7 @@ const Cart = () => {
                         <p>
                           {option.added_product.description}
                         </p>
-                        <p>Category: {option.added_product.category}</p>
+                        <p>Category: {option.added_product.category.name}</p>
                       </div>
                       <div id="mll" class="col-md-2 mb-2">
                         <p>
